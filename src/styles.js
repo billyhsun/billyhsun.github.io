@@ -12,6 +12,7 @@ window.onscroll = function() {
     prevScrollpos = currentScrollPos;
 }
 
+
 // Head
 class Head extends HTMLElement {
     connectedCallback() {
@@ -25,21 +26,25 @@ class Head extends HTMLElement {
             <meta name="description" content="Bill Sun's Portfolio">
             <meta name="author" content="Bill (Yuan Hong) Sun">
             <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-            <link rel="stylesheet" href="styles.css">
+            <link rel="stylesheet" href="src/styles.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
         </head>
+
         `
     }
 }
+
 
 // Header (Navigation bar)
 class Header extends HTMLElement {
     connectedCallback() {
       this.innerHTML = `
         <div class="navbar" id="navbar123" style="z-index: 2;">
-            <div class="button"><a href="blogs.html">Blog</a></div>
+            <div class="button"><a href="blogs.html" style="color: #e6e6e6; text-decoration: none; padding: 15px 15px">Blog</a>
+            </div>
             <div class="dropdown">
-                <button class="dropbtn"><a href="projects.html">Projects</a>
+                <button class="dropbtn"><a href="projects.html"
+                        style="color: #e6e6e6; text-decoration: none; padding: 15px 0px">Projects</a>
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
@@ -52,7 +57,8 @@ class Header extends HTMLElement {
                 </div>
             </div>
             <div class="dropdown">
-                <button class="dropbtn"><a href="experience.html">Experience</a>
+                <button class="dropbtn"><a href="experience.html"
+                        style="color: #e6e6e6; text-decoration: none; padding: 15px 0px">Experience</a>
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
@@ -63,9 +69,11 @@ class Header extends HTMLElement {
                     <a href="transit.html">Transportation Modelling Research - University of Toronto</a>
                 </div>
             </div>
-            <div class="button"><a href="about.html">About Me</a></div>
+            <div class="button"><a href="about.html" style="color: #e6e6e6; text-decoration: none; padding: 15px 15px">About
+                    Me</a></div>
             <div class="logo">
-                <h1><a href="index.html">bill.</a></h1>
+                <h1 style="margin:1px;">
+                    <a href="index.html" style="text-decoration: none;">bill.</a></h1>
             </div>
         </div>
         `
@@ -79,8 +87,10 @@ class Footer extends HTMLElement {
         `
 		<div class="footer">
 			<br>
-			<p>
+
+			<p style="margin-left: 2%;">
 				<font color=#cccccc>Copyright 2018-2023 © Bill Yuan Hong Sun</font>
+
 			<div class="socialmedia">
                 <a href="https://www.linkedin.com/in/bill-yuan-hong-sun/"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
 				<a href="https://github.com/billyhsun"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
@@ -92,6 +102,7 @@ class Footer extends HTMLElement {
 				<a href="mailto:billyuanhong.sun@mail.utoronto.ca"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                 <a href="https://linktr.ee/billyhsun"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
 			</div>
+
 			</p>
 			<br><br>
 		</div>
@@ -117,6 +128,9 @@ class Publications extends HTMLElement {
             <p>[4] Yasin, Y., Sun, Y.H., & Lee, K. (2022). A machine learning approach for predicting children's future BMI. Canadian Developmental Psychology Conference 2022.
                 (Conference proceeding). <a href="files/poster-childbmi.pdf">Poster</a>
             </p>
+            <!-- <p>[5] Zhou, W., Sun, Y.H., Huang, W., Liu, Q., Lee, N.Y., Yasin, Y., Chen, Z., Wang, J., Cai, P., Feng, Z.P. & Lee, K. (In press). Risk prediction of fatty liver disease by machine learning using physical and blood biomarkers independent of liver biopsy. Metabolism.
+                (<a href="files/NAFLD-Manuscript-Lancet.pdf">Submission</a>)
+            </p> -->
             <p>
                 <a href="https://scholar.google.com/citations?hl=en&user=bbtplDkAAAAJ&view_op=list_works&gmla=AJsN-F4COolLEfdgE4iCWldQ-NS9XYUCR5fAPNxaEnJmw0C_VnRX9D0330aSstBiPzdrgi9lJ_ueu85EiVneGUbauuNtqvL3uSWMXhNprQDV_4_cdGrDhYA">
                 Google Scholar</a>
@@ -128,7 +142,33 @@ class Publications extends HTMLElement {
     }
 }
 
+/* More links
+<a href="https://devpost.com/billyhsun"><i class="fab fa-dev"></i></a>
+<a href="https://angel.co/bill-sun-1"><i class="fab fa-angellist"></i></a>
+<a href="https://stackoverflow.com/users/11026180/bill-sun"><i class="fab fa-stack-overflow"></i></a>
+<a href="https://www.kaggle.com/billyhsun"><i class="fab fa-kaggle"></i></a>
+<a href="https://twitter.com/byhsun"><i class="fab fa-twitter"></i></a>
+<a href="https://thewanderingengineer.medium.com/"><i class="fab fa-medium-m"></i></a>
+
+            <div class="dropdown">
+                <button class="dropbtn"><a href="clubs.html"
+                        style="color: #e6e6e6; text-decoration: none; padding: 15px 0px">Extracurriculars</a>
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="toastmasters.html">Toastmasters</a>
+                    <a href="ewb.html">Engineers Without Borders - High School / University of Toronto</a>
+                    <a href="solarcar.html">Blue Sky Solar Racing Team - University of Toronto</a>
+                    <a href="ilead.html">iLead The Game - University of Toronto</a>
+                    <a href="deep.html">DEEP Summer Academy - High School / University of Toronto</a>
+                    <a href="swim.html">Swimming and Lifeguarding - High School / City of Toronto</a>
+                    <a href="weather.html">Hobbies</a>
+                </div>
+            </div>
+*/
+
 customElements.define('main-head', Head);
 customElements.define('main-header', Header);
 customElements.define('main-footer', Footer);
 customElements.define('publications-list', Publications);
+
