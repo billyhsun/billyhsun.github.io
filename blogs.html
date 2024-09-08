@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="styles.js"></script>
+<link rel="icon" type="image/png" href="logos/b.png" sizes="32x32">
+<main-head></main-head>
+<main-header></main-header>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial;
+        padding: 20px;
+        background: #1a2639;
+        color: #d4d4dc;
+        animation: fadeIn 1s ease-in;
+        transition: background-color 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+
+    .header {
+        padding-top: 100px;
+        padding-bottom: 30px;
+        font-size: 36px; 
+        text-align: center;
+        color: #3e8989;
+    }
+
+    .leftcolumn {
+        float: left;
+        width: 30%;
+    }
+
+    .rightcolumn {
+        float: left;
+        width: 70%;
+        padding-left: 20px;
+    }
+
+    .card {
+        background-color: #2c3e50;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+
+    .card:hover {
+        transform: scale(1.03); 
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2); 
+    }
+
+    .card h2 {
+        color: #3e8989;
+    }
+
+    .card a {
+        color: #84a9ac;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .card a:hover {
+        color: #e8e8e8;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    @media screen and (max-width: 800px) {
+        .leftcolumn,
+        .rightcolumn {
+            width: 100%;
+            padding: 0;
+        }
+    }
+</style>
+
+<body>
+    <title>Bill Sun's Blog</title>
+
+    <div class="header">
+        <h2>Bill Sun's Blog</h2>
+    </div>
+
+    <div class="row">
+
+        <div class="leftcolumn">
+            <div class="card">
+                <h2>Table of Contents</h2>
+                <ul>
+                    <li><a href="#20240812">Aug. 12, 2024: Continuous Integration for Machine Learning Applications</a></li>
+                    <li><a href="#20231127">Nov. 27, 2023: Software Architecture for Real-time Big Data Forecasting Systems</a></li>
+                    <li><a href="#20210708">Jul. 8, 2021: University of Toronto vs UWaterloo: How to Decide?</a></li>
+                    <li><a href="#20210511">May 11, 2021: For those considering the PEY Co-op program at University of Toronto</a></li>
+                    <li><a href="#20210504">May 4, 2021: For anyone considering the Engineering Science program at University of Toronto</a></li>
+                </ul>
+                <br><a href="blog2.html">Next page</a>
+            </div>
+        </div>
+
+        <div class="rightcolumn">
+
+            <div class="card" style="background-color: #2c3e50; color: #d4d4dc;">
+                <h2 id="20240812">Continuous Integration for Machine Learning Applications</h2>
+                <h5>Kinaxis Engineering Blog, Aug. 12, 2024</h5>
+                <img src="pics/ml-workflow.jpg" alt="Software" style="width:80%">
+
+                <p>Continuous integration, or CI (sometimes called CI/CD along with continuous deployment), is an...</p>
+                <p><b>Read the full text <a href="https://www.kinaxis.com/en/blog/continuous-integration-machine-learning-applications">here</a>.</b></p>
+
+            </div>
+
+            <div class="card" style="background-color: #2c3e50; color: #d4d4dc;">
+                <h2 id="20231127">Software Architecture for Real-time Big Data Forecasting Systems</h2>
+                <h5>Kinaxis Engineering Blog, Nov. 27, 2023</h5>
+                <img src="pics/software-architecture.png" alt="Software" style="width:80%">
+
+                <p>Machine learning engineering is a subset of software engineering...</p>
+                <p><b>Read the full text <a href="https://www.kinaxis.com/en/blog/software-architecture-real-time-big-data-forecasting-systems">here</a>.</b></p>
+
+            </div>
+
+
+            <div class="card" style="background-color: #2c3e50; color: #d4d4dc;">
+                <h2 id="20210708">University of Toronto vs UWaterloo: How to Decide?</h2>
+                <h5>Medium - The Wandering Engineer, July 8, 2021</h5>
+                <img src="pics/uoft1.jpg" alt="UofT" style="width:80%">
+
+                <p>University of Toronto (U of T) and University of Waterloo (UW) are the consensus top university picks for top high school students across Canada, especially for STEM disciplines. There are many pros and cons of each school...</p>
+                <p><b>Read the full text <a href="https://medium.com/@thewanderingengineer/university-of-toronto-vs-waterloo-how-to-decide-455234568dac">here</a>.</b></p>
+
+            </div>
+
+
+            <div class="card" style="background-color: #2c3e50; color: #d4d4dc;">
+                <h2 id="20210511">For those considering the PEY Co-op program at University of Toronto</h2>
+                <h5>Medium - The Wandering Engineer, May 11, 2021</h5>
+                <img src="pics/uoft2.jpeg" alt="UofT" style="width:80%">
+
+                <p>This post is my general advice for those considering the Professional Experience Year, or PEY co-op program at University of Toronto, St. George campus....</p>
+                <p><b>Read the full text <a href="https://thewanderingengineer.medium.com/for-those-considering-the-pey-co-op-program-at-university-of-toronto-93d3c359823c">here</a>.</b></p>
+
+            </div>
+
+
+            <div class="card" style="background-color: #2c3e50; color: #d4d4dc;">
+                <h2 id="20210504">For anyone considering the Engineering Science program at University of Toronto</h2>
+                <h5>Medium - The Wandering Engineer, May 4, 2021</h5>
+                <img src="pics/bahen.jpg" alt="Bahen" style="width:80%">
+
+                <p>This post is for anyone considering the Engineering Science program at University of Toronto...</p>
+                <p><b>Read the full text <a href="https://medium.com/@thewanderingengineer/this-post-is-for-anyone-considering-the-engineering-science-program-at-university-of-toronto-4f828232c902">here</a>.</b></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<main-footer></main-footer>
+</html>

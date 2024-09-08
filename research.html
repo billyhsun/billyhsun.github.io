@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="styles.js"></script>
+<link rel="icon" type="image/png" href="logos/b.png" sizes="32x32">
+<main-head></main-head>
+<main-header></main-header>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: #1a2639;
+        color: #d4d4dc;
+        animation: fadeIn 1s ease-in;
+        transition: background-color 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    h1, h2, h3, .titleabout {
+        color: #3e8989;
+        animation: slideIn 0.8s ease-out;
+    }
+
+    a {
+        text-decoration: none;
+        color: #84a9ac;
+        transition: color 0.3s ease;
+        position: relative;
+    }
+
+    a:hover {
+        color: #e8e8e8;
+    }
+
+    a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #84a9ac;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-out;
+    }
+
+    a:hover::after {
+        transform: scaleX(1);
+    }
+
+    .container {
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background-color: #2c3e50;
+        transition: background-color 0.3s ease;
+    }
+
+    .skills {
+        text-align: right;
+        padding: 5px;
+        color: white;
+        animation: skillFill 2s ease-out;
+    }
+
+    @keyframes skillFill {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    .fluent { width: 100%; background-color: #3498db; }
+    .good { width: 67%; background-color: #2980b9; }
+    .familiar { width: 33%; background-color: #1f618d; }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted #d4d4dc;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #34495e;
+        color: #FFFFFF;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        left: 110%;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    #skillicon {
+        color: #EEEEEE;
+        margin: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    #skillicon:hover {
+        color: #FFFFFF;
+        transform: rotate(10deg);
+    }
+
+    .item img {
+        transition: transform 0.3s ease;
+    }
+
+    .item img:hover {
+        transform: scale(1.05);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #3e8989;
+    }
+
+    figure.item {
+        display: inline-block;
+        margin: 10px;
+        text-align: center;
+    }
+
+    figcaption.desc {
+        margin-top: 5px;
+    }
+</style>
+
+<div style="padding: 0% 10% 0% 10%; margin-top:170px; min-height:800px;">
+    <body>
+
+        <!--Main-->
+        <title>Research Experience & Publications - Bill Sun</title>
+
+        <h1>All Publications</h1>
+        <publications-list></publications-list>
+        <br><br>
+
+
+        <h1>Undergraduate Thesis</h1>
+        <h3>A Novel Approach for Developing Efficient and Convenient Short Assessments to Approximate a Long Assessment</h3>
+        <h3>Supervisor: <a
+                href="https://www.oise.utoronto.ca/aphd/Home/Faculty_and_Staff/Faculty/4836/Kang_Lee.html">Kang Lee</a>,
+            Department of Applied Psychology and Human Development, University of Toronto</h3>
+        <!-- <h3>September 2020 — April 2021</h3> -->
+        <br>
+
+        <p>This paper describes the development of efficient, convenient, and 
+            non-repetitive short assessments (e.g., surveys, tests, exams) to 
+            replace a long assessment for conducting any kind of assessments of 
+            people's behaviors, opinions, attitudes, mental and physical states, 
+            traits (e.g., personality), and abilities (e.g., IQ), and skills 
+            (e.g., music playing proficiency). The process involves (1) obtain 
+            data for a particular long assessment (e.g., a scale for Generalized 
+            Anxiety Disorder, GAD) from a large sample of participants, (2) derive 
+            the ground truth scores from participants' responses to all items of the 
+            long assessment (e.g., scores of GAD or class of GAD: with vs. with GAD),
+            (3) use machine learning to select participants' response to a small set of 
+            items of the long assessment to predict the ground truth accurately, 
+            (4) obtain computational models that use the minimal number of items 
+            needed to achieve the prediction accuracy as high as when the 
+            responses to all items of the whole long assessment are used, 
+            (5) generate all possible combinations of minimal number of items 
+            to create multiple short assessments of similar predictive accuracies 
+            for use if the short assessment is to be done repeatedly, (6) implement 
+            the short assessments in computer programs, mobile apps, websites, clouds, 
+            telemarketing, and any other forms for use with any future participant of 
+            the assessment, (7) the implementation will randomly or non-randomly select 
+            one subset of items to assess a particular participant using these platforms, 
+            (7) the implementation will use the computational model based on the subset 
+            of items to produce estimated scores as if the participant has done the 
+            long assessment, and the confidence of the model's estimation in the form 
+            of likelihood ratio or similar indexes.
+        </p>
+
+        <p>A version of this paper has been published in the
+            <a href="https://doi.org/10.3758/s13428-021-01771-7">Behavior Research Methods</a> journal.
+        </p>
+        <br><br>
+
+
+        <h1>Masters Thesis</h1>
+        <h3>Rapid Assessment of Psychiatric Disorder Risks Using Machine Learning</h3>
+        <h3>Supervisor: <a
+                href="https://www.oise.utoronto.ca/aphd/Home/Faculty_and_Staff/Faculty/4836/Kang_Lee.html">Kang Lee</a>,
+            Department of Applied Psychology and Human Development, University of Toronto</h3>
+        <!-- <h3>September 2022 — April 2023</h3> -->
+        <br>
+
+        <p>This study applies a set of machine learning methods to develop a shortened, 
+            100-item version of the MMPI-2 scale and evaluate its reliability and validity. 
+            We first selected the most important items from the original 567-item MMPI scale 
+            using feature importance measures such as MRMR and SHAP. Then we trained machine 
+            learning models on the selected items using a novel machine learning method called 
+            the stacked generalization ensemble of several machine learning techniques. 
+            We were able to reduce the length of the MMPI-2 by over 82% from 567 items to 
+            100 items. The shortened MMPI scales, denoted the MMPI-100, can measure the 10 
+            target conditions with at least 85% Area Under Curve of the Receiver Operating 
+            Characteristic (AUC ROC). It also has a Cronbach's Alpha of 0.96. Finally, we 
+            implemented this shortened MMPI-2 scale into a mobile-friendly web application. 
+            This shortened scale can not only help alleviate pressure on healthcare systems 
+            for dealing with the increased number of patients with mental health concerns but 
+            also for individuals to use it for regular mental health monitoring or screening.
+        </p>
+        <br><br>
+    
+
+    </body>
+</div>
+
+<main-footer></main-footer>
+</html>

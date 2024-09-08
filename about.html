@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="styles.js"></script>
+<link rel="icon" type="image/png" href="logos/b.png" sizes="32x32">
+<main-head></main-head>
+<main-header></main-header>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: #1a2639;
+        color: #d4d4dc;
+        animation: fadeIn 1s ease-in;
+        transition: background-color 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    box {
+        font-size: 15px;
+        padding: 7px 10px 7px 10px;
+        margin: 0px 5px 0px 5px;
+        height: 29px;
+        text-align: center;
+    }
+
+    .titleabout, h2, h3 {
+        color: #3e8989;
+    }
+
+    table {
+        table-layout: fixed;
+    }
+
+    th, td {
+        text-align: center;
+    }
+
+    body p a {
+        text-decoration: none;
+        color: #84a9ac;
+        padding: 0;
+        position: relative;
+    }
+
+    body p a:hover {
+        color: #e8e8e8;
+    }
+
+    body p a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #84a9ac;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-out;
+    }
+
+    body p a:hover::after {
+        transform: scaleX(1);
+    }
+
+    a {
+        text-decoration: none;
+        color: #84a9ac;
+        transition: color 0.3s ease;
+        position: relative;
+    }
+
+    a:hover {
+        color: #e8e8e8;
+    }
+
+    a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #84a9ac;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-out;
+    }
+
+    a:hover::after {
+        transform: scaleX(1);
+    }
+
+    .container {
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background-color: #2c3e50;
+        transition: background-color 0.3s ease;
+    }
+
+    .skills {
+        text-align: right;
+        padding: 5px;
+        color: white;
+        animation: skillFill 2s ease-out;
+        transition: background-color 0.3s ease;
+    }
+
+    @keyframes skillFill {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    .fluent {
+        width: 100%;
+        background-color: #3498db;
+    }
+
+    .good {
+        width: 67%;
+        background-color: #2980b9;
+    }
+
+    .familiar {
+        width: 33%;
+        background-color: #1f618d;
+    }
+
+    .container:nth-child(1) .skills { animation-delay: 0.1s; }
+    .container:nth-child(2) .skills { animation-delay: 0.2s; }
+    .container:nth-child(3) .skills { animation-delay: 0.3s; }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted #d4d4dc;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #34495e;
+        color: #FFFFFF;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        left: 110%;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent #34495e transparent transparent;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    #skillicon {
+        color:#EEEEEE; 
+        margin: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    #skillicon:hover {
+        color:#FFFFFF; 
+        transform: rotate(10deg);
+    }
+
+    .item img {
+        transition: transform 0.3s ease;
+    }
+
+    .item img:hover {
+        transform: scale(1.05);
+    }
+    
+</style>
+
+<div style="padding: 0% 10% 0% 10%; margin-top:170px; min-height:500px;">
+    <body>
+
+        <!--Main-->
+        <title>About Me - Bill Sun</title>
+
+        <h1 class="titleabout">About Me</h1><br>
+
+        <p>Hello! I'm Bill (Yuan Hong) Sun. I am currently working as a Machine Learning Engineer at 
+            <a href="https://www.kinaxis.com/en">Kinaxis</a>, where I 
+            develop machine learning modules and pipelines for supply chain forecasting solutions. Previously, 
+            I worked at <a href="https://www.nuralogix.ai/">Nuralogix</a> as a Data Science Software Developer,
+            working closely with the <a href="https://www.nuralogix.ai/anura/">Anura</a> personal health monitoring app.</p>
+
+        <p>I am currently pursuing a Master's of computer science at Georgia Tech. Previously, I graduated 
+            from the <a href="https://engsci.utoronto.ca/program/what-is-engsci/">Engineering Science</a> 
+            program from the University of Toronto, majoring in
+            <a href="https://engsci.utoronto.ca/explore_our_program/majors/machine-intelligence/">
+                Machine Learning and Artificial Intelligence</a>. I am enthusiastic about using software, big data,
+            machine learning, and the engineering approach to solve challenging problems across different disciplines, and helping to 
+            improve people's lives through technology.
+        </p>
+
+        <p>I have numerous software <a href="projects.html">projects</a>, and I am also doing research at University of Toronto, 
+            as showcased by my publications below. 
+            In my spare time, I am involved in numerous <a href="clubs.html">extracurricular activities</a>. I actively
+            attend technical meetups and participate in hackathons. I also like to workout, play sports, travel, photography, volunteer, and
+            mentor younger peers. I am currently open for mentoring, so if you're interested, please send me an <a href="mailto:billyuanhong.sun@mail.utoronto.ca">email</a>.</p>
+
+        <p>You can reach me by
+            <a href="mailto:billyuanhong.sun@mail.utoronto.ca">email</a> or <a
+                href="https://www.linkedin.com/in/bill-yuan-hong-sun/">LinkedIn</a>. 
+            You can also read about my engineering insights and reflections in my <a href="blogs.html">blog</a>.
+                </p>
+            <br><br><br>
+
+
+        <h2 id="pubs" style="text-align:center;">All Publications</h2>
+        <publications-list></publications-list>
+        <br><br><br>
+    
+
+        <h2 id="skills" style="text-align:center;">Skills Summary</h2>
+
+        <table style="width:100%">
+            <tr>
+                <th>
+                    <h3>Programming</h3>
+                </th>
+                <th>
+                    <h3>Other Technologies</h3>
+                </th>
+                <th>
+                    <h3>Engineering & Leadership</h3>
+                </th>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip"><i class="fab fa-python fa-3x" id="skillicon"></i>
+                        <span class="tooltiptext">Python</span></div>
+                    <div class="container">
+                        <div class="skills fluent"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="tooltip"><i class="fas fa-database fa-3x" id="skillicon"></i>
+                        <span class="tooltiptext">SQL / Databases</span></div>
+                    <div class="container">
+                        <div class="skills fluent"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <p><b>Engineering Design Process</b></p>
+                    <div class="container">
+                        <div class="skills fluent"></div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip"><i><img src="logos/cpp.png" alt="Python" width=42 style="margin:5px"></i>
+                        <span class="tooltiptext">C++</span></div>
+                    <div class="container">
+                        <div class="skills good"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="tooltip"><i class="fab fa-aws fa-3x" id="skillicon"></i>
+                        <span class="tooltiptext">Amazon Web Services</span></div>
+                    <div class="container">
+                        <div class="skills good"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <p><b>Agile Methodology</b></p>
+                    <div class="container">
+                        <div class="skills good"></div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip"><i><img src="logos/c.png" alt="Python" width=42 style="margin:5px"></i>
+                        <span class="tooltiptext">C</span></div>
+                    <div class="container">
+                        <div class="skills familiar"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="tooltip"><i><img src="logos/google-cloud.png" alt="Python" width=50
+                                style="margin:0px 5px"></i>
+                        <span class="tooltiptext">Google Cloud</span></div>
+                    <div class="container">
+                        <div class="skills good"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <p><b>Software Development Cycle</b></p>
+                    <div class="container">
+                        <div class="skills good"></div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip"><i class="fab fa-java fa-3x" id="skillicon"></i>
+                        <span class="tooltiptext">Java</span></div>
+                    <div class="container">
+                        <div class="skills familiar"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="tooltip"><i class="fab fa-linux fa-3x" id="skillicon"></i>
+                        <span class="tooltiptext">Linux / Ubuntu</span></div>
+                    <div class="container">
+                        <div class="skills good"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <p><b>DevOps</b></p>
+                    <div class="container">
+                        <div class="skills good"></div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip"><i class="fab fa-html5 fa-3x" id="skillicon"></i>
+                        <span class="tooltiptext">HTML</span></div>
+                    <div class="container">
+                        <div class="skills good"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="tooltip"><i class="fab fa-docker fa-3x" id="skillicon"></i>
+                        <span class="tooltiptext">Docker</span></div>
+                    <div class="container">
+                        <div class="skills good"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <p><b>Machine Learning & Deep Learning</b></p>
+                    <div class="container">
+                        <div class="skills fluent"></div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip"><i class="fab fa-css3 fa-3x" id="skillicon"></i>
+                        <span class="tooltiptext">CSS</span></div>
+                    <div class="container">
+                        <div class="skills good"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="tooltip"><i class="fab fa-atlassian fa-3x" id="skillicon"></i>
+                        <span class="tooltiptext">Atlassian toolkit (Jira, Confluence, etc.)</span></div>
+                    <div class="container">
+                        <div class="skills fluent"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <p><b>Natural Language Processing</b></p>
+                    <div class="container">
+                        <div class="skills good"></div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip"><i class="fab fa-js-square fa-3x" id="skillicon"></i>
+                        <span class="tooltiptext">JavaScript</span></div>
+                    <div class="container">
+                        <div class="skills familiar"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="tooltip"><i><img src="logos/excel.png" alt="Python" width=45 style="margin:0px 5px"></i>
+                        <span class="tooltiptext">Microsoft Excel</span></div>
+                    <div class="container">
+                        <div class="skills good"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <p><b>Data Mining and Analysis</b></p>
+                    <div class="container">
+                        <div class="skills fluent"></div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip"><i><img src="logos/matlab.png" alt="Python" width=45
+                                style="margin:0px 5px"></i>
+                        <span class="tooltiptext">MATLAB</span></div>
+                    <div class="container">
+                        <div class="skills good"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="tooltip"><i><img src="logos/tensorflow.png" alt="Python" width=45
+                                style="margin:0px 5px"></i>
+                        <span class="tooltiptext">Tensorflow</span></div>
+                    <div class="container">
+                        <div class="skills good"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <p><b>Public Speaking</b></p>
+                    <div class="container">
+                        <div class="skills good"></div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="tooltip"><i class="fab fa-r-project fa-3x" id="skillicon"></i>
+                        <span class="tooltiptext">R</span></div>
+                    <div class="container">
+                        <div class="skills familiar"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="tooltip"><i><img src="logos/pytorch.png" alt="Python" width=45
+                                style="margin:0px 5px"></i>
+                        <span class="tooltiptext">PyTorch</span></div>
+                    <div class="container">
+                        <div class="skills fluent"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <p><b>Mentoring</b></p>
+                    <div class="container">
+                        <div class="skills good"></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <br>
+</div>
+
+<div style="padding: 0% 10% 0% 10%; margin-top:50px; min-height:700px;">
+
+    <h2 id="exp" style="text-align:center;">Experience Highlight</h2>
+
+    <figure class="item">
+        <a href="pey.html" target="_blank"><img src="pics/nuralogix.png" alt="portfolio item" width=400 height=250></a>
+        <figcaption class="desc">
+            <p>
+                <font color="white"><strong>Nuralogix Corporation</strong></font>
+            </p>
+            <p>
+                <font color="white">PEY Co-op as a Data Science Software Developer</font>
+            </p>
+        </figcaption>
+    </figure>
+
+    <figure class="item">
+        <a href="https://github.com/billyhsun/MusicGenre" target="_blank"><img src="pics/musicgenre.png"
+                alt="portfolio item" width=400 height=250></a>
+        <figcaption class="desc">
+            <p>
+                <font color="white"><strong>Music Genre Classifier</strong></font>
+            </p>
+            <p>
+                <font color="white">Deep Learning and Web Project</font>
+            </p>
+        </figcaption>
+    </figure>
+
+    <figure class="item">
+        <a href="capstone.html" target="_blank"><img src="pics/pho.png" alt="portfolio item" width=400 height=250></a>
+        <figcaption class="desc">
+            <p>
+                <font color="white"><strong>Undergraduate Capstone Project</strong></font>
+            </p>
+            <p>
+                <font color="white">Vaccine and COVID-19 misinformation detection on social media, powered by natural
+                    language processing</font>
+			</p>
+			<p>
+                <font color="white">Client: Public Health Ontario</font>
+            </p>
+        </figcaption>
+    </figure>
+
+    <figure class="item">
+        <a href="research.html" target="_blank"><img src="pics/anxiety.png" alt="portfolio item" width=400 height=250></a>
+        <figcaption class="desc">
+            <p>
+                <font color="white"><strong>Research & Publications</strong></font>
+            </p>
+            <p>
+                <font color="white">My research work and publications</font>
+            </p>
+            <p>
+                <font color="white">Kang Lee's Development Lab, University of Toronto</font>
+            </p>
+        </figcaption>
+    </figure>
+
+    <figure class="item">
+        <a href="transit.html" target="_blank"><img src="pics/transit2.png" alt="portfolio item" width=400
+                height=250></a>
+        <figcaption class="desc">
+            <p>
+                <font color="white"><strong>Transit Modelling Research</strong></font>
+            </p>
+            <p>
+                <font color="white">University of Toronto Transportation Research Institute, Summer 2017</font>
+            </p>
+        </figcaption>
+    </figure>
+
+    <figure class="item">
+        <a href="https://devpost.com/software/surroundsound-1u9ljk" target="_blank"><img src="pics/surroundsound.jpg"
+                alt="portfolio item" width=400 height=250></a>
+        <figcaption class="desc">
+            <p>
+                <font color="white"><strong>Music / Playlist Sharing Application</strong></font>
+            </p>
+            <p>
+                <font color="white">Hack The 6ix 2018</font>
+            </p>
+        </figcaption>
+    </figure>
+
+    <br>
+    <p>Click the images to view the details for each project.</p>
+    <p>If you are interested, you can view my <b>résumé</b> <a href="notfound.html">here</a>.</p><br>
+
+</div>
+
+<div style="padding: 0% 10% 0% 10%; margin-top:50px; min-height:300px;">
+    <h2 id="exp" style="text-align:center;">Awards</h2>
+
+    <p>2022 &emsp; Canadian Psychology Association (CPA) Research Award</p>
+    <p>2021 &emsp; Dean's Honours List</p>
+    <p>2017 &emsp; Natural Sciences and Engineering Research Council (NSERC) - Undergraduate Research Award</p>
+    <p>2016 &emsp; University of Toronto - Delta Tau Delta Scholarship</p>
+    <p>2016 &emsp; University of Toronto - President's Entrance Scholarship</p>
+    <p>2016 &emsp; Toronto District Secondary Schools Athletic Association (TDSSAA) Swimming Champions</p>
+
+</div>
+
+<div style="padding: 0% 10% 0% 10%; margin-top:50px; min-height:300px;">
+    <h2 id="exp" style="text-align:center;">Certifications</h2>
+
+    <p>2023 &emsp; Scrum Alliance - Certified Scrum Master</p>
+    <p>2022 &emsp; Amazon Web Services (AWS) - Certified Cloud Practitioner</p>
+    <p>2020 &emsp; Toastmasters International - Competent Communicator</p>
+    <p>2016 &emsp; Canadian Lifesaving Society - National Lifeguard</p>
+    <p>2016 &emsp; St. John's Ambulance - Standard First Aid CPR Level-C & AED</p>
+    <p>2015 &emsp; Ontario Lifesaving Society - Swim Instructor</p>
+
+</div>
+
+<div style="padding: 0% 10% 0% 10%; margin-top:50px; min-height:300px;">
+    <h2 id="exp" style="text-align:center;">Presentations and Guest Lectures</h2>
+
+    <p>2023 &emsp; University of Toronto - Machine Learning Applications in Psychology and Education (APD 5044)</p>
+    <p>2023 &emsp; University of Toronto - OISE Graduate Student Research Conference</p>
+    <p>2023 &emsp; University of Toronto - Developmental Interest Group</p>
+    <p>2022 &emsp; University of Toronto - Applied Psychology and Human Development Research Gala</p>
+    <p>2022 &emsp; Canadian Developmental Psychology Conference</p>
+
+</div>
+
+<br><br>
+</div>
+
+    </body>
+</div>
+
+
+<!--Footer-->
+<main-footer></main-footer>
+
+</html>

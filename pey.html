@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="styles.js"></script>
+<link rel="icon" type="image/png" href="logos/b.png" sizes="32x32">
+<main-head></main-head>
+<main-header></main-header>
+
+<head>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #1a2639;
+            color: #d4d4dc;
+            animation: fadeIn 1s ease-in;
+            transition: background-color 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1, h2, h3 {
+            color: #3e8989;
+        }
+
+        p a {
+            text-decoration: none;
+            color: #84a9ac;
+            padding: 0;
+            position: relative;
+        }
+
+        p a:hover {
+            color: #e8e8e8;
+        }
+
+        p a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #84a9ac;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-out;
+        }
+
+        p a:hover::after {
+            transform: scaleX(1);
+        }
+
+        a {
+            text-decoration: none;
+            color: #84a9ac;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        a:hover {
+            color: #e8e8e8;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #84a9ac;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-out;
+        }
+
+        a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .content-container {
+            padding: 0 10%;
+            margin-top: 170px;
+            min-height: 1500px;
+        }
+
+        img {
+            width: 80%;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05); 
+        }
+    </style>
+</head>
+
+<div style="padding: 0% 10% 0% 10%; margin-top:170px; min-height:850px;">
+	<body>
+
+		<!--Main-->
+        <title>PEY Co-op - Bill Sun</title>
+
+        <h1>PEY Co-op Summary</h1>
+        <h3><a href="https://nuralogix.ai">Nuralogix Corporation</a></h3>
+        <h3>Data Science Software Developer</h3>
+        <h3>May 2019 — August 2020</h3>
+        <br>
+
+        <p>As a Data Science Software Developer, I was involved in both development and research work, 
+            working with different teams in an Agile manner. I was mostly tasked with developing internal 
+            software to accelerate data collection and processing, testing and implementing machine learning 
+            models, and software testing. I was occasionally tasked with training machine learning models as well.</p>
+
+        <li>Developed an end-to-end web application for testing survey-based machine learning models.</li>
+        <li>Developed a symptoms-based COVID-19 assessment tool, based on a machine learning
+        prediction model. Co-authored a research paper about this subject.</li>
+        <li>Trained and implemented other questionnaire-based machine learning models to predict
+        various mental health conditions and body parameters in children and adults.</li>
+        <li>Co-lead the project to implement the system as a feature on the Anura app.</li>
+        <li>Developed an API interface to simplify access to the DeepAffex cloud engine. Wrote an
+        open-source demo program using the above to showcase the software development cases.</li>
+        <li>Developed a GUI application and pipeline to automate data uploading and processing.</li>
+        <li>Developed a web app for video processing and testing new video algorithms.</li>
+        <li>Assisted in testing of the Anura app and other public applications.</li>
+        <li>Helped develop several other internal tools to improve efficiency.</li>
+        
+        <p>Nuralogix is a start-up founded in Toronto in 2015 with the purpose of changing the landscape of
+        personal health monitoring. It is based on research that utilizes computer vision and machine
+        learning techniques to predict various health parameters (such as heart rate, breathing patterns,
+        and blood pressure) from a video of a person’s face. This enables health monitoring with merely
+        a smartphone or a camera, without any specialized devices. The company has developed
+        cloud and mobile platforms, including the Anura app and the DeepAffex cloud service, to turn
+        theory into practice. Nuralogix has been rapidly growing its company and customer base.
+        I had a wonderful experience working here for my PEY term. Being a part of the Data Team, I
+        participated in multiple unique projects throughout the company, working with teams coming
+        from interdisciplinary backgrounds. These projects encompassed many technical areas, ranging
+        from software testing to data gathering and processing to full-stack software development and
+        machine learning. From completing these projects, I gained various technical and non-technical
+        skills that would significantly help me in a high-technology workplace. As a student coming
+        from a machine intelligence background, this PEY term really opened my eyes to the industry of
+        applied data science and machine learning, and kickstarted my career in machine learning and
+        artificial intelligence. Being in a workplace also taught me a lot about self-awareness and
+        professionalism as an engineer that I would not have learned in school. Furthermore, being in a
+        start-up environment also gave me valuable lessons about entrepreneurship and decision-making
+        at a corporate level, as it gave me the opportunity to observe and experience everything up-close.</p>
+
+    </body>
+</div>
+
+<main-footer></main-footer>
+</html>

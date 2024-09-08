@@ -1,0 +1,382 @@
+﻿*{
+    box-sizing: border-box;
+    transition: all ease-in-out 0.02s;
+}
+
+html, body{
+    overflow-x: hidden;
+}
+
+/* Top Menu Bar */
+.navbar {
+    overflow: hidden;
+    background-color: #4d4d4d;
+    font-family: 'Open Sans', sans-serif;
+    position: fixed;
+    color: #EEEEEE;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-width: 600px;
+    transition: top 0.3s;
+}
+
+@media (min-width: 550px){
+	.navbar {
+	    overflow: hidden;
+	    width: 100%;
+	}
+}
+
+.navbar .button {
+    float: right;
+    position: relative;
+    right: 8%;
+    top: 5px;
+    font-size: 15px;
+    color: #EEEEEE;
+    text-align: center;
+    padding: 15px 0px 15px 0px;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+.navbar .button point{
+    background-color: #666666;
+}
+
+.navbar .logo {
+    float: left;
+    position: relative;
+    left: 9.5%;
+    text-decoration: none; 
+    font-family: 'Montserrat', sans-serif;
+    padding: 0px;
+    font-size: 19pt;
+    color: #DDDDDD;
+}
+
+.navbar .logo :hover{
+	color: #FFFFFF;
+	transition: 0.05s;
+}
+
+
+.dropdown {
+    float: right;
+    position: relative;
+    right: 8%;
+    top: 5px;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 15px;    
+    border: none;
+    outline: none;
+    color: #EEEEEE;
+    padding: 15px 15px 15px 15px;
+    background-color: #4d4d4d;
+    font-family: inherit;
+    margin: 0;
+}
+
+.button:hover, .dropbtn:hover {
+    background-color: #666666;
+    color: #FFFFFF;
+}
+
+.dropdown-content {
+    font-size: 15px; 
+    display: none;
+    position: fixed;
+    background-color: #595959;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: #EEEEEE;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #737373;
+    color: #FFFFFF;
+}
+
+.dropdown-content a:hover .dropbtn {
+    background-color: #666666;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Body */
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Open Sans, sans-serif;
+    min-width: 600px;
+    width: 100%;
+    color: #EEEEEE;
+    background-color: #333333;
+}
+
+p {
+    color: inherit;
+    line-height: 1.65;
+}
+
+li {
+    color: inherit;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: #ffbfbf;
+    text-decoration: none;
+}
+
+
+/* Intro Box */
+.box {
+    width: 500px;
+    background: rgba(25, 26, 26, 0.507);
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: white;
+    font-family: 'Century Gothic', sans-serif;
+    opacity: 1;
+    border: 5px groove white;
+}
+.box-img {
+    border-radius: 5%;
+    max-width: 100%;
+    max-height: 100%;
+    width: 300px;
+    height: auto;
+    margin-top: 40px;
+}
+.box h1 {
+    font-size: 40px;
+    letter-spacing: 3px;
+    font-weight: 100;
+}
+.box h5 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+.box p {
+    text-align: justify;
+    color: white;
+}
+.box p a {
+    text-decoration: none;
+    color: #ffbfbf; 
+    padding: 0;
+}
+.box p a:hover {
+    text-decoration: underline;
+    color: #ffbfbf; 
+    padding: 0;
+}
+.box ul {
+    margin: 0;
+    padding: 0;
+}
+.box li {
+    display: inline-block;
+    margin: 6px;
+    list-style: none;
+}
+.box li a {
+    color: white;
+    text-decoration: none;
+    font-size: 60px;
+    transition: all ease-in-out 0.1s;
+}
+.box li a:hover {
+    color: #b9b9b9;
+}
+.box button {
+    background-color: #4A4A4A;
+    width: 95px;
+    padding: 10px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+    text-decoration: none;
+    color: #2d2d2d;
+    cursor: pointer;
+}
+.box a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+.box button:hover {
+    background-color: #686868;
+}
+
+
+/* Footer */
+.footer { 
+    overflow: hidden;
+    float: left;
+    left: 0;
+    display: block;
+    position: absolute;
+    font-size: 13px;
+    color: white;
+    background-color: #1a1a1a;
+    width: 100%;
+    min-width: 600px;
+}
+
+
+/* Social Media Icons */
+.socialmedia{
+    display: inline-block;
+    float: right;
+    position: relative;
+    right: 35px;
+    bottom: 35px;
+}
+
+.socialmedia a i{
+    font-size: 25px;
+    padding: 3px;
+    color: #AAAAAA;
+    transition: all ease-in-out 0.1s;
+}
+.socialmedia a i:hover{
+    color: #CCCCCC;
+}
+
+
+/* Portfolio Clickable Images with Pop up */
+.item{
+    z-index: 0;
+    position: relative;
+    height: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.item img{
+    display: block;
+    overflow: hidden;
+}
+
+.desc{
+    position: absolute;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white; 
+    background: rgba(0,0,0,0.6);
+    padding-bottom: 10px;
+    transition: 0.3s ease;
+}
+
+.desc p{
+    margin: 1em;
+}
+
+@media screen and (max-width: 750px){
+    .item{
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    .desc{
+    	width: 100%;
+	    transform: translateY(150%);
+    }
+
+    .item:hover .desc{
+	    transform: translateY(0%);
+    }
+}
+
+@media screen and (min-width: 750px){
+    .item{
+        width: 45%;
+        max-width: 400px;
+        float: left;
+        overflow: hidden;
+        margin: 2.5%;
+    }
+
+    .desc{
+    	width:100%;
+	    transform: translateY(150%);
+    }
+
+    .item:hover .desc{
+	    transform: translateY(0%);
+    }
+}
+
+@media screen and (min-width: 1170px){
+    .item{
+        width: 30%;
+        max-width: 400px;
+        float: left;
+        overflow: hidden;
+        margin: 1.6667%;
+    }
+
+    .desc{
+    	width: 100%;
+	    transform: translateY(150%);
+    }
+
+    .item:hover .desc{
+	    transform: translateY(0%);
+    }
+}
+
+/* Table of Contents */
+#toc_container {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid #aaa;
+    display: table;
+    font-size: 95%;
+    padding: 20px;
+    margin: 20px;
+    width: auto;
+    float: right;
+}
+
+.toc_title {
+    font-weight: 700;
+    text-align: center;
+}
+
+#toc_container li, #toc_container ul, #toc_container ul li{
+    list-style: outside none none !important;
+}

@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Manager App Simulator - Bill Sun</title>
+    <link rel="icon" type="image/png" href="logos/b.png" sizes="32x32">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="styles.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #1a2639;
+            color: #1a2639;
+            animation: fadeIn 1s ease-in;
+            transition: background-color 0.3s ease;
+            background-image: url('pics/parkinglot.jpg');
+            background-size: cover;
+            background-position: center 3px;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1, h2, h3 {
+            color: #3e8989;
+            position: relative;
+            z-index: 2;
+        }
+
+        p, img {
+            position: relative;
+            z-index: 2;
+        }
+
+        p a {
+            text-decoration: none;
+            color: #1a2639;
+            padding: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        p a:hover {
+            color: #3e8989;
+        }
+
+        p a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #3e8989;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-out;
+            z-index: 2;
+        }
+
+        p a:hover::after {
+            transform: scaleX(1);
+        }
+
+        a {
+            text-decoration: none;
+            color: #1a2639;
+            transition: color 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        a:hover {
+            color: #3e8989;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #3e8989;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-out;
+            z-index: 2;
+        }
+
+        a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .content-container {
+            padding: 0 10%;
+            margin-top: 170px;
+            min-height: 800px;
+            position: relative;
+            z-index: 2;
+        }
+
+        img {
+            width: auto;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main-head></main-head>
+    <main-header></main-header>
+
+    <div class="content-container">
+        <h1>Parking Manager Application Simulator</h1>
+        <h3>ICS4U - Computer Programming, Earl Haig Secondary School</h3>
+
+        <p>This is the final project for the grade 12 computer programming course. Using C++ and QT, this is a
+            simulator for a parking manager application, where the user can book parking spots ahead of time, while the
+            manager can keep track of parking times and fees automatically.</p>
+
+        <p>You can find more info <a href="https://docs.google.com/presentation/d/1USTnklmIhDBNNschInb0S65nVlk1E4cYfUybT6-2Pw4/edit?usp=sharing">here</a>.</p>
+
+        <img src="pics/parking2.png" alt="Parking Screenshot 1" style="width:50%;">
+        <img src="pics/parking1.png" alt="Parking Screenshot 2" style="width:27%;">
+        <img src="pics/parking3.png" alt="Parking Screenshot 3" style="width:22%;">
+        <img src="pics/parking4.png" alt="Parking Screenshot 4" style="width:30%;">
+    </div>
+
+    <main-footer></main-footer>
+
+</body>
+
+</html>

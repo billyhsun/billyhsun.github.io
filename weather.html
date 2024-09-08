@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="styles.js"></script>
+<link rel="icon" type="image/png" href="logos/b.png" sizes="32x32">
+<main-head></main-head>
+<main-header></main-header>
+
+<head>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #1a2639;
+            color: #d4d4dc;
+            animation: fadeIn 1s ease-in;
+            transition: background-color 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1, h2, h3 {
+            color: #3e8989;
+        }
+
+        p a {
+            text-decoration: none;
+            color: #84a9ac;
+            padding: 0;
+            position: relative;
+        }
+
+        p a:hover {
+            color: #e8e8e8;
+        }
+
+        p a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #84a9ac;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-out;
+        }
+
+        p a:hover::after {
+            transform: scaleX(1);
+        }
+
+        a {
+            text-decoration: none;
+            color: #84a9ac;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        a:hover {
+            color: #e8e8e8;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #84a9ac;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-out;
+        }
+
+        a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .content-container {
+            padding: 0 10%;
+            margin-top: 170px;
+            min-height: 1500px;
+        }
+
+        img {
+            width: 80%;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05); 
+        }
+    </style>
+</head>
+
+<div style="padding: 0% 10% 0% 10%; margin-top:170px; min-height:800px;">
+	<body>
+
+		<!--Main-->
+		<title>Earth Sciences Hobby Research - Bill Sun</title>
+
+		<h1>Earth Sciences Hobby Research</h1><br>
+
+		<p>I have a personal interest in earth sciences, particularly in weather, climate, earthquakes, and volcanoes.
+		</p>
+
+		<p>I have collected data in various weather sites across Toronto, and performed several studies that linked
+			local weather patterns to global oceanic and atmospheric conditions, as well as studying the effects of
+			climate change in Toronto.</p>
+
+		<p><a
+				href="https://docs.google.com/presentation/d/17rTYIpXCpVzQt1EA5CrKk3m9nSGJGkCB9zM2Sxnq4q8/edit?usp=sharing">Link</a>
+		</p>
+
+	</body>
+</div>
+
+<main-footer></main-footer>
+</html>

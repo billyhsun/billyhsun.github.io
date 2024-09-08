@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toastmasters - Bill Sun</title>
+    <link rel="icon" type="image/png" href="logos/b.png" sizes="32x32">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="styles.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #1a2639;
+            color: #d4d4dc;
+            animation: fadeIn 1s ease-in;
+            transition: background-color 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1, h2, h3 {
+            color: #3e8989;
+        }
+
+        p a {
+            text-decoration: none;
+            color: #84a9ac;
+            padding: 0;
+            position: relative;
+        }
+
+        p a:hover {
+            color: #e8e8e8;
+        }
+
+        p a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #84a9ac;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-out;
+        }
+
+        p a:hover::after {
+            transform: scaleX(1);
+        }
+
+        a {
+            text-decoration: none;
+            color: #84a9ac;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        a:hover {
+            color: #e8e8e8;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #84a9ac;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-out;
+        }
+
+        a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .content-container {
+            padding: 0 10%;
+            margin-top: 170px;
+            min-height: 800px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main-head></main-head>
+    <main-header></main-header>
+
+    <div class="content-container">
+        <h1>Toastmasters</h1>
+        <h3>North York Toastmasters Club</h3>
+
+        <p><a href="https://www.toastmasters.org/">Toastmasters Central</a></p>
+        <p><a href="https://www.northyorktoastmasters.com/meetourmembers.html">Club Website</a></p>
+
+        <p>I am currently a member of North York Toastmasters Club, serving as the club secretary.</p>
+
+        <p>Having been a Toastmasters club member since March 2019, I am presently working towards the
+            <a href="https://www.toastmasters.org/education/communication-track">Competent Communicator (CC) award</a>,
+            which requires the completion of 10 speeches (or one Toastmasters pathway). I am also working to complete
+            the <a href="https://www.toastmasters.org/pathways-overview/pathways-visionary-communication-path">Visionary
+                Communication pathway</a>.
+        </p>
+    </div>
+
+    <main-footer></main-footer>
+
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="styles.js"></script>
+<link rel="icon" type="image/png" href="logos/b.png" sizes="32x32">
+<main-head></main-head>
+<main-header></main-header>
+
+<head>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #1a2639;
+            color: #d4d4dc;
+            animation: fadeIn 1s ease-in;
+            transition: background-color 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1, h2, h3 {
+            color: #3e8989;
+        }
+
+        p a {
+            text-decoration: none;
+            color: #84a9ac;
+            padding: 0;
+            position: relative;
+        }
+
+        p a:hover {
+            color: #e8e8e8;
+        }
+
+        p a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #84a9ac;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-out;
+        }
+
+        p a:hover::after {
+            transform: scaleX(1);
+        }
+
+        a {
+            text-decoration: none;
+            color: #84a9ac;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        a:hover {
+            color: #e8e8e8;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #84a9ac;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-out;
+        }
+
+        a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .content-container {
+            padding: 0 10%;
+            margin-top: 170px;
+            min-height: 1500px;
+        }
+
+        img {
+            width: 80%;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05); 
+        }
+    </style>
+</head>
+
+<div style="padding: 0% 10% 0% 10%; margin-top:170px; min-height:800px;">
+	<body>
+
+		<!--Main-->
+		<title>Pill Packaging Machine - Bill Sun</title>
+
+		<h1>Autonomous Pill Packaging Machine</h1>
+		<h3>AER201 - Engineering Design, University of Toronto</h3>
+		<h4>Instructor: Prof. M. Reza Emami</h4>
+
+		<p><a href="http://aer201.aerospace.utoronto.ca/course/syllabus.htm">Course Website</a></p>
+
+		<p>AER201 is an multidisciplinary engineering design course that involves the design and construction of an
+			autonomous robot, in teams of 3. My team had to build an autonomous pill packaging machine, where the user
+			inserts a prescription organizer box and 3 different types of pills, and the machine organizes the pills
+			into the pillbox based on given instructions. The instructions are loaded through a user interface on the
+			machine. The requirements for the machine are outlined in the <a href="files/RFP - Pill Boxing.pdf">Request
+				for Proposal (RFP)</a>.</p>
+
+		<p>Based on the requirements from the RFP, my team developed a potential design using the engineering design
+			process, outlined by the <a href="files/Team 7 Proposal.pdf">Proposal Document</a>.</p>
+
+		<p>As a part of the role division of team members, I am mainly responsible for the elctromechanical subsystem of
+			the machine. This includes all the structural, mechanical, and some electrical parts of the robot. It
+			comprises the selection and powering of actuators (motors) and material selection. In addition, I am also
+			involved in the circuits construction and programming of the microcontroller that controls all the
+			functionalities.</p>
+
+		<p>The <a href="files/Final Report.pdf">Final Report</a> describes all the design decisions, construction and
+			integration process, and testing procedures. All the code and datasheets are also on this document. The
+			final product is currently partially functional. </p>
+
+		<br>
+		<p>Oblique view: </p>
+        <img src="pics/aer2011.png" alt="Oblique view of pill packaging machine">
+        <p>Side view: </p>
+        <img src="pics/aer2012.jpg" alt="Side view of pill packaging machine">
+        <p>Top view: </p>
+        <img src="pics/aer2013.jpg" alt="Top view of pill packaging machine">
+        <p>CAD schematic: </p>
+        <img src="pics/aer2014.png" alt="CAD schematic of pill packaging machine">
+
+		<br><br><br>
+
+	</body>
+</div>
+
+<main-footer></main-footer>
+</html>
