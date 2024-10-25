@@ -48,7 +48,8 @@ class Header extends HTMLElement {
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                    <a href="https://survey-demo.deepaffex.ai/login">Mental Health Questionnaire Website</a>
+                    <a href="https://llm-psych-assessment.onrender.com/">Mental Health Chatbot</a>
+                    <a href="https://kangleelab-surveys.vercel.app/">Machine Learning Psychometrics Website</a>
                     <a href="https://github.com/billyhsun/MusicGenre">Music Genre Classifier</a>
                     <a href="https://devpost.com/software/surroundsound-1u9ljk">Music Sharing App</a>
                     <a href="game.html">Boxhead Video Game</a>

@@ -27,21 +27,21 @@ body {
 }
 
 .profile-picture {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1rem;
 }
 
 h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
 }
 
 h3 {
-    font-size: 1.0rem;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.1rem;
 }
 
 .cta-buttons {
@@ -73,6 +73,7 @@ h3 {
     text-decoration: none;
     border-radius: 50%;
     line-height: 60px;
+    font-size: 1.7rem;
     margin: 0 0.5rem;
     transition: transform 0.5s;
 }
