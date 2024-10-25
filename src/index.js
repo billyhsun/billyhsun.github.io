@@ -80,7 +80,7 @@ class Footer extends HTMLElement {
 		<div class="footer">
 			<br>
 			<p>
-				<font color=#cccccc>Copyright 2018-2023 © Bill Yuan Hong Sun</font>
+				<font color=#cccccc>Copyright 2018-2024 © Bill Yuan Hong Sun</font>
 			<div class="socialmedia">
                 <a href="https://www.linkedin.com/in/bill-yuan-hong-sun/"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
 				<a href="https://github.com/billyhsun"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
