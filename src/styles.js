@@ -99,7 +99,7 @@ class Footer extends HTMLElement {
                 <a href="https://www.researchgate.net/profile/Yuan-Hong-Sun"><i class="fa-brands fa-researchgate"></i></a>
                 <a href="https://www.facebook.com/billyhsun"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
 				<a href="https://www.instagram.com/billyhsun/"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-                <a href="https://calendly.com/billyuanhong-sun-mail/30min"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+                <a href="https://calendly.com/billyhsun/30min"><i class="fa fa-calendar" aria-hidden="true"></i></a>
 				<a href="mailto:billyuanhong.sun@mail.utoronto.ca"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                 <a href="https://linktr.ee/billyhsun"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
 			</div>
