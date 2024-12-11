@@ -74,7 +74,7 @@ class Header extends HTMLElement {
             <div class="button"><a href="about.html" style="color: #e6e6e6; text-decoration: none; padding: 15px 15px">About
                     Me</a></div>
             <div class="logo">
-                <h1 style="margin:10px;">
+                <h1 style="margin:5px;">
                     <a href="index.html" style="text-decoration: none;">bill.ai</a>
                 </h1>
             </div>
