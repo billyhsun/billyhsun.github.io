@@ -48,8 +48,8 @@ class Header extends HTMLElement {
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                    <a href="https://llm-psych-assessment.onrender.com/">Mental Health Chatbot</a>
-                    <a href="https://kangleelab-surveys.vercel.app/">Machine Learning Psychometrics Website</a>
+                    <a href="https://llm-psych-assessment.onrender.com/">Mental Health LLM Chatbot</a>
+                    <a href="https://kangleelab-surveys.vercel.app/">Machine Learning Psychometrics</a>
                     <a href="https://github.com/billyhsun/MusicGenre">Music Genre Classifier</a>
                     <a href="https://devpost.com/software/surroundsound-1u9ljk">Music Sharing App</a>
                     <a href="game.html">Boxhead Video Game</a>
@@ -65,16 +65,18 @@ class Header extends HTMLElement {
                 <div class="dropdown-content">
                     <a href="research.html">Research & Publications</a>
                     <a href="https://www.kinaxis.com/en">Machine Learning Engineer - Kinaxis</a>
+                    <a href="https://kangleelab.com/">Machine Learning Lead - University of Toronto</a>
                     <a href="https://www.nuralogix.ai/">Data Science Software Developer - Nuralogix</a>
-                    <a href="capstone.html">Capstone Project - Public Health Ontario</a>
+                    <a href="capstone.html">Data Scientist - Public Health Ontario</a>
                     <a href="transit.html">Transportation Modelling Research - University of Toronto</a>
                 </div>
             </div>
             <div class="button"><a href="about.html" style="color: #e6e6e6; text-decoration: none; padding: 15px 15px">About
                     Me</a></div>
             <div class="logo">
-                <h1 style="margin:1px;">
-                    <a href="index.html" style="text-decoration: none;">bill.ai</a></h1>
+                <h1 style="margin:10px;">
+                    <a href="index.html" style="text-decoration: none;">bill.ai</a>
+                </h1>
             </div>
         </div>
         `
@@ -129,9 +131,6 @@ class Publications extends HTMLElement {
             <p>[4] Yasin, Y., Sun, Y.H., & Lee, K. (2022). A machine learning approach for predicting children's future BMI. Canadian Developmental Psychology Conference 2022.
                 (Conference proceeding). <a href="files/poster-childbmi.pdf">Poster</a>
             </p>
-            <!-- <p>[5] Zhou, W., Sun, Y.H., Huang, W., Liu, Q., Lee, N.Y., Yasin, Y., Chen, Z., Wang, J., Cai, P., Feng, Z.P. & Lee, K. (In press). Risk prediction of fatty liver disease by machine learning using physical and blood biomarkers independent of liver biopsy. Metabolism.
-                (<a href="files/NAFLD-Manuscript-Lancet.pdf">Submission</a>)
-            </p> -->
             <p>
                 <a href="https://scholar.google.com/citations?hl=en&user=bbtplDkAAAAJ&view_op=list_works&gmla=AJsN-F4COolLEfdgE4iCWldQ-NS9XYUCR5fAPNxaEnJmw0C_VnRX9D0330aSstBiPzdrgi9lJ_ueu85EiVneGUbauuNtqvL3uSWMXhNprQDV_4_cdGrDhYA">
                 Google Scholar</a>
