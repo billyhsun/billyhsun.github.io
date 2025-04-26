@@ -119,16 +119,19 @@ class Publications extends HTMLElement {
         this.innerHTML = 
         `
 		<div class="publications">
-            <p>[1] Sun, Y.H., Luo, H. & Lee, K. (2022). A Novel Approach for Developing Efficient and Convenient Short Assessments to Approximate a Long Assessment. Behavior Research Methods. 
+            <p>[1] Sun, Y.H., Luo, H. & Lee, K. (2022). A Novel Approach for Developing Efficient and Convenient Short Assessments to Approximate a Long Assessment. Behavior Research Methods, 54, 2802–2828.
                 <a href="https://doi.org/10.3758/s13428-021-01771-7">doi.org/10.3758/s13428-021-01771-7</a>
             </p>
             <p>[2] Sun, Y.H., Liu, Q., Lee, N.Y., Li, X., & Lee, K. (2022). A novel machine learning approach to shorten depression risk assessment for convenient uses. Journal of Affective Disorders, 312, 275–291.
                 <a href="https://doi.org/10.1016/j.jad.2022.06.035">doi.org/10.1016/j.jad.2022.06.035</a>
             </p>
-            <p>[3] Liu, S., Sun, Y.H., Waese-Perlman, A.A., Lee, N.Y., Zhang, H., Lee, K. (2022). Symptom Based Models of COVID-19 Infection Using AI. In: Lidströmer, N., Eldar, Y.C. (eds) Artificial Intelligence in Covid-19. Springer, Cham. 
+            <p>[3] Yang, H.C., Sun, Y.H., Lee, K. (2025). Concise multi-class anxiety disorder risk assessment: A novel advanced machine learning approach. Journal of Anxiety Disorders, 112, 103018.
+                <a href="https://doi.org/10.1016/j.janxdis.2025.103018">doi.org/10.1016/j.janxdis.2025.103018</a>
+            </p>
+            <p>[4] Liu, S., Sun, Y.H., Waese-Perlman, A.A., Lee, N.Y., Zhang, H., Lee, K. (2022). Symptom Based Models of COVID-19 Infection Using AI. In: Lidströmer, N., Eldar, Y.C. (eds) Artificial Intelligence in Covid-19. Springer, Cham. 
                 <a href="https://doi.org/10.1007/978-3-031-08506-2_8">doi.org/10.1007/978-3-031-08506-2_8</a>
             </p>
-            <p>[4] Yasin, Y., Sun, Y.H., & Lee, K. (2022). A machine learning approach for predicting children's future BMI. Canadian Developmental Psychology Conference 2022.
+            <p>[5] Yasin, Y., Sun, Y.H., & Lee, K. (2022). A machine learning approach for predicting children's future BMI. Canadian Developmental Psychology Conference 2022.
                 (Conference proceeding). <a href="files/poster-childbmi.pdf">Poster</a>
             </p>
             <p>
