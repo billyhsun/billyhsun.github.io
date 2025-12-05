@@ -3,43 +3,17 @@
 <head>
     <link rel="icon" type="image/png" href="/assets/logos/b.png" sizes="32x32">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/pages.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
     <main-head></main-head>
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://kit.fontawesome.com/29daaa91a3.js" crossorigin="anonymous"></script>
     <script src="/assets/js/styles.js"></script>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            animation: fadeIn 1s ease-in;
-            transition: background-color 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .item {
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .item:hover {
-            transform: scale(1.05);
-        }
-    </style>
 </head>
 
 <body background="/assets/images/toronto1.png">
-	<div style="padding: 0% 10% 0% 10%; margin-top:170px; min-height:1500px;">
+	<div class="page-container">
 		<main-header-pages></main-header-pages>
 
 		<!--Main-->

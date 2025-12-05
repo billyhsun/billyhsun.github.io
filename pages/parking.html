@@ -9,16 +9,10 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://kit.fontawesome.com/29daaa91a3.js" crossorigin="anonymous"></script>
     <script src="/assets/js/styles.js"></script>
+    <link rel="stylesheet" href="/assets/css/pages.css">
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            background-color: #1a2639;
             color: #1a2639;
-            animation: fadeIn 1s ease-in;
-            transition: background-color 0.3s ease;
             background-image: url('assets/images/parkinglot.jpg');
             background-size: cover;
             background-position: center 3px;
@@ -35,17 +29,7 @@
             z-index: 1;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
         h1, h2, h3 {
-            color: #3e8989;
             position: relative;
             z-index: 2;
         }
@@ -56,10 +40,7 @@
         }
 
         p a {
-            text-decoration: none;
             color: #1a2639;
-            padding: 0;
-            position: relative;
             z-index: 2;
         }
 
@@ -68,27 +49,12 @@
         }
 
         p a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: 0;
-            left: 0;
             background-color: #3e8989;
-            transform: scaleX(0);
-            transition: transform 0.3s ease-out;
             z-index: 2;
         }
 
-        p a:hover::after {
-            transform: scaleX(1);
-        }
-
         a {
-            text-decoration: none;
             color: #1a2639;
-            transition: color 0.3s ease;
-            position: relative;
             z-index: 2;
         }
 
@@ -97,25 +63,11 @@
         }
 
         a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: 0;
-            left: 0;
             background-color: #3e8989;
-            transform: scaleX(0);
-            transition: transform 0.3s ease-out;
             z-index: 2;
         }
 
-        a:hover::after {
-            transform: scaleX(1);
-        }
-
         .content-container {
-            padding: 0 10%;
-            margin-top: 170px;
             min-height: 800px;
             position: relative;
             z-index: 2;
@@ -148,10 +100,10 @@
 
         <p>You can find more info <a href="https://docs.google.com/presentation/d/1USTnklmIhDBNNschInb0S65nVlk1E4cYfUybT6-2Pw4/edit?usp=sharing">here</a>.</p>
 
-        <img src="/assets/images/parking2.png" alt="Parking Screenshot 1" style="width:50%;">
-        <img src="/assets/images/parking1.png" alt="Parking Screenshot 2" style="width:27%;">
-        <img src="/assets/images/parking3.png" alt="Parking Screenshot 3" style="width:22%;">
-        <img src="/assets/images/parking4.png" alt="Parking Screenshot 4" style="width:30%;">
+        <img src="/assets/images/parking2.png" alt="Parking Screenshot 1" class="img-width-50">
+        <img src="/assets/images/parking1.png" alt="Parking Screenshot 2" class="img-width-27">
+        <img src="/assets/images/parking3.png" alt="Parking Screenshot 3" class="img-width-22">
+        <img src="/assets/images/parking4.png" alt="Parking Screenshot 4" class="img-width-30">
     </div>
     <main-footer></main-footer>
 </body>

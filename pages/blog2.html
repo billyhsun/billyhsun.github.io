@@ -3,93 +3,13 @@
 <head>
     <link rel="icon" type="image/png" href="/assets/logos/b.png" sizes="32x32">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/pages.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
     <main-head></main-head>
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://kit.fontawesome.com/29daaa91a3.js" crossorigin="anonymous"></script>
     <script src="/assets/js/styles.js"></script>
-    <style>
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: Arial;
-        padding: 20px;
-        background: #1a2639;
-        color: #d4d4dc;
-        animation: fadeIn 1s ease-in;
-        transition: background-color 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
-
-    .header {
-        padding-top: 100px;
-        padding-bottom: 30px;
-        font-size: 36px; 
-        text-align: center;
-        color: #3e8989;
-    }
-
-    .leftcolumn {
-        float: left;
-        width: 30%;
-    }
-
-    .rightcolumn {
-        float: left;
-        width: 70%;
-        padding-left: 20px;
-    }
-
-    .card {
-        background-color: #2c3e50;
-        padding: 20px;
-        margin-top: 20px;
-        border-radius: 5px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    }
-
-    .card:hover {
-        transform: scale(1.03); 
-        box-shadow: 0 8px 16px rgba(0,0,0,0.2); 
-    }
-
-    .card h2 {
-        color: #3e8989;
-    }
-
-    .card a {
-        color: #84a9ac;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .card a:hover {
-        color: #e8e8e8;
-    }
-
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    @media screen and (max-width: 800px) {
-        .leftcolumn,
-        .rightcolumn {
-            width: 100%;
-            padding: 0;
-        }
-    }
-    </style>
 </head>
 
 <body>
@@ -129,7 +49,7 @@
             <div class="card">
                 <h2 id="20190403">Music Genre Classification using Deep Learning</h2>
                 <h5>Literature Review, Apr. 3, 2019</h5>
-                <img src="/assets/images/Genres.png" alt="Genres" style="width:80%">
+                <img src="/assets/images/Genres.png" alt="Genres">
 
                 <p>Last term, in my Introduction to Machine Intelligence course, I completed a project involving music
                     genre
@@ -260,7 +180,7 @@
             <div class="card">
                 <h2 id="20190111">Implications of AlphaZero and Boardgame AIs</h2>
                 <h5>Environmental Sustainability Paper, Jan. 11, 2019</h5>
-                <img src="assets/images/google-deepmind.jpg" alt="Google" style="width:80%">
+                <img src="assets/images/google-deepmind.jpg" alt="Google">
 
                 <p>In artificial intelligence, an important milestone is the ability for a computer program to
                     learn to play a game. Google, one of the global leaders in artificial intelligence, created the
@@ -326,7 +246,7 @@
             <div class="card">
                 <h2 id="20181107">Are credit-ranking systems inherently unethical?</h2>
                 <h5>Ethical Analysis Paper, Nov. 7, 2018</h5>
-                <img src="assets/images/credit.jpg" alt="Power Lines" style="width:80%;">
+                <img src="assets/images/credit.jpg" alt="Power Lines">
 
                 <p>In a world dominated by artificial intelligence, it is common for data-driven algorithms to replace
                     human
@@ -425,7 +345,7 @@
             <div class="card">
                 <h2 id="20171204">The Missing Technological Link to Renewable Energy Systems</h2>
                 <h5>Technology Analysis, Dec. 4, 2017</h5>
-                <img src="assets/images/power lines.jpg" alt="Power Lines" style="width:80%;">
+                <img src="assets/images/power lines.jpg" alt="Power Lines">
 
                 <p>The world is facing an energy crisis. According to Prof. Benjamin K. Sovacool, global energy
                     shortages
@@ -657,7 +577,7 @@
             <div class="card">
                 <h2 id="20171019">The Ethics of Solar Power Technology</h2>
                 <h5>Technology Ethical Analysis, Oct. 19, 2017</h5>
-                <img src="assets/images/solar panel.jpg" alt="Solar Power" style="width:80%;">
+                <img src="assets/images/solar panel.jpg" alt="Solar Power">
 
                 <p>Every element of our industrialized world requires energy to function. For more than a century, the
                     use of
@@ -833,7 +753,7 @@
             <div class="card">
                 <h2 id="20170224">Personal Engineering Design Process</h2>
                 <h5>Personal Engineering Design Process Report, Feb. 24, 2017</h5>
-                <img src="assets/images/flowchart.jpg" alt="Flowchart" style="width:100%;">
+                <img src="assets/images/flowchart.jpg" alt="Flowchart">
 
                 <p>Engineering design process is not the same for everyone. It can vary based on personal strengths,
                     values, and
@@ -864,8 +784,10 @@
                     here:
                     Praxis I, Praxis II</p>
 
+                <!-- Image removed: framedivergeconverge.png
                 <img src="assets/images/framedivergeconverge.png" alt="framedivergeconverge" width=500>
                 <p><i>Figure 2: Praxis model of engineering design process [1]</i></p>
+                -->
 
                 <h3>Framing</h3>
                 <p>According to Design Engineering Manual, every engineering design process begins with some form of
@@ -885,10 +807,12 @@
                     opportunities
                     present in that community. An example of my field notes from Praxis II can be found here [2].</p>
 
+                <!-- Images removed: image1.jpg, image2.png
                 <img src="assets/images/image1.jpg" alt="1" width=400> <img src="assets/images/image2.png" alt="2" width=400>
                 <p><i>Figure 3/4: Example of raw field notes taken from different site visits of the same location
                         during the
                         first phase of Praxis II [2]</i></p>
+                -->
 
                 <p>The raw field notes are then analyzed to further understand the community or the opportunity. Since I
                     prefer
@@ -896,10 +820,12 @@
                     ones shown
                     in Figure 5 and 6, by including all the information/research gathered.</p>
 
+                <!-- Images removed: img_1812.jpg, flowchart.png
                 <img src="assets/images/img_1812.jpg" alt="1" width=300> <img src="assets/images/flowchart.png" alt="2" width=550>
                 <p><i>Figure 5/6: Process flowcharts from the first phase of Praxis II that describes the customer
                         service
                         procedure at a Chinese restaurant [2][3]</i></p>
+                -->
 
                 <p>From here, I am able to set design objectives that would cover the needs and wants of the
                     stakeholders and
@@ -911,9 +837,11 @@
                     that the
                     process stays on track and does not go off topic.</p>
 
+                <!-- Image removed: requirements-graph1.png
                 <img src="assets/images/requirements-graph1.png" alt="req" width=1000>
                 <p><i>Figure 7: A mind map of all the design requirements and stakeholders from Phase 1 of Praxis II
                         [3]</i></p>
+                -->
 
                 <h3>Diverging</h3>
                 <p>Diverging is often needed in engineering design to generate a wide variety of ideas, and to prevent
@@ -933,10 +861,9 @@
                     details.
                     This method usually generates a good number of ideas that ensures diversity and uniqueness.</p>
 
-                <img src="assets/images/14.png" alt="1b" width=400> <img src="assets/images/1.png" alt="1a" width=400>
-                <p><i>Figure 8 (Left): Some of my individual brainstorming ideas from a session in Phase 2, Praxis II;
-                        Figure 9
-                        (Right): Visual representation of the Lotus Blossom Technique [5]</i></p>
+                <img src="assets/images/1.png" alt="1a" width=400>
+                <p><i>Figure 8: Visual representation of the Lotus Blossom Technique [5]</i></p>
+                <!-- Image removed: 14.png -->
 
                 <p>I then get together with my teammates and combine certain ideas, or modify some ideas based on other
                     teammates' ideas. For this purpose, the Morph Chart (Figure 10) is a useful tool in which a basic
@@ -946,9 +873,11 @@
                     team members and I build some mini, non-functional prototypes to demonstrate the concepts. All these
                     activities help us visualize our ideas better.</p>
 
+                <!-- Image removed: img_20170319_1909491.jpg
                 <img src="assets/images/img_20170319_1909491.jpg" alt="10" width=800>
                 <p><i>Figure 10: Example of a Morph chart my team used to diversify ideas in Phase 2 of Praxis II</i>
                 </p>
+                -->
 
                 <p>If my team and I run into problems during the diverging process, such as feeling very constrained by
                     the
@@ -989,8 +918,10 @@
                     simpler
                     to construct.</p>
 
+                <!-- Image removed: photo-2017-03-22-5-06-11-pm.jpg
                 <img src="assets/images/photo-2017-03-22-5-06-11-pm.jpg" alt="11" width=600>
                 <p><i>Figure 11: A functional prototype developed for Phase 2 of Praxis II for Beta Release</i></p>
+                -->
 
                 <p>We would then perform beta-tests on the prototype(s) to make sure that they meet the basic
                     functionality
@@ -1005,12 +936,14 @@
                     base design, tested for its functionality, and added rubber rollers and motors as further design
                     details.</p>
 
+                <!-- Image removed: 17887344_878741408930890_1684891883_o.jpg
                 <img src="assets/images/17887344_878741408930890_1684891883_o.jpg" alt="11" width=500>
                 <p><i>Figure 12: A functional prototype developed for Phase 2 of Praxis II for final Showcase. Notice
                         the
                         differences between this prototype and the final design concept (Fig. 15, 16, 17) as some parts
                         of this
                         prototype are proxies to how they are on the final design concept.</i></p>
+                -->
 
                 <p>Finally, to summarize all the testing results and how each design idea performs on the metrics, a
                     Pugh Chart
@@ -1021,10 +954,12 @@
                     Here, I would judge each design by further research, logical reasoning, and some instinctive
                     thought.</p>
 
+                <!-- Images removed: pugh.png, pairwise.png
                 <img src="assets/images/pugh.png" alt="pugh" width=500><img src="assets/images/pairwise.png" alt="pairwise" width=500>
                 <p><i>Figure 13/14: Examples of a Pugh Chart (Left) and Pairwise Comparison Matrix (Right) used in Phase
                         2 of
                         Praxis II to converge ideas. </i></p>
+                -->
 
                 <p>The best design is usually chosen as the one that best satisfies the needs and wants of the
                     stakeholders, and
@@ -1048,6 +983,7 @@
                     fully
                     functional and validated (Figure 15, 16, 17). You can read more about our final design here.</p>
 
+                <!-- Images removed: unloaded.jpg, loaded.jpg, good-render.jpg
                 <img src="assets/images/unloaded.jpg" alt="unloaded" width=400><img src="assets/images/loaded.jpg" alt="loaded" width=400>
                 <br>
                 <img src="assets/images/good-render.jpg" alt="good render" width=800>
@@ -1055,6 +991,7 @@
                         Oblique
                         view. The design is drastically different compared to the design for Beta Release (Fig. 12)</i>
                 </p>
+                -->
 
                 <h3>Reflection</h3>
                 <p>An engineering design process is never concrete. It is a constantly evolving process that changes
@@ -1134,7 +1071,7 @@
             <div class="card">
                 <h2 id="20170130">Can Artificial Intelligence Win the Traffic Game?</h2>
                 <h5>Engineering Science Education Conference (ESEC) Lecture Extension, Jan. 30, 2017</h5>
-                <img src="assets/images/traffic.jpg" alt="Traffic" style="width:100%;">
+                <img src="assets/images/traffic.jpg" alt="Traffic">
 
                 <p>As a commuter student, spending 2 hours a day going through the traffic in Toronto is a part of my
                     daily
@@ -1212,7 +1149,7 @@
             <div class="card">
                 <h2 id="20161116">An Application of Engineering Thinking in Daily Life - Choice of Workout Location</h2>
                 <h5>Engineering Design Decision, Nov. 16, 2016</h5>
-                <img src="assets/images/gym.jpg" alt="Gym" style="width:100%;">
+                <img src="assets/images/gym.jpg" alt="Gym">
 
                 <h3>1. Introduction</h3>
                 <h4>1.1. Background</h4>
@@ -1581,7 +1518,7 @@
             <div class="card">
                 <h2 id="20161025">Design for X Walkabout - The Improved Design of iPhone 7/7+ for Durability</h2>
                 <h5>Design for X Walkabout Report, Oct. 25, 2016</h5>
-                <img src="assets/images/iphone7.jpg" alt="iPhone 7" style="width:100%;">
+                <img src="assets/images/iphone7.jpg" alt="iPhone 7">
 
                 <p>There has been a lot of controversy surrounding the design of the latest iPhone 7 and 7-Plus,
                     especially with
@@ -1708,7 +1645,7 @@
             <div class="card">
                 <h2 id="20160929">Praxis I Lecture Extension - Use Wikipedia for Research?</h2>
                 <h5>Lecture Extension Report, Sep. 29, 2016</h5>
-                <img src="assets/images/wikipedia.jpg" alt="Wikipedia" style="width:100%;">
+                <img src="assets/images/wikipedia.jpg" alt="Wikipedia">
 
 
                 <p>During the Praxis lecture on Monday, September 26th, we briefly discussed the idea of using Wikipedia

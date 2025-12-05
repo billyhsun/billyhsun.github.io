@@ -9,98 +9,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://kit.fontawesome.com/29daaa91a3.js" crossorigin="anonymous"></script>
     <script src="/assets/js/styles.js"></script>
+    <link rel="stylesheet" href="/assets/css/pages.css">
     <style>
-        html {
-            scroll-behavior: smooth;
-        }  
-
-        body {
-            
-            background-color: #1a2639;
-            color: #d4d4dc;
-            animation: fadeIn 1s ease-in;
-            transition: background-color 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        h1, h2, h3 {
-            color: #3e8989;
-        }
-
-        p a {
-            text-decoration: none;
-            color: #84a9ac;
-            padding: 0;
-            position: relative;
-        }
-
-        p a:hover {
-            color: #e8e8e8;
-        }
-
-        p a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #84a9ac;
-            transform: scaleX(0);
-            transition: transform 0.3s ease-out;
-        }
-
-        p a:hover::after {
-            transform: scaleX(1);
-        }
-
-        a {
-            text-decoration: none;
-            color: #84a9ac;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        a:hover {
-            color: #e8e8e8;
-        }
-
-        a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #84a9ac;
-            transform: scaleX(0);
-            transition: transform 0.3s ease-out;
-        }
-
-        a:hover::after {
-            transform: scaleX(1);
-        }
-
-        .content-container {
-            padding: 0 10%;
-            margin-top: 170px;
-            min-height: 1500px;
-        }
-
-        img {
-            width: 80%;
-            margin: 10px;
-            transition: transform 0.3s ease;
-        }
-
         img:hover {
             transform: scale(1.05); 
         }
@@ -109,7 +19,7 @@
 
 <body>
     <main-header-pages></main-header-pages>
-    <div style="padding: 0% 10% 0% 10%; margin-top:170px; min-height:1500px;">
+    <div class="content-container">
 
         <!--Main-->
         <title>Undergraduate Capstone Project - Bill Sun</title>

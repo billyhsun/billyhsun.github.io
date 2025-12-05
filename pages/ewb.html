@@ -9,111 +9,22 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://kit.fontawesome.com/29daaa91a3.js" crossorigin="anonymous"></script>
     <script src="/assets/js/styles.js"></script>
+    <link rel="stylesheet" href="/assets/css/pages.css">
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: #1a2639;
-            color: #d4d4dc;
-            animation: fadeIn 1s ease-in;
-            transition: background-color 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        h1, h2, h3 {
-            color: #3e8989;
-        }
-
-        p a {
-            text-decoration: none;
-            color: #84a9ac;
-            padding: 0;
-            position: relative;
-        }
-
-        p a:hover {
-            color: #e8e8e8;
-        }
-
-        p a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #84a9ac;
-            transform: scaleX(0);
-            transition: transform 0.3s ease-out;
-        }
-
-        p a:hover::after {
-            transform: scaleX(1);
-        }
-
-        a {
-            text-decoration: none;
-            color: #84a9ac;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        a:hover {
-            color: #e8e8e8;
-        }
-
-        a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #84a9ac;
-            transform: scaleX(0);
-            transition: transform 0.3s ease-out;
-        }
-
-        a:hover::after {
-            transform: scaleX(1);
-        }
-
-        .content-container {
-            padding: 0 10%;
-            margin-top: 170px;
-            min-height: 1500px;
-        }
-
-        img {
-            width: 80%;
-            margin: 10px;
-            transition: transform 0.3s ease;
-        }
-
         img:hover {
             transform: scale(1.05); 
         }
     </style>
 </head>
 
-<div style="padding: 0% 10% 0% 10%; margin-top:170px; min-height:800px;">
-	<body>
+<body>
+<div class="page-container">
         <main-header-pages></main-header-pages>
 
 		<!--Main-->
 		<title>EWB - Bill Sun</title>
 
-		<img src="/assets/images/ewb1.png" alt="logo" style="width:35%;border:0;float:right;margin:20px">
+		<img src="/assets/images/ewb1.png" alt="logo" class="img-float-right">
 		<h1>Engineers Without Borders</h1>
 		<h3>University of Toronto Chapter</h3><br>
 
@@ -139,7 +50,7 @@
 			social change. Through this experience, I believe that I am also making social change. I strongly believe
 			that as a professional engineer, it is my mission to serve the community and help make a difference.</p>
 
-		<img src="/assets/images/copy-of-logo-ye.png" alt="logo" style="width:20%;border:0;">
+		<img src="/assets/images/copy-of-logo-ye.png" alt="logo" class="img-width-20">
 
 		<br>
 		<h2>EWBoosters and YAIT</h2>
@@ -171,7 +82,7 @@
 			watching/streaming, social media, etc.). Also, from interviewing the stakeholders, they found out that the
 			current bandwidth is inadequate.</p>
 
-		<img src="/assets/images/ewb.jpg" alt="logo" style="width:40%;border:0">
+		<img src="/assets/images/ewb.jpg" alt="logo" class="img-width-40">
 		<p><i>Youth Engagement Team from Innomasters</i></p>
 
 		<p>As I guided them through the project, they learned about the basic engineering design model in Praxis (Frame,

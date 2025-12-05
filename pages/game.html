@@ -8,98 +8,9 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://kit.fontawesome.com/29daaa91a3.js" crossorigin="anonymous"></script>
     <script src="/assets/js/styles.js"></script>
+    <link rel="stylesheet" href="/assets/css/pages.css">
 <head>
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: #1a2639;
-            color: #d4d4dc;
-            animation: fadeIn 1s ease-in;
-            transition: background-color 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        h1, h2, h3 {
-            color: #3e8989;
-        }
-
-        p a {
-            text-decoration: none;
-            color: #84a9ac;
-            padding: 0;
-            position: relative;
-        }
-
-        p a:hover {
-            color: #e8e8e8;
-        }
-
-        p a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #84a9ac;
-            transform: scaleX(0);
-            transition: transform 0.3s ease-out;
-        }
-
-        p a:hover::after {
-            transform: scaleX(1);
-        }
-
-        a {
-            text-decoration: none;
-            color: #84a9ac;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        a:hover {
-            color: #e8e8e8;
-        }
-
-        a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #84a9ac;
-            transform: scaleX(0);
-            transition: transform 0.3s ease-out;
-        }
-
-        a:hover::after {
-            transform: scaleX(1);
-        }
-
-        .content-container {
-            padding: 0 10%;
-            margin-top: 170px;
-            min-height: 1500px;
-        }
-
-        img {
-            width: 80%;
-            margin: 10px;
-            transition: transform 0.3s ease;
-        }
-
         img:hover {
             transform: scale(1.05); 
         }
@@ -121,13 +32,13 @@
 			please see the <a href="Boxhead Bill Sun Special.pdf">presentation</a>.</p><br>
 
 		<p>Home page:</p>
-		<img src="assets/images/game1.png" alt="logo" style="width:70%;margin:10px;">
+		<img src="assets/images/game1.png" alt="logo" class="img-width-70">
 		<p>Selection page:</p>
-		<img src="assets/images/game3.png" alt="logo" style="width:70%;margin:10px;">
+		<img src="assets/images/game3.png" alt="logo" class="img-width-70">
 		<p>Gameplay:</p>
-		<img src="assets/images/game2.png" alt="logo" style="width:70%;margin:10px;">
+		<img src="assets/images/game2.png" alt="logo" class="img-width-70">
 		<p>Game over:</p>
-		<img src="assets/images/game4.png" alt="logo" style="width:70%;margin:10px;">
+		<img src="assets/images/game4.png" alt="logo" class="img-width-70">
 
 		<p>The code for this project can be found <a href="https://github.com/billyhsun/Boxhead-Video-Game">here</a>.
 		</p>
