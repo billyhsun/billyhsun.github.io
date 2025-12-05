@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="icon" type="image/png" href="logos/b.png" sizes="32x32">
-<main-head></main-head>
-<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-<script src="src/styles.js"></script>
-<main-header></main-header>
-
-<style>
+<head>
+    <link rel="icon" type="image/png" href="/assets/logos/b.png" sizes="32x32">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
+    <main-head></main-head>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://kit.fontawesome.com/29daaa91a3.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/styles.js"></script>
+    <style>
     html {
         scroll-behavior: smooth;
     }
@@ -194,11 +197,12 @@
     .item img:hover {
         transform: scale(1.05);
     }
-    
-</style>
+    </style>
+</head>
 
-<div style="padding: 0% 10% 0% 10%; margin-top:170px; min-height:500px;">
-    <body>
+<body>
+    <main-header-pages></main-header-pages>
+    <div style="padding: 0% 10% 0% 10%; margin-top:170px; min-height:500px;">
 
         <!--Main-->
         <title>About Me - Bill Sun</title>
@@ -226,15 +230,15 @@
             improve people's lives through technology.
         </p>
 
-        <p>I have numerous software <a href="projects.html">projects</a> and research publications from University of Toronto, 
+        <p>I have numerous software <a href="/pages/projects.html">projects</a> and research publications from University of Toronto, 
             as showcased below. 
-            In my spare time, I am involved in numerous <a href="clubs.html">extracurricular activities</a>.
+            In my spare time, I am involved in numerous <a href="/pages/clubs.html">extracurricular activities</a>.
             I am currently open for mentoring, so if you're interested, please send me an <a href="mailto:billyuanhong.sun@mail.utoronto.ca">email</a>.</p>
 
         <p>You can reach me by
             <a href="mailto:billyuanhong.sun@mail.utoronto.ca">email</a> or <a
                 href="https://www.linkedin.com/in/bill-yuan-hong-sun/">LinkedIn</a>. 
-            You can also read about my engineering insights and reflections in my <a href="blogs.html">blog</a>.
+            You can also read about my engineering insights and reflections in my <a href="/pages/blogs.html">blog</a>.
                 </p>
             <br><br><br>
 
@@ -311,7 +315,7 @@
 
             <tr>
                 <td>
-                    <div class="tooltip"><i><img src="logos/cpp.png" alt="Python" width=42 style="margin:5px"></i>
+                    <div class="tooltip"><i><img src="/assets/logos/cpp.png" alt="Python" width=42 style="margin:5px"></i>
                         <span class="tooltiptext">C++</span></div>
                     <div class="container">
                         <div class="skills good"></div>
@@ -319,7 +323,7 @@
                 </td>
 
                 <td>
-                    <div class="tooltip"><i><img src="logos/google-cloud.png" alt="Python" width=50
+                    <div class="tooltip"><i><img src="/assets/logos/google-cloud.png" alt="Python" width=50
                                 style="margin:0px 5px"></i>
                         <span class="tooltiptext">Google Cloud</span></div>
                     <div class="container">
@@ -337,7 +341,7 @@
 
             <tr>
                 <td>
-                    <div class="tooltip"><i><img src="logos/c.png" alt="Python" width=42 style="margin:5px"></i>
+                    <div class="tooltip"><i><img src="/assets/logos/c.png" alt="Python" width=42 style="margin:5px"></i>
                         <span class="tooltiptext">C</span></div>
                     <div class="container">
                         <div class="skills familiar"></div>
@@ -420,7 +424,7 @@
                 </td>
 
                 <td>
-                    <div class="tooltip"><i><img src="logos/excel.png" alt="Python" width=45 style="margin:0px 5px"></i>
+                    <div class="tooltip"><i><img src="/assets/logos/excel.png" alt="Python" width=45 style="margin:0px 5px"></i>
                         <span class="tooltiptext">Microsoft Excel</span></div>
                     <div class="container">
                         <div class="skills good"></div>
@@ -437,7 +441,7 @@
 
             <tr>
                 <td>
-                    <div class="tooltip"><i><img src="logos/matlab.png" alt="Python" width=45
+                    <div class="tooltip"><i><img src="/assets/logos/matlab.png" alt="Python" width=45
                                 style="margin:0px 5px"></i>
                         <span class="tooltiptext">MATLAB</span></div>
                     <div class="container">
@@ -446,7 +450,7 @@
                 </td>
 
                 <td>
-                    <div class="tooltip"><i><img src="logos/tensorflow.png" alt="Python" width=45
+                    <div class="tooltip"><i><img src="/assets/logos/tensorflow.png" alt="Python" width=45
                                 style="margin:0px 5px"></i>
                         <span class="tooltiptext">Tensorflow</span></div>
                     <div class="container">
@@ -472,7 +476,7 @@
                 </td>
 
                 <td>
-                    <div class="tooltip"><i><img src="logos/pytorch.png" alt="Python" width=45
+                    <div class="tooltip"><i><img src="/assets/logos/pytorch.png" alt="Python" width=45
                                 style="margin:0px 5px"></i>
                         <span class="tooltiptext">PyTorch</span></div>
                     <div class="container">
@@ -496,7 +500,7 @@
     <h2 id="exp" style="text-align:center;">Experience Highlight</h2>
 
     <figure class="item">
-        <a href="pey.html" target="_blank"><img src="pics/nuralogix.png" alt="portfolio item" width=400 height=250></a>
+        <a href="/pages/pey.html" target="_blank"><img src="/assets/images/nuralogix.png" alt="portfolio item" width=400 height=250></a>
         <figcaption class="desc">
             <p>
                 <font color="white"><strong>Nuralogix Corporation</strong></font>
@@ -508,7 +512,7 @@
     </figure>
 
     <figure class="item">
-        <a href="https://github.com/billyhsun/MusicGenre" target="_blank"><img src="pics/musicgenre.png"
+        <a href="https://github.com/billyhsun/MusicGenre" target="_blank"><img src="/assets/images/musicgenre.png"
                 alt="portfolio item" width=400 height=250></a>
         <figcaption class="desc">
             <p>
@@ -521,7 +525,7 @@
     </figure>
 
     <figure class="item">
-        <a href="capstone.html" target="_blank"><img src="pics/pho.png" alt="portfolio item" width=400 height=250></a>
+        <a href="/pages/capstone.html" target="_blank"><img src="/assets/images/pho.png" alt="portfolio item" width=400 height=250></a>
         <figcaption class="desc">
             <p>
                 <font color="white"><strong>Undergraduate Capstone Project</strong></font>
@@ -537,7 +541,7 @@
     </figure>
 
     <figure class="item">
-        <a href="research.html" target="_blank"><img src="pics/anxiety.png" alt="portfolio item" width=400 height=250></a>
+        <a href="/pages/research.html" target="_blank"><img src="/assets/images/anxiety.png" alt="portfolio item" width=400 height=250></a>
         <figcaption class="desc">
             <p>
                 <font color="white"><strong>Research & Publications</strong></font>
@@ -552,7 +556,7 @@
     </figure>
 
     <figure class="item">
-        <a href="transit.html" target="_blank"><img src="pics/transit2.png" alt="portfolio item" width=400
+        <a href="/pages/transit.html" target="_blank"><img src="/assets/images/transit2.png" alt="portfolio item" width=400
                 height=250></a>
         <figcaption class="desc">
             <p>
@@ -565,7 +569,7 @@
     </figure>
 
     <figure class="item">
-        <a href="https://devpost.com/software/surroundsound-1u9ljk" target="_blank"><img src="pics/surroundsound.jpg"
+        <a href="https://devpost.com/software/surroundsound-1u9ljk" target="_blank"><img src="/assets/images/surroundsound.jpg"
                 alt="portfolio item" width=400 height=250></a>
         <figcaption class="desc">
             <p>
@@ -624,11 +628,7 @@
 <br><br>
 </div>
 
-    </body>
-</div>
-
-
-<!--Footer-->
-<main-footer></main-footer>
-
+    </div>
+    <main-footer></main-footer>
+</body>
 </html>

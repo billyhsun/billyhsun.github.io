@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-<link rel="icon" type="image/png" href="logos/b.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/assets/logos/b.png" sizes="32x32">
+<link rel="stylesheet" href="/assets/css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 <main-head></main-head>
-<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-<script src="src/styles.js"></script>
-<main-header></main-header>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://kit.fontawesome.com/29daaa91a3.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/styles.js"></script>
 <head>
     <style>
         html {
@@ -89,31 +91,39 @@
         .content-container {
             padding: 0 10%;
             margin-top: 170px;
-            min-height: 800px;
+            min-height: 1500px;
+        }
+
+        img {
+            width: 80%;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05); 
         }
     </style>
 </head>
-
 <body>
-    <div class="content-container">
+    <main-header-pages></main-header-pages>
 
-        <title>Toastmasters - Bill Sun</title>
-        <h1>Toastmasters</h1>
-        <h3>North York Toastmasters Club</h3>
+		<!--Main-->
+		<title>Earth Sciences Hobby Research - Bill Sun</title>
 
-        <p><a href="https://www.toastmasters.org/">Toastmasters Central</a></p>
-        <p><a href="https://www.northyorktoastmasters.com/meetourmembers.html">Club Website</a></p>
+		<h1>Earth Sciences Hobby Research</h1><br>
 
-        <p>I am currently a member of North York Toastmasters Club, serving as the club secretary.</p>
+		<p>I have a personal interest in earth sciences, particularly in weather, climate, earthquakes, and volcanoes.
+		</p>
 
-        <p>Having been a Toastmasters club member since March 2019, I am presently working towards the
-            <a href="https://www.toastmasters.org/education/communication-track">Competent Communicator (CC) award</a>,
-            which requires the completion of 10 speeches (or one Toastmasters pathway). I am also working to complete
-            the <a href="https://www.toastmasters.org/pathways-overview/pathways-visionary-communication-path">Visionary
-                Communication pathway</a>.
-        </p>
-    </div>
+		<p>I have collected data in various weather sites across Toronto, and performed several studies that linked
+			local weather patterns to global oceanic and atmospheric conditions, as well as studying the effects of
+			climate change in Toronto.</p>
+
+		<p><a
+				href="https://docs.google.com/presentation/d/17rTYIpXCpVzQt1EA5CrKk3m9nSGJGkCB9zM2Sxnq4q8/edit?usp=sharing">Link</a>
+		</p>
+
+    <main-footer></main-footer>
 </body>
-
-<main-footer></main-footer>
 </html>

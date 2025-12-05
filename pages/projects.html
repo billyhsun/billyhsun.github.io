@@ -1,13 +1,33 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<link rel="icon" type="image/png" href="logos/b.png" sizes="32x32">
-<main-head></main-head>
-<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-<script src="src/styles.js"></script>
-<main-header></main-header>
-
 <head>
+    <link rel="icon" type="image/png" href="/assets/logos/b.png" sizes="32x32">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
+    <main-head></main-head>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://kit.fontawesome.com/29daaa91a3.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/styles.js"></script>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            animation: fadeIn 1s ease-in;
+            transition: background-color 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
         .item {
             transition: transform 0.3s ease-in-out;
         }
@@ -18,8 +38,9 @@
     </style>
 </head>
 
-<body background="pics/toronto1.png">
+<body background="assets/images/toronto1.png">
 	<div style="padding: 0% 10% 0% 10%; margin-top:170px; min-height:1500px;">
+		<main-header-pages></main-header-pages>
 
 		<!--Main-->
 		<title>Projects - Bill Sun</title>
@@ -27,7 +48,7 @@
 		<h1>Projects Summary</h1><br>
 
 		<figure class="item">
-			<a href="index.html" target="_blank"><img src="pics/portfolio.png" alt="portfolio item" width=400 height=250></a>
+			<a href="/index.html" target="_blank"><img src="/assets/images/portfolio.png" alt="portfolio item" width=400 height=250></a>
 			<figcaption class="desc">
 				<p>
 					<font color="white"><strong>Portfolio website</strong></font>
@@ -39,7 +60,7 @@
 		</figure>
 
 		<figure class="item">
-			<a href="https://www.kangleelab.com" target="_blank"><img src="pics/lab.png" alt="portfolio item" width=400
+			<a href="https://www.kangleelab.com" target="_blank"><img src="/assets/images/lab.png" alt="portfolio item" width=400
 					height=250></a>
 			<figcaption class="desc">
 				<p>
@@ -52,7 +73,7 @@
 		</figure>
 
 		<figure class="item">
-			<a href="https://kangleelab-surveys.herokuapp.com/" target="_blank"><img src="pics/mental-health.jpg"
+			<a href="https://kangleelab-surveys.herokuapp.com/" target="_blank"><img src="/assets/images/mental-health.jpg"
 					alt="portfolio item" width=400 height=250></a>
 			<figcaption class="desc">
 				<p>
@@ -68,7 +89,7 @@
 		</figure>
 
 		<figure class="item">
-			<a href="capstone.html" target="_blank"><img src="pics/vaccine.jpg"
+			<a href="/pages/capstone.html" target="_blank"><img src="/assets/images/vaccine.jpg"
 					alt="portfolio item" width=400 height=250></a>
 			<figcaption class="desc">
 				<p>
@@ -85,7 +106,7 @@
 		</figure>
 
 		<figure class="item">
-			<a href="https://github.com/billyhsun/MusicGenre" target="_blank"><img src="pics/musicgenre.png"
+			<a href="https://github.com/billyhsun/MusicGenre" target="_blank"><img src="/assets/images/musicgenre.png"
 					alt="portfolio item" width=400 height=250></a>
 			<figcaption class="desc">
 				<p>
@@ -99,7 +120,7 @@
 
 		<figure class="item">
 			<a href="https://devpost.com/software/surroundsound-1u9ljk" target="_blank"><img
-					src="pics/surroundsound.jpg" alt="portfolio item" width=400 height=250></a>
+					src="/assets/images/surroundsound.jpg" alt="portfolio item" width=400 height=250></a>
 			<figcaption class="desc">
 				<p>
 					<font color="white"><strong>Music / Playlist Sharing Application</strong></font>
@@ -115,7 +136,6 @@
 		<br><br>
 	
 	</div>
+    <main-footer></main-footer>
 </body>
-
-<main-footer></main-footer>
 </html>

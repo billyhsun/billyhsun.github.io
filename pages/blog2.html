@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="icon" type="image/png" href="logos/b.png" sizes="32x32">
-<main-head></main-head>
-<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-<script src="src/styles.js"></script>
-<main-header></main-header>
-
-<style>
+<head>
+    <link rel="icon" type="image/png" href="/assets/logos/b.png" sizes="32x32">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
+    <main-head></main-head>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://kit.fontawesome.com/29daaa91a3.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/styles.js"></script>
+    <style>
     * {
         box-sizing: border-box;
     }
@@ -86,9 +89,11 @@
             padding: 0;
         }
     }
-</style>
+    </style>
+</head>
 
 <body>
+    <main-header-pages></main-header-pages>
     <title>Bill Sun's Blog</title>
 
     <div class="header">
@@ -114,7 +119,7 @@
                 <li><a href="#20161025">Oct. 25, 2016: Design for X Walkabout - The Improved Design of iPhone 7/7+ for
                         Durability</a></li>
                 <li><a href="#20160929">Sep. 29, 2016: Praxis I Lecture Extension - Use Wikipedia for Research?</a></li>
-                <br><a href="blogs.html">Previous page</a>
+                <br><a href="/pages/blogs.html">Previous page</a>
             </div>
         </div>
 
@@ -124,7 +129,7 @@
             <div class="card">
                 <h2 id="20190403">Music Genre Classification using Deep Learning</h2>
                 <h5>Literature Review, Apr. 3, 2019</h5>
-                <img src="pics/Genres.png" alt="Genres" style="width:80%">
+                <img src="/assets/images/Genres.png" alt="Genres" style="width:80%">
 
                 <p>Last term, in my Introduction to Machine Intelligence course, I completed a project involving music
                     genre
@@ -255,13 +260,13 @@
             <div class="card">
                 <h2 id="20190111">Implications of AlphaZero and Boardgame AIs</h2>
                 <h5>Environmental Sustainability Paper, Jan. 11, 2019</h5>
-                <img src="pics/google-deepmind.jpg" alt="Google" style="width:80%">
+                <img src="assets/images/google-deepmind.jpg" alt="Google" style="width:80%">
 
                 <p>In artificial intelligence, an important milestone is the ability for a computer program to
                     learn to play a game. Google, one of the global leaders in artificial intelligence, created the
                     program AlphaGo to play the game of Go, and more recently, developed AlphaZero to master
                     multiple board games, including Go, chess, and shogi (Japanese chess) [1]. AlphaZero is claimed
-                    to be “extraordinarily” efficient and sets a benchmark for future artificial intelligence programs.
+                    to be "extraordinarily" efficient and sets a benchmark for future artificial intelligence programs.
                 </p>
 
                 <p>Compared to pre-existing AIs, AlphaZero significantly reduces energy use by decreasing
@@ -285,12 +290,12 @@
                 <p>Furthermore, AlphaZero lays out the foundation for building increasingly intelligent and
                     energy-efficient AIs. This is not just applicable to learning human-designed games, but also in
                     learning other human tasks. One limitation, however, is that all computer programs need to be
-                    created by humans and require some human “input” as a starting point of training, whether it is
-                    rules, guidelines, or data [1]. It is not yet considered true “intelligence” as AIs still mimic
+                    created by humans and require some human "input" as a starting point of training, whether it is
+                    rules, guidelines, or data [1]. It is not yet considered true "intelligence" as AIs still mimic
                     human
                     behavior through these inputs and do not yet learn completely from self-exploration. Although
                     AIs can outperform humans in some specialized tasks, there are still numerous tasks in this world
-                    where the “inputs” do not yet exist [1]. There is no need to worry that AIs will outsmart humans
+                    where the "inputs" do not yet exist [1]. There is no need to worry that AIs will outsmart humans
                     completely. Yet, the level of intelligence and efficiency in AIs today is sufficient to replace
                     certain human tasks, which may exaggerate problems such as unemployment and the wealth gap.</p>
 
@@ -321,7 +326,7 @@
             <div class="card">
                 <h2 id="20181107">Are credit-ranking systems inherently unethical?</h2>
                 <h5>Ethical Analysis Paper, Nov. 7, 2018</h5>
-                <img src="pics/credit.jpg" alt="Power Lines" style="width:80%;">
+                <img src="assets/images/credit.jpg" alt="Power Lines" style="width:80%;">
 
                 <p>In a world dominated by artificial intelligence, it is common for data-driven algorithms to replace
                     human
@@ -359,13 +364,13 @@
                     algorithms are inherently discriminatory and unethical. In some countries, in addition to collecting
                     the
                     information listed above, other information such as social media accounts, cellphone data, and work
-                    performance are collected [3]. They can also impact other areas in addition to taking loans. China’s
+                    performance are collected [3]. They can also impact other areas in addition to taking loans. China's
                     infamous
                     social credit system, for example, takes information including public behavior and internet activity
                     into
-                    account, and can impact a person’s travel privileges and internet access [3]. In general, the more
+                    account, and can impact a person's travel privileges and internet access [3]. In general, the more
                     factors
-                    that an algorithm takes into calculating a person’s credit score, the more barriers it presents to
+                    that an algorithm takes into calculating a person's credit score, the more barriers it presents to
                     certain
                     groups from becoming unmarginalized. This then creates a greater obstacle from achieving social
                     equality. By
@@ -420,7 +425,7 @@
             <div class="card">
                 <h2 id="20171204">The Missing Technological Link to Renewable Energy Systems</h2>
                 <h5>Technology Analysis, Dec. 4, 2017</h5>
-                <img src="pics/power lines.jpg" alt="Power Lines" style="width:80%;">
+                <img src="assets/images/power lines.jpg" alt="Power Lines" style="width:80%;">
 
                 <p>The world is facing an energy crisis. According to Prof. Benjamin K. Sovacool, global energy
                     shortages
@@ -513,7 +518,7 @@
                     exists for the development of a low-cost and efficient battery to commercially replace fossil fuels.
                 </p>
 
-                <img src="pics/lmb.jpg" alt="LMB" width=400> <img src="pics/ambri.png" alt="Ambri" width=400>
+                <img src="assets/images/lmb.jpg" alt="LMB" width=400> <img src="assets/images/ambri.png" alt="Ambri" width=400>
 
                 <p>One feasible technological solution is the liquid metal battery (LMB). Ambri, a company founded by
                     Donald
@@ -652,7 +657,7 @@
             <div class="card">
                 <h2 id="20171019">The Ethics of Solar Power Technology</h2>
                 <h5>Technology Ethical Analysis, Oct. 19, 2017</h5>
-                <img src="pics/solar panel.jpg" alt="Solar Power" style="width:80%;">
+                <img src="assets/images/solar panel.jpg" alt="Solar Power" style="width:80%;">
 
                 <p>Every element of our industrialized world requires energy to function. For more than a century, the
                     use of
@@ -828,7 +833,7 @@
             <div class="card">
                 <h2 id="20170224">Personal Engineering Design Process</h2>
                 <h5>Personal Engineering Design Process Report, Feb. 24, 2017</h5>
-                <img src="pics/flowchart.jpg" alt="Flowchart" style="width:100%;">
+                <img src="assets/images/flowchart.jpg" alt="Flowchart" style="width:100%;">
 
                 <p>Engineering design process is not the same for everyone. It can vary based on personal strengths,
                     values, and
@@ -840,7 +845,7 @@
                     below), but
                     with a lot of modifications.</p>
 
-                <img src="pics/slide21.png" alt="21" width=600>
+                <img src="assets/images/slide21.png" alt="21" width=600>
                 <p><i>Figure 1: Flowchart representation of my personal engineering process</i></p>
 
                 <p>To maximize my strengths of visualization, prototyping, and testing, as well as my value of designing
@@ -859,7 +864,7 @@
                     here:
                     Praxis I, Praxis II</p>
 
-                <img src="pics/framedivergeconverge.png" alt="framedivergeconverge" width=500>
+                <img src="assets/images/framedivergeconverge.png" alt="framedivergeconverge" width=500>
                 <p><i>Figure 2: Praxis model of engineering design process [1]</i></p>
 
                 <h3>Framing</h3>
@@ -880,7 +885,7 @@
                     opportunities
                     present in that community. An example of my field notes from Praxis II can be found here [2].</p>
 
-                <img src="pics/image1.jpg" alt="1" width=400> <img src="pics/image2.png" alt="2" width=400>
+                <img src="assets/images/image1.jpg" alt="1" width=400> <img src="assets/images/image2.png" alt="2" width=400>
                 <p><i>Figure 3/4: Example of raw field notes taken from different site visits of the same location
                         during the
                         first phase of Praxis II [2]</i></p>
@@ -891,7 +896,7 @@
                     ones shown
                     in Figure 5 and 6, by including all the information/research gathered.</p>
 
-                <img src="pics/img_1812.jpg" alt="1" width=300> <img src="pics/flowchart.png" alt="2" width=550>
+                <img src="assets/images/img_1812.jpg" alt="1" width=300> <img src="assets/images/flowchart.png" alt="2" width=550>
                 <p><i>Figure 5/6: Process flowcharts from the first phase of Praxis II that describes the customer
                         service
                         procedure at a Chinese restaurant [2][3]</i></p>
@@ -906,7 +911,7 @@
                     that the
                     process stays on track and does not go off topic.</p>
 
-                <img src="pics/requirements-graph1.png" alt="req" width=1000>
+                <img src="assets/images/requirements-graph1.png" alt="req" width=1000>
                 <p><i>Figure 7: A mind map of all the design requirements and stakeholders from Phase 1 of Praxis II
                         [3]</i></p>
 
@@ -928,7 +933,7 @@
                     details.
                     This method usually generates a good number of ideas that ensures diversity and uniqueness.</p>
 
-                <img src="pics/14.png" alt="1b" width=400> <img src="pics/1.png" alt="1a" width=400>
+                <img src="assets/images/14.png" alt="1b" width=400> <img src="assets/images/1.png" alt="1a" width=400>
                 <p><i>Figure 8 (Left): Some of my individual brainstorming ideas from a session in Phase 2, Praxis II;
                         Figure 9
                         (Right): Visual representation of the Lotus Blossom Technique [5]</i></p>
@@ -941,7 +946,7 @@
                     team members and I build some mini, non-functional prototypes to demonstrate the concepts. All these
                     activities help us visualize our ideas better.</p>
 
-                <img src="pics/img_20170319_1909491.jpg" alt="10" width=800>
+                <img src="assets/images/img_20170319_1909491.jpg" alt="10" width=800>
                 <p><i>Figure 10: Example of a Morph chart my team used to diversify ideas in Phase 2 of Praxis II</i>
                 </p>
 
@@ -984,7 +989,7 @@
                     simpler
                     to construct.</p>
 
-                <img src="pics/photo-2017-03-22-5-06-11-pm.jpg" alt="11" width=600>
+                <img src="assets/images/photo-2017-03-22-5-06-11-pm.jpg" alt="11" width=600>
                 <p><i>Figure 11: A functional prototype developed for Phase 2 of Praxis II for Beta Release</i></p>
 
                 <p>We would then perform beta-tests on the prototype(s) to make sure that they meet the basic
@@ -1000,7 +1005,7 @@
                     base design, tested for its functionality, and added rubber rollers and motors as further design
                     details.</p>
 
-                <img src="pics/17887344_878741408930890_1684891883_o.jpg" alt="11" width=500>
+                <img src="assets/images/17887344_878741408930890_1684891883_o.jpg" alt="11" width=500>
                 <p><i>Figure 12: A functional prototype developed for Phase 2 of Praxis II for final Showcase. Notice
                         the
                         differences between this prototype and the final design concept (Fig. 15, 16, 17) as some parts
@@ -1016,7 +1021,7 @@
                     Here, I would judge each design by further research, logical reasoning, and some instinctive
                     thought.</p>
 
-                <img src="pics/pugh.png" alt="pugh" width=500><img src="pics/pairwise.png" alt="pairwise" width=500>
+                <img src="assets/images/pugh.png" alt="pugh" width=500><img src="assets/images/pairwise.png" alt="pairwise" width=500>
                 <p><i>Figure 13/14: Examples of a Pugh Chart (Left) and Pairwise Comparison Matrix (Right) used in Phase
                         2 of
                         Praxis II to converge ideas. </i></p>
@@ -1043,9 +1048,9 @@
                     fully
                     functional and validated (Figure 15, 16, 17). You can read more about our final design here.</p>
 
-                <img src="pics/unloaded.jpg" alt="unloaded" width=400><img src="pics/loaded.jpg" alt="loaded" width=400>
+                <img src="assets/images/unloaded.jpg" alt="unloaded" width=400><img src="assets/images/loaded.jpg" alt="loaded" width=400>
                 <br>
-                <img src="pics/good-render.jpg" alt="good render" width=800>
+                <img src="assets/images/good-render.jpg" alt="good render" width=800>
                 <p><i>Figure 15 (Top-left): Unrolling setup; Figure 16 (Top-right): Rolling setup; Figure 16 (Bottom):
                         Oblique
                         view. The design is drastically different compared to the design for Beta Release (Fig. 12)</i>
@@ -1129,7 +1134,7 @@
             <div class="card">
                 <h2 id="20170130">Can Artificial Intelligence Win the Traffic Game?</h2>
                 <h5>Engineering Science Education Conference (ESEC) Lecture Extension, Jan. 30, 2017</h5>
-                <img src="pics/traffic.jpg" alt="Traffic" style="width:100%;">
+                <img src="assets/images/traffic.jpg" alt="Traffic" style="width:100%;">
 
                 <p>As a commuter student, spending 2 hours a day going through the traffic in Toronto is a part of my
                     daily
@@ -1207,7 +1212,7 @@
             <div class="card">
                 <h2 id="20161116">An Application of Engineering Thinking in Daily Life - Choice of Workout Location</h2>
                 <h5>Engineering Design Decision, Nov. 16, 2016</h5>
-                <img src="pics/gym.jpg" alt="Gym" style="width:100%;">
+                <img src="assets/images/gym.jpg" alt="Gym" style="width:100%;">
 
                 <h3>1. Introduction</h3>
                 <h4>1.1. Background</h4>
@@ -1231,8 +1236,8 @@
                     minimizing commute and waiting time for equipment.</p>
 
                 <p><i>Left to right: Hart House, Athletic Centre, Goldring Centre, Sheppard YMCA</i></p>
-                <img src="pics/7.png" alt="7" height=150><img src="pics/6.png" alt="6" height=150><img src="pics/8.png"
-                    alt="8" height=150><img src="pics/9.png" alt="9" height=150>
+                <img src="assets/images/7.png" alt="7" height=150><img src="assets/images/6.png" alt="6" height=150><img src="assets/images/8.png"
+                    alt="8" height=150><img src="assets/images/9.png" alt="9" height=150>
 
                 <h4>1.2. Purpose/Goals</h4>
                 <p>I need to choose a permanent workout location instead of going between all 4 places. The goal is to
@@ -1576,7 +1581,7 @@
             <div class="card">
                 <h2 id="20161025">Design for X Walkabout - The Improved Design of iPhone 7/7+ for Durability</h2>
                 <h5>Design for X Walkabout Report, Oct. 25, 2016</h5>
-                <img src="pics/iphone7.jpg" alt="iPhone 7" style="width:100%;">
+                <img src="assets/images/iphone7.jpg" alt="iPhone 7" style="width:100%;">
 
                 <p>There has been a lot of controversy surrounding the design of the latest iPhone 7 and 7-Plus,
                     especially with
@@ -1592,7 +1597,7 @@
                     7-Plus more
                     resistant to water and dust; thus, iPhone 7 generation is designed for greater durability.</p>
 
-                <img src="pics/5.png" alt="good render" width=600>
+                <img src="assets/images/5.png" alt="good render" width=600>
                 <p><i>Fig. 1: comparison of iPhone 7 and iPhone 6s from the bottom</i></p>
 
                 <p>The unconventional decision to remove the earphone jacks and the reset hole on the iPhone 7 can be
@@ -1648,7 +1653,7 @@
                     a
                     significant improvement of the iPhone 7's durability.</p>
 
-                <img src="pics/4.png" alt="good render" width=600>
+                <img src="assets/images/4.png" alt="good render" width=600>
                 <p><i>Fig. 2: Comparison of the home button between iPhone 7 and 6/6s</i></p>
 
                 <p>Another minor detail I noticed during observation is that iPhone 7/7-Plus have their camera lenses
@@ -1666,7 +1671,7 @@
                     Overall, these design features make the iPhone 7/7-Plus much more durable than other smartphones.
                 </p>
 
-                <img src="pics/3.png" alt="good render" width=200>
+                <img src="assets/images/3.png" alt="good render" width=200>
                 <p><i>Fig. 3: Comparison of camera lens</i></p>
 
                 <p>In summary, even though the design of iPhone 7/7-Plus may seem unconventional and controversial
@@ -1703,7 +1708,7 @@
             <div class="card">
                 <h2 id="20160929">Praxis I Lecture Extension - Use Wikipedia for Research?</h2>
                 <h5>Lecture Extension Report, Sep. 29, 2016</h5>
-                <img src="pics/wikipedia.jpg" alt="Wikipedia" style="width:100%;">
+                <img src="assets/images/wikipedia.jpg" alt="Wikipedia" style="width:100%;">
 
 
                 <p>During the Praxis lecture on Monday, September 26th, we briefly discussed the idea of using Wikipedia
@@ -1828,7 +1833,6 @@
 
     </div>
 
+    <main-footer></main-footer>
 </body>
-
-<main-footer></main-footer>
 </html>

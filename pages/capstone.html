@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="/assets/logos/b.png" sizes="32x32">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
+    <main-head></main-head>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://kit.fontawesome.com/29daaa91a3.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/styles.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }  
+
+        body {
+            
+            background-color: #1a2639;
+            color: #d4d4dc;
+            animation: fadeIn 1s ease-in;
+            transition: background-color 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1, h2, h3 {
+            color: #3e8989;
+        }
+
+        p a {
+            text-decoration: none;
+            color: #84a9ac;
+            padding: 0;
+            position: relative;
+        }
+
+        p a:hover {
+            color: #e8e8e8;
+        }
+
+        p a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #84a9ac;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-out;
+        }
+
+        p a:hover::after {
+            transform: scaleX(1);
+        }
+
+        a {
+            text-decoration: none;
+            color: #84a9ac;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        a:hover {
+            color: #e8e8e8;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #84a9ac;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-out;
+        }
+
+        a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .content-container {
+            padding: 0 10%;
+            margin-top: 170px;
+            min-height: 1500px;
+        }
+
+        img {
+            width: 80%;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05); 
+        }
+    </style>
+</head>
+
+<body>
+    <main-header-pages></main-header-pages>
+    <div style="padding: 0% 10% 0% 10%; margin-top:170px; min-height:1500px;">
+
+        <!--Main-->
+        <title>Undergraduate Capstone Project - Bill Sun</title>
+
+        <h1>Undergraduate Capstone Project</h1>
+        <h3>Vaccine and COVID-19 misinformation detection on social media, powered by natural
+            language processing</h3>
+        <h3>Client: Public Health Ontario</h3>
+        <h3>September — December 2020</h3>
+        <br>
+
+        <p>Working in a team of 4 and with a client, the goal of this capstone project is to help our client,
+            Public Health Ontario, find a way to combat misinformation about vaccines and COVID-19 on social 
+            media, using a machine learning approach.</p>
+
+        <p>My team decided to use natural language processing techniques, especially sentiment analysis, to 
+            compute sentiment scores for each social media post. The data was obtained from Public Health Ontario,
+            which consists of various labelled tweets on Twitter from earlier this year about COVID-19 and vaccination.
+            We also decided to scrap our own data online using APIs from other social media platforms, including
+            Facebook and Reddit.</p>
+        
+        <p>We developed a <a href="https://vaccine-sentiment-pho.herokuapp.com/dashboard/">web-based dashboard</a>
+            to display real-time statistics on how our sentiment analysis model rates
+            the latest social media posts. These posts are scraped directly from the social media sites. A demo will
+            be available upon completion.</p>
+
+    </div>
+    <main-footer></main-footer>
+</body>
+</html>
