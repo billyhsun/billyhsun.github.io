@@ -48,15 +48,25 @@ h2, h3 {
 
 /* Layout Containers */
 .content-container {
-    padding: 0 10%;
-    margin-top: 170px;
-    min-height: 500px;
+    padding: 0 5%;
+    margin: 100px auto 0;
+    max-width: 1400px;
+    min-height: auto;
 }
 
 .page-container {
-    padding: 0% 10% 0% 10%;
-    margin-top: 170px;
-    min-height: 1500px;
+    padding: 0 5%;
+    margin: 100px auto 0;
+    max-width: 1400px;
+    min-height: auto;
+}
+
+@media (max-width: 768px) {
+    .content-container,
+    .page-container {
+        padding: 0 5%;
+        margin-top: 90px;
+    }
 }
 
 /* Links */
@@ -145,10 +155,21 @@ p a:hover::after {
 table {
     table-layout: fixed;
     width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
 }
 
-th, td {
+th {
     text-align: center;
+    width: 33.33%;
+    padding: 10px;
+}
+
+td {
+    text-align: center;
+    width: 33.33%;
+    padding: 20px;
+    vertical-align: top;
 }
 
 /* Box Element */
@@ -268,8 +289,16 @@ box {
 
 /* Images */
 img {
-    width: 80%;
-    margin: 10px;
+    max-width: 100%;
+    height: auto;
+    margin: 10px auto;
+    display: block;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    margin: 1rem 0;
 }
 
 /* Blog Styles */

@@ -3,14 +3,48 @@
 // Scrolling
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
-    var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-        document.getElementById("navbar123").style.top = "0";
-    } else {
-        document.getElementById("navbar123").style.top = "-60px";
+    var navbar = document.getElementById("navbar123");
+    if (navbar) {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            navbar.style.top = "0";
+        } else {
+            navbar.style.top = "-60px";
+        }
+        prevScrollpos = currentScrollPos;
     }
-    prevScrollpos = currentScrollPos;
 }
+
+// Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    // Create mobile menu toggle button
+    const navbar = document.getElementById("navbar123");
+    if (navbar && !document.querySelector('.mobile-menu-toggle')) {
+        const toggleBtn = document.createElement('button');
+        toggleBtn.className = 'mobile-menu-toggle';
+        toggleBtn.setAttribute('aria-label', 'Toggle mobile menu');
+        toggleBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        document.body.appendChild(toggleBtn);
+        
+        toggleBtn.addEventListener('click', function() {
+            navbar.classList.toggle('mobile-open');
+            const icon = this.querySelector('i');
+            if (navbar.classList.contains('mobile-open')) {
+                icon.className = 'fas fa-times';
+            } else {
+                icon.className = 'fas fa-bars';
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!navbar.contains(event.target) && !toggleBtn.contains(event.target)) {
+                navbar.classList.remove('mobile-open');
+                toggleBtn.querySelector('i').className = 'fas fa-bars';
+            }
+        });
+    }
+});
 
 
 // Head
@@ -28,14 +62,30 @@ class Head extends HTMLElement {
 class Header extends HTMLElement {
     connectedCallback() {
       this.innerHTML = `
-        <div class="navbar" id="navbar123" style="z-index: 2;">
-            <div class="button"><a href="pages/blogs.html" style="color: #e6e6e6; text-decoration: none; padding: 15px 15px">Blog</a>
+        <div class="navbar" id="navbar123">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">bill.ai</a>
+            </div>
+            <div class="button"><a href="pages/about.html" style="color: #e6e6e6; text-decoration: none;">About Me</a></div>
+            <div class="dropdown">
+                <a href="pages/experience.html" class="dropbtn">
+                    <span>Experience</span>
+                    <i class="fa fa-caret-down" style="margin-left: 5px;"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="pages/research.html">Research & Publications</a>
+                    <a href="https://www.kinaxis.com/en">Machine Learning Engineer - Kinaxis</a>
+                    <a href="https://kangleelab.com/">Machine Learning Lead - University of Toronto</a>
+                    <a href="https://www.nuralogix.ai/">Data Science Software Developer - Nuralogix</a>
+                    <a href="pages/capstone.html">Data Scientist - Public Health Ontario</a>
+                    <a href="pages/transit.html">Transportation Modelling Research - University of Toronto</a>
+                </div>
             </div>
             <div class="dropdown">
-                <button class="dropbtn"><a href="pages/projects.html"
-                        style="color: #e6e6e6; text-decoration: none; padding: 15px 0px">Projects</a>
-                    <i class="fa fa-caret-down"></i>
-                </button>
+                <a href="pages/projects.html" class="dropbtn">
+                    <span>Projects</span>
+                    <i class="fa fa-caret-down" style="margin-left: 5px;"></i>
+                </a>
                 <div class="dropdown-content">
                     <a href="https://llm-psych-assessment.onrender.com/">Mental Health LLM Chatbot</a>
                     <a href="https://kangleelab-surveys.vercel.app/">Machine Learning Psychometrics</a>
@@ -46,27 +96,7 @@ class Header extends HTMLElement {
                     <a href="pages/aer201.html">Autonomous Pill Packaging Machine</a>
                 </div>
             </div>
-            <div class="dropdown">
-                <button class="dropbtn"><a href="pages/experience.html"
-                        style="color: #e6e6e6; text-decoration: none; padding: 15px 0px">Experience</a>
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="pages/research.html">Research & Publications</a>
-                    <a href="https://www.kinaxis.com/en">Machine Learning Engineer - Kinaxis</a>
-                    <a href="https://kangleelab.com/">Machine Learning Lead - University of Toronto</a>
-                    <a href="https://www.nuralogix.ai/">Data Science Software Developer - Nuralogix</a>
-                    <a href="pages/capstone.html">Data Scientist - Public Health Ontario</a>
-                    <a href="pages/transit.html">Transportation Modelling Research - University of Toronto</a>
-                </div>
-            </div>
-            <div class="button"><a href="pages/about.html" style="color: #e6e6e6; text-decoration: none; padding: 15px 15px">About
-                    Me</a></div>
-            <div class="logo">
-                <h1 style="margin:5px;">
-                    <a href="index.html" style="text-decoration: none;">bill.ai</a>
-                </h1>
-            </div>
+            <div class="button"><a href="pages/blogs.html" style="color: #e6e6e6; text-decoration: none;">Blog</a></div>
         </div>
         `
     }
@@ -78,11 +108,9 @@ class Footer extends HTMLElement {
         this.innerHTML = 
         `
 		<div class="footer">
-			<br>
-
-			<p style="margin-left: 2%;">
+			<p style="margin: 0; padding: 0;">
 				<font color=#cccccc>Copyright 2018-2025 © Bill Yuan Hong Sun</font>
-
+			</p>
 			<div class="socialmedia">
                 <a href="https://www.linkedin.com/in/bill-yuan-hong-sun/"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
 				<a href="https://github.com/billyhsun"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
@@ -94,9 +122,6 @@ class Footer extends HTMLElement {
 				<a href="mailto:billyuanhong.sun@mail.utoronto.ca"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                 <a href="https://linktr.ee/billyhsun"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
 			</div>
-
-			</p>
-			<br><br>
 		</div>
         `
     }
@@ -163,13 +188,30 @@ class Publications extends HTMLElement {
 class HeaderRoot extends HTMLElement {
     connectedCallback() {
       this.innerHTML = `
-        <div class="navbar" id="navbar123" style="z-index: 2;">
-            <div class="button"><a href="/pages/blogs.html" style="color: #e6e6e6; text-decoration: none; padding: 15px 15px">Blog</a></div>
+        <div class="navbar" id="navbar123">
+            <div class="logo">
+                <a href="/index.html" style="text-decoration: none; color: inherit;">bill.ai</a>
+            </div>
+            <div class="button"><a href="/pages/about.html" style="color: #e6e6e6; text-decoration: none;">About Me</a></div>
             <div class="dropdown">
-                <button class="dropbtn"><a href="/pages/projects.html"
-                        style="color: #e6e6e6; text-decoration: none; padding: 15px 0px">Projects</a>
-                    <i class="fa fa-caret-down"></i>
-                </button>
+                <a href="/pages/experience.html" class="dropbtn">
+                    <span>Experience</span>
+                    <i class="fa fa-caret-down" style="margin-left: 5px;"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="/pages/research.html">Research & Publications</a>
+                    <a href="https://www.kinaxis.com/en">Machine Learning Engineer - Kinaxis</a>
+                    <a href="https://kangleelab.com/">Machine Learning Lead - University of Toronto</a>
+                    <a href="https://www.nuralogix.ai/">Data Science Software Developer - Nuralogix</a>
+                    <a href="/pages/capstone.html">Data Scientist - Public Health Ontario</a>
+                    <a href="/pages/transit.html">Transportation Modelling Research - University of Toronto</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="/pages/projects.html" class="dropbtn">
+                    <span>Projects</span>
+                    <i class="fa fa-caret-down" style="margin-left: 5px;"></i>
+                </a>
                 <div class="dropdown-content">
                     <a href="https://llm-psych-assessment.onrender.com/">Mental Health LLM Chatbot</a>
                     <a href="https://kangleelab-surveys.vercel.app/">Machine Learning Psychometrics</a>
@@ -180,27 +222,7 @@ class HeaderRoot extends HTMLElement {
                     <a href="/pages/aer201.html">Autonomous Pill Packaging Machine</a>
                 </div>
             </div>
-            <div class="dropdown">
-                <button class="dropbtn"><a href="/pages/experience.html"
-                        style="color: #e6e6e6; text-decoration: none; padding: 15px 0px">Experience</a>
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="/pages/research.html">Research & Publications</a>
-                    <a href="https://www.kinaxis.com/en">Machine Learning Engineer - Kinaxis</a>
-                    <a href="https://kangleelab.com/">Machine Learning Lead - University of Toronto</a>
-                    <a href="https://www.nuralogix.ai/">Data Science Software Developer - Nuralogix</a>
-                    <a href="/pages/capstone.html">Data Scientist - Public Health Ontario</a>
-                    <a href="/pages/transit.html">Transportation Modelling Research - University of Toronto</a>
-                </div>
-            </div>
-            <div class="button"><a href="/pages/about.html" style="color: #e6e6e6; text-decoration: none; padding: 15px 15px">About
-                    Me</a></div>
-            <div class="logo">
-                <h1 style="margin:5px;">
-                    <a href="/index.html" style="text-decoration: none;">bill.ai</a>
-                </h1>
-            </div>
+            <div class="button"><a href="/pages/blogs.html" style="color: #e6e6e6; text-decoration: none;">Blog</a></div>
         </div>
         `
     }
@@ -210,13 +232,30 @@ class HeaderRoot extends HTMLElement {
 class HeaderPages extends HTMLElement {
     connectedCallback() {
       this.innerHTML = `
-        <div class="navbar" id="navbar123" style="z-index: 2;">
-            <div class="button"><a href="blogs.html" style="color: #e6e6e6; text-decoration: none; padding: 15px 15px">Blog</a></div>
+        <div class="navbar" id="navbar123">
+            <div class="logo">
+                <a href="/index.html" style="text-decoration: none; color: inherit;">bill.ai</a>
+            </div>
+            <div class="button"><a href="about.html" style="color: #e6e6e6; text-decoration: none;">About Me</a></div>
             <div class="dropdown">
-                <button class="dropbtn"><a href="projects.html"
-                        style="color: #e6e6e6; text-decoration: none; padding: 15px 0px">Projects</a>
-                    <i class="fa fa-caret-down"></i>
-                </button>
+                <a href="experience.html" class="dropbtn">
+                    <span>Experience</span>
+                    <i class="fa fa-caret-down" style="margin-left: 5px;"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="research.html">Research & Publications</a>
+                    <a href="https://www.kinaxis.com/en">Machine Learning Engineer - Kinaxis</a>
+                    <a href="https://kangleelab.com/">Machine Learning Lead - University of Toronto</a>
+                    <a href="https://www.nuralogix.ai/">Data Science Software Developer - Nuralogix</a>
+                    <a href="capstone.html">Data Scientist - Public Health Ontario</a>
+                    <a href="transit.html">Transportation Modelling Research - University of Toronto</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="projects.html" class="dropbtn">
+                    <span>Projects</span>
+                    <i class="fa fa-caret-down" style="margin-left: 5px;"></i>
+                </a>
                 <div class="dropdown-content">
                     <a href="https://llm-psych-assessment.onrender.com/">Mental Health LLM Chatbot</a>
                     <a href="https://kangleelab-surveys.vercel.app/">Machine Learning Psychometrics</a>
@@ -227,27 +266,7 @@ class HeaderPages extends HTMLElement {
                     <a href="aer201.html">Autonomous Pill Packaging Machine</a>
                 </div>
             </div>
-            <div class="dropdown">
-                <button class="dropbtn"><a href="experience.html"
-                        style="color: #e6e6e6; text-decoration: none; padding: 15px 0px">Experience</a>
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="research.html">Research & Publications</a>
-                    <a href="https://www.kinaxis.com/en">Machine Learning Engineer - Kinaxis</a>
-                    <a href="https://kangleelab.com/">Machine Learning Lead - University of Toronto</a>
-                    <a href="https://www.nuralogix.ai/">Data Science Software Developer - Nuralogix</a>
-                    <a href="capstone.html">Data Scientist - Public Health Ontario</a>
-                    <a href="transit.html">Transportation Modelling Research - University of Toronto</a>
-                </div>
-            </div>
-            <div class="button"><a href="about.html" style="color: #e6e6e6; text-decoration: none; padding: 15px 15px">About
-                    Me</a></div>
-            <div class="logo">
-                <h1 style="margin:5px;">
-                    <a href="/index.html" style="text-decoration: none;">bill.ai</a>
-                </h1>
-            </div>
+            <div class="button"><a href="blogs.html" style="color: #e6e6e6; text-decoration: none;">Blog</a></div>
         </div>
         `
     }

@@ -1,0 +1,627 @@
+/* ================================================
+   Modern, Mobile-First Responsive Design
+   ================================================ */
+
+:root {
+    /* Modern Color Palette */
+    --primary-bg: #0f172a;        /* Deep navy (modern dark) */
+    --secondary-bg: #1e293b;       /* Slate gray */
+    --card-bg: #334155;            /* Card background */
+    --accent-primary: #3b82f6;     /* Modern blue */
+    --accent-secondary: #8b5cf6;   /* Purple accent */
+    --text-primary: #f1f5f9;       /* Light gray text */
+    --text-secondary: #cbd5e1;     /* Muted text */
+    --text-muted: #94a3b8;         /* Very muted */
+    --border-color: #475569;       /* Borders */
+    --success: #10b981;            /* Green */
+    --warning: #f59e0b;            /* Orange */
+    
+    /* Typography */
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Layout */
+    --navbar-height: 70px;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+}
+
+/* ================================================
+   Mobile Navigation with Hamburger Menu
+   ================================================ */
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 1001;
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Show hamburger on mobile */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+        background: var(--accent-primary);
+        color: white;
+        padding: 12px 16px;
+        border-radius: var(--radius-md);
+    }
+    
+    .mobile-menu-toggle:hover {
+        background: var(--accent-secondary);
+    }
+    
+    .navbar {
+        min-width: 100% !important;
+        height: auto !important;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: var(--spacing-md);
+    }
+    
+    .navbar .logo {
+        position: static !important;
+        float: none !important;
+        padding: var(--spacing-sm) 0;
+        margin-right: 0 !important;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .navbar .button,
+    .navbar .dropdown {
+        display: none !important;
+        width: 100%;
+        float: none !important;
+        position: static !important;
+        text-align: left;
+        height: auto !important;
+    }
+    
+    .navbar.mobile-open .button,
+    .navbar.mobile-open .dropdown {
+        display: block !important;
+    }
+    
+    .navbar .button a {
+        display: block !important;
+        padding: var(--spacing-md) var(--spacing-lg) !important;
+        width: 100%;
+        height: auto !important;
+    }
+    
+    .navbar .dropdown .dropbtn {
+        display: block;
+        padding: var(--spacing-md) var(--spacing-lg) !important;
+        width: 100%;
+        height: auto !important;
+        background: transparent;
+    }
+    
+    .dropdown-content {
+        position: static !important;
+        display: none !important;
+        box-shadow: none !important;
+        background-color: rgba(0, 0, 0, 0.4) !important;
+        padding-left: var(--spacing-lg) !important;
+        border: none !important;
+        min-width: 100% !important;
+    }
+    
+    .navbar.mobile-open .dropdown:hover .dropdown-content {
+        display: block !important;
+    }
+    
+    .dropdown-content a {
+        padding: var(--spacing-sm) var(--spacing-md) !important;
+        font-size: 0.9rem;
+    }
+}
+
+/* ================================================
+   Improved Responsive Layouts
+   ================================================ */
+
+/* Container improvements */
+.content-container,
+.page-container {
+    padding: 0 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: calc(var(--navbar-height) + 40px);
+}
+
+@media (max-width: 768px) {
+    .content-container,
+    .page-container {
+        padding: var(--spacing-lg);
+        padding-top: calc(var(--navbar-height) + 20px) !important;
+        margin-top: 0 !important;
+        min-height: auto !important;
+    }
+}
+
+/* ================================================
+   Modern Card Design
+   ================================================ */
+
+.item,
+.card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--card-bg);
+}
+
+.item:hover,
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--accent-primary);
+}
+
+.item figcaption.desc {
+    background: rgba(0, 0, 0, 0.85) !important;
+    backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+    .item:hover,
+    .card:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* Experience Grid - Modern CSS Grid Layout */
+.experience-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin: var(--spacing-lg) 0;
+    clear: both;
+}
+
+.experience-grid .item {
+    width: 100% !important;
+    max-width: none !important;
+    float: none !important;
+    margin: 0 !important;
+    display: block !important;
+    position: relative !important;
+    overflow: hidden !important;
+    height: auto !important;
+    min-height: auto !important;
+    box-shadow: var(--shadow-md);
+    border-radius: var(--radius-lg);
+}
+
+.experience-grid .item a {
+    display: block !important;
+}
+
+.experience-grid .item img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    aspect-ratio: 16/10;
+    object-fit: cover !important;
+}
+
+/* Override old styles.css rules for items in grid */
+@media screen and (max-width: 750px) {
+    .experience-grid .item {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .experience-grid .item {
+        width: 100% !important;
+        max-width: none !important;
+        float: none !important;
+        margin: 0 !important;
+    }
+}
+
+@media screen and (min-width: 1170px) {
+    .experience-grid .item {
+        width: 100% !important;
+        max-width: none !important;
+        float: none !important;
+        margin: 0 !important;
+    }
+}
+
+/* Responsive adjustments */
+@media (min-width: 1200px) {
+    .experience-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .experience-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .experience-grid {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-lg);
+    }
+}
+
+/* ================================================
+   Typography Improvements
+   ================================================ */
+
+body {
+    font-family: var(--font-main) !important;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading) !important;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+}
+
+h1 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 600;
+    margin-left: 0 !important;
+}
+
+h3 {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    line-height: 1.7;
+}
+
+/* ================================================
+   Buttons & CTAs
+   ================================================ */
+
+.btn,
+.cta-buttons a {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn:hover,
+.cta-buttons a:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 768px) {
+    .cta-buttons {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .cta-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ================================================
+   Tables Responsive
+   ================================================ */
+
+table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+    table {
+        font-size: 0.875rem;
+    }
+    
+    th, td {
+        padding: var(--spacing-sm) !important;
+        min-width: 80px;
+    }
+}
+
+/* ================================================
+   Images Responsive
+   ================================================ */
+
+img {
+    max-width: 100%;
+    height: auto !important;
+    display: block;
+}
+
+/* Remove fixed width/height attributes on all images */
+img[width],
+img[height] {
+    width: auto !important;
+    height: auto !important;
+    max-width: 100%;
+}
+
+/* Portfolio item images */
+.item img {
+    width: 100%;
+    height: auto !important;
+    object-fit: cover;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    box-shadow: var(--shadow-xl);
+    border: 4px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+    .img-float-right {
+        width: 100% !important;
+        float: none !important;
+        margin: var(--spacing-md) 0 !important;
+    }
+    
+    .img-width-70,
+    .img-width-50,
+    .img-width-40,
+    .img-width-30,
+    .img-width-27,
+    .img-width-22,
+    .img-width-20 {
+        width: 100% !important;
+    }
+    
+    img[width],
+    img[height] {
+        width: 100% !important;
+    }
+}
+
+/* ================================================
+   Blog Layout Responsive
+   ================================================ */
+
+@media (max-width: 800px) {
+    .leftcolumn,
+    .rightcolumn {
+        width: 100% !important;
+        padding: 0 !important;
+        float: none !important;
+    }
+    
+    .leftcolumn {
+        order: 2;
+    }
+    
+    .rightcolumn {
+        order: 1;
+    }
+    
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* ================================================
+   Footer Responsive
+   ================================================ */
+
+.footer {
+    padding: var(--spacing-md) var(--spacing-md);
+    min-width: 100% !important;
+    position: relative !important;
+    margin-top: var(--spacing-xl);
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0 0 var(--spacing-sm) 0 !important;
+}
+
+.socialmedia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    position: static !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin: var(--spacing-sm) 0 0 0;
+}
+
+.socialmedia a {
+    font-size: 1.2rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.socialmedia a:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+    
+    .footer p {
+        font-size: 0.85rem;
+    }
+    
+    .socialmedia {
+        gap: var(--spacing-xs);
+    }
+    
+    .socialmedia a {
+        font-size: 1.1rem;
+    }
+}
+
+/* ================================================
+   Skills Section Responsive
+   ================================================ */
+
+@media (max-width: 768px) {
+    .container {
+        width: 95% !important;
+        margin-left: 2.5% !important;
+    }
+    
+    .tooltip {
+        border-bottom: none !important;
+    }
+    
+    .tooltip .tooltiptext {
+        position: relative !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: auto !important;
+        display: block;
+        margin-top: var(--spacing-xs);
+        font-size: 0.75rem;
+    }
+    
+    #skillicon {
+        margin: var(--spacing-xs) !important;
+    }
+}
+
+/* ================================================
+   Smooth Animations
+   ================================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+    * {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Loading animation */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* ================================================
+   Accessibility Improvements
+   ================================================ */
+
+/* Focus styles */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+/* Skip to content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent-primary);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ================================================
+   Print Styles
+   ================================================ */
+
+@media print {
+    .navbar,
+    .footer,
+    .socialmedia,
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
+
