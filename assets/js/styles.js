@@ -58,31 +58,38 @@ class Head extends HTMLElement {
 }
 
 
-// Header (Navigation bar)
+// Unified Header (Navigation bar)
+// Automatically detects if we're in root or pages directory
 class Header extends HTMLElement {
     connectedCallback() {
-      this.innerHTML = `
+        // Detect if we're in the root directory or pages directory
+        const isInPages = window.location.pathname.includes('/pages/');
+        const pathPrefix = isInPages ? '' : '/pages/';
+        const homeLink = isInPages ? '/index.html' : '/index.html';
+        
+        this.innerHTML = `
         <div class="navbar" id="navbar123">
             <div class="logo">
-                <a href="index.html" style="text-decoration: none; color: inherit;">bill.ai</a>
+                <a href="${homeLink}" style="text-decoration: none; color: inherit;">bill.ai</a>
             </div>
-            <div class="button"><a href="pages/about.html" style="color: #e6e6e6; text-decoration: none;">About Me</a></div>
+            <div class="button"><a href="${pathPrefix}about.html" style="color: #e6e6e6; text-decoration: none;">About Me</a></div>
             <div class="dropdown">
-                <a href="pages/experience.html" class="dropbtn">
+                <a href="${pathPrefix}experience.html" class="dropbtn">
                     <span>Experience</span>
                     <i class="fa fa-caret-down" style="margin-left: 5px;"></i>
                 </a>
                 <div class="dropdown-content">
-                    <a href="pages/research.html">Research & Publications</a>
+                    <a href="${pathPrefix}research.html">Research & Publications</a>
+                    <a href="https://www.guidepoint.com/">AI Engineer - Guidepoint</a>
                     <a href="https://www.kinaxis.com/en">Machine Learning Engineer - Kinaxis</a>
                     <a href="https://kangleelab.com/">Machine Learning Lead - University of Toronto</a>
-                    <a href="https://www.nuralogix.ai/">Data Science Software Developer - Nuralogix</a>
-                    <a href="pages/capstone.html">Data Scientist - Public Health Ontario</a>
-                    <a href="pages/transit.html">Transportation Modelling Research - University of Toronto</a>
+                    <a href="https://www.nuralogix.ai/">Data Science Software Engineer - Nuralogix</a>
+                    <a href="${pathPrefix}capstone.html">Data Scientist - Public Health Ontario</a>
+                    <a href="${pathPrefix}transit.html">Transportation Modelling Research - University of Toronto</a>
                 </div>
             </div>
             <div class="dropdown">
-                <a href="pages/projects.html" class="dropbtn">
+                <a href="${pathPrefix}projects.html" class="dropbtn">
                     <span>Projects</span>
                     <i class="fa fa-caret-down" style="margin-left: 5px;"></i>
                 </a>
@@ -91,12 +98,12 @@ class Header extends HTMLElement {
                     <a href="https://kangleelab-surveys.vercel.app/">Machine Learning Psychometrics</a>
                     <a href="https://github.com/billyhsun/MusicGenre">Music Genre Classifier</a>
                     <a href="https://devpost.com/software/surroundsound-1u9ljk">Music Sharing App</a>
-                    <a href="pages/game.html">Boxhead Video Game</a>
-                    <a href="pages/parking.html">Parking Manager App Simulator</a>
-                    <a href="pages/aer201.html">Autonomous Pill Packaging Machine</a>
+                    <a href="${pathPrefix}game.html">Boxhead Video Game</a>
+                    <a href="${pathPrefix}parking.html">Parking Manager App Simulator</a>
+                    <a href="${pathPrefix}aer201.html">Autonomous Pill Packaging Machine</a>
                 </div>
             </div>
-            <div class="button"><a href="pages/blogs.html" style="color: #e6e6e6; text-decoration: none;">Blog</a></div>
+            <div class="button"><a href="${pathPrefix}blogs.html" style="color: #e6e6e6; text-decoration: none;">Blog</a></div>
         </div>
         `
     }
@@ -184,93 +191,9 @@ class Publications extends HTMLElement {
             </div>
 */
 
-// Header for index.html (root)
-class HeaderRoot extends HTMLElement {
-    connectedCallback() {
-      this.innerHTML = `
-        <div class="navbar" id="navbar123">
-            <div class="logo">
-                <a href="/index.html" style="text-decoration: none; color: inherit;">bill.ai</a>
-            </div>
-            <div class="button"><a href="/pages/about.html" style="color: #e6e6e6; text-decoration: none;">About Me</a></div>
-            <div class="dropdown">
-                <a href="/pages/experience.html" class="dropbtn">
-                    <span>Experience</span>
-                    <i class="fa fa-caret-down" style="margin-left: 5px;"></i>
-                </a>
-                <div class="dropdown-content">
-                    <a href="/pages/research.html">Research & Publications</a>
-                    <a href="https://www.kinaxis.com/en">Machine Learning Engineer - Kinaxis</a>
-                    <a href="https://kangleelab.com/">Machine Learning Lead - University of Toronto</a>
-                    <a href="https://www.nuralogix.ai/">Data Science Software Developer - Nuralogix</a>
-                    <a href="/pages/capstone.html">Data Scientist - Public Health Ontario</a>
-                    <a href="/pages/transit.html">Transportation Modelling Research - University of Toronto</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="/pages/projects.html" class="dropbtn">
-                    <span>Projects</span>
-                    <i class="fa fa-caret-down" style="margin-left: 5px;"></i>
-                </a>
-                <div class="dropdown-content">
-                    <a href="https://llm-psych-assessment.onrender.com/">Mental Health LLM Chatbot</a>
-                    <a href="https://kangleelab-surveys.vercel.app/">Machine Learning Psychometrics</a>
-                    <a href="https://github.com/billyhsun/MusicGenre">Music Genre Classifier</a>
-                    <a href="https://devpost.com/software/surroundsound-1u9ljk">Music Sharing App</a>
-                    <a href="/pages/game.html">Boxhead Video Game</a>
-                    <a href="/pages/parking.html">Parking Manager App Simulator</a>
-                    <a href="/pages/aer201.html">Autonomous Pill Packaging Machine</a>
-                </div>
-            </div>
-            <div class="button"><a href="/pages/blogs.html" style="color: #e6e6e6; text-decoration: none;">Blog</a></div>
-        </div>
-        `
-    }
-}
-
-// Header for pages/*.html
-class HeaderPages extends HTMLElement {
-    connectedCallback() {
-      this.innerHTML = `
-        <div class="navbar" id="navbar123">
-            <div class="logo">
-                <a href="/index.html" style="text-decoration: none; color: inherit;">bill.ai</a>
-            </div>
-            <div class="button"><a href="about.html" style="color: #e6e6e6; text-decoration: none;">About Me</a></div>
-            <div class="dropdown">
-                <a href="experience.html" class="dropbtn">
-                    <span>Experience</span>
-                    <i class="fa fa-caret-down" style="margin-left: 5px;"></i>
-                </a>
-                <div class="dropdown-content">
-                    <a href="research.html">Research & Publications</a>
-                    <a href="https://www.kinaxis.com/en">Machine Learning Engineer - Kinaxis</a>
-                    <a href="https://kangleelab.com/">Machine Learning Lead - University of Toronto</a>
-                    <a href="https://www.nuralogix.ai/">Data Science Software Developer - Nuralogix</a>
-                    <a href="capstone.html">Data Scientist - Public Health Ontario</a>
-                    <a href="transit.html">Transportation Modelling Research - University of Toronto</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="projects.html" class="dropbtn">
-                    <span>Projects</span>
-                    <i class="fa fa-caret-down" style="margin-left: 5px;"></i>
-                </a>
-                <div class="dropdown-content">
-                    <a href="https://llm-psych-assessment.onrender.com/">Mental Health LLM Chatbot</a>
-                    <a href="https://kangleelab-surveys.vercel.app/">Machine Learning Psychometrics</a>
-                    <a href="https://github.com/billyhsun/MusicGenre">Music Genre Classifier</a>
-                    <a href="https://devpost.com/software/surroundsound-1u9ljk">Music Sharing App</a>
-                    <a href="game.html">Boxhead Video Game</a>
-                    <a href="parking.html">Parking Manager App Simulator</a>
-                    <a href="aer201.html">Autonomous Pill Packaging Machine</a>
-                </div>
-            </div>
-            <div class="button"><a href="blogs.html" style="color: #e6e6e6; text-decoration: none;">Blog</a></div>
-        </div>
-        `
-    }
-}
+// Legacy aliases for backward compatibility
+class HeaderRoot extends Header {}
+class HeaderPages extends Header {}
 
 customElements.define('main-head', Head);
 customElements.define('main-header', Header);
