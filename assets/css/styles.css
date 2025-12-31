@@ -178,6 +178,10 @@ html, body{
 }
 
 /* Body - Base styles (responsive typography in modern.css) */
+html {
+    min-height: 100%;
+}
+
 body {
     background-repeat: no-repeat;
     background-size: cover;
@@ -187,6 +191,9 @@ body {
     background-color: #1a2639;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 p {
@@ -298,18 +305,16 @@ a:hover {
 }
 
 
-/* Footer */
+/* Footer - Sticky footer that stays at bottom */
 .footer { 
     overflow: hidden;
-    float: left;
-    left: 0;
     display: block;
-    position: absolute;
     font-size: 13px;
     color: white;
     background-color: #1a1a1a;
     width: 100%;
-    min-width: 600px;
+    padding: 20px 0;
+    margin-top: auto;
 }
 
 
