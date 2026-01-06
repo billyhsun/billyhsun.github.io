@@ -185,6 +185,8 @@ html {
 body {
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     font-family: 'Inter', 'Open Sans', sans-serif;
     width: 100%;
     color: #EEEEEE;
