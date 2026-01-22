@@ -95,7 +95,7 @@ class Header extends HTMLElement {
                 </a>
                 <div class="dropdown-content">
                     <a href="https://llm-psych-assessment.onrender.com/">Mental Health LLM Chatbot</a>
-                    <a href="https://kangleelab-surveys.vercel.app/">Machine Learning Psychometrics</a>
+                    <a href="https://kang-lee-lab-surveys.vercel.app/">Machine Learning Psychometrics</a>
                     <a href="https://github.com/billyhsun/MusicGenre">Music Genre Classifier</a>
                     <a href="https://devpost.com/software/surroundsound-1u9ljk">Music Sharing App</a>
                     <a href="${pathPrefix}game.html">Boxhead Video Game</a>
