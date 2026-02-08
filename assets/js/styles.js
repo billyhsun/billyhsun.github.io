@@ -152,7 +152,10 @@ class Publications extends HTMLElement {
             <p>[4] Liu, S., Sun, Y.H., Waese-Perlman, A.A., Lee, N.Y., Zhang, H., Lee, K. (2022). Symptom Based Models of COVID-19 Infection Using AI. In: Lidströmer, N., Eldar, Y.C. (eds) Artificial Intelligence in Covid-19. Springer, Cham. 
                 <a href="https://doi.org/10.1007/978-3-031-08506-2_8">doi.org/10.1007/978-3-031-08506-2_8</a>
             </p>
-            <p>[5] Yasin, Y., Sun, Y.H., & Lee, K. (2022). A machine learning approach for predicting children's future BMI. Canadian Developmental Psychology Conference 2022.
+            <p>[5] Sun, Y., Zhu, J., Meng, F., Liu, Q., Chiu, Q., Lee, N.Y., … Lee, K. (2026). Concise Comprehensive Assessment of Psychiatric Disorder Risks Using Machine Learning. Preprint.
+                <a href="https://doi.org/10.31234/osf.io/tnwq8_v1">doi.org/10.31234/osf.io/tnwq8_v1</a>
+            </p>
+            <p>[6] Yasin, Y., Sun, Y.H., & Lee, K. (2022). A machine learning approach for predicting children's future BMI. Canadian Developmental Psychology Conference 2022.
                 (Conference proceeding). <a href="files/poster-childbmi.pdf">Poster</a>
             </p>
             <p>
