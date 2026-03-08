@@ -104,6 +104,7 @@ class Header extends HTMLElement {
                 </div>
             </div>
             <div class="button"><a href="${pathPrefix}blogs.html" style="color: #e6e6e6; text-decoration: none;">Blog</a></div>
+            <div class="button"><a href="${pathPrefix}mentorship.html" style="color: #e6e6e6; text-decoration: none;">Mentorship</a></div>
         </div>
         `
     }

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tech Mentorship with Bill Sun - Career advice, resume reviews, and startup guidance for students and professionals in tech">
+    <title>Tech Mentorship - Bill Sun</title>
+    <link rel="icon" type="image/png" href="/assets/logos/b.png" sizes="32x32">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/pages.css">
+    <link rel="stylesheet" href="/assets/css/modern.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/29daaa91a3.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/styles.js"></script>
+    <style>
+        .mentorship-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-xl);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .mentorship-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-md);
+        }
+
+        .mentorship-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-color: #3e8989;
+        }
+
+        .mentorship-card .card-icon {
+            font-size: 2.5rem;
+            color: #3e8989;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .mentorship-card h3 {
+            color: #3e8989;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .mentorship-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .services-list {
+            list-style: none;
+            padding: 0;
+            max-width: 700px;
+            margin: var(--spacing-xl) auto;
+        }
+
+        .services-list li {
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+            background-color: var(--card-bg);
+            border-radius: var(--radius-md);
+            border-left: 4px solid #3e8989;
+            font-size: 1.05rem;
+            color: var(--text-primary);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .services-list li:hover {
+            transform: translateX(4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .services-list li i {
+            color: #3e8989;
+            margin-right: var(--spacing-md);
+            width: 20px;
+            text-align: center;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: var(--spacing-2xl) 0;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto var(--spacing-xl);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: var(--radius-md);
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn::after {
+            display: none;
+        }
+
+        .cta-btn-primary {
+            background-color: #3e8989;
+            color: #fff;
+        }
+
+        .cta-btn-primary:hover {
+            background-color: #357a7a;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-btn-secondary {
+            background-color: transparent;
+            color: #3e8989;
+            border: 2px solid #3e8989;
+        }
+
+        .cta-btn-secondary:hover {
+            background-color: #3e8989;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        @media (max-width: 768px) {
+            .mentorship-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main-header-pages></main-header-pages>
+    <div class="content-container">
+
+        <h1 class="titleabout">Tech Mentorship</h1><br>
+
+        <p>I'm Bill, an AI Engineer with a Master's in Computer Science from Georgia Tech and
+            a Bachelor's in Engineering Science from the University of Toronto. Having navigated
+            the tech industry across startups, large enterprises, and academic research, I'm
+            passionate about helping others chart their own path in tech.</p>
+
+        <p>Whether you're a student breaking into the industry, a professional pivoting into tech,
+            or a founder building something new, I'd love to help you get to where you want to be.</p>
+
+    </div>
+
+    <div class="page-container" style="margin-top: 0;">
+
+        <h2 class="text-center">Who This Is For</h2>
+
+        <div class="mentorship-cards">
+            <div class="mentorship-card">
+                <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Students</h3>
+                <p>University and college students in CS, engineering, and other STEM fields
+                    looking to land their first role in tech. I can help with resume building,
+                    internship strategy, and navigating the recruiting process.</p>
+            </div>
+
+            <div class="mentorship-card">
+                <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+                <h3>Early Career &amp; Career Switchers</h3>
+                <p>Professionals early in their tech career or transitioning from another field.
+                    I'll help you identify transferable skills, position yourself effectively,
+                    and plan your next move.</p>
+            </div>
+
+            <div class="mentorship-card">
+                <div class="card-icon"><i class="fas fa-rocket"></i></div>
+                <h3>Startup Founders</h3>
+                <p>Building or evaluating a tech startup idea? I can help analyze your project,
+                    provide technical guidance, and share lessons from the industry on turning
+                    ideas into products.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="page-container" style="margin-top: 0;">
+
+        <h2 class="text-center">How I Can Help</h2>
+
+        <ul class="services-list">
+            <li><i class="fas fa-file-alt"></i> Resume and portfolio reviews</li>
+            <li><i class="fas fa-compass"></i> Career advice and planning</li>
+            <li><i class="fas fa-code"></i> Technical interview preparation tips</li>
+            <li><i class="fas fa-lightbulb"></i> Startup and project analysis and feedback</li>
+        </ul>
+
+    </div>
+
+    <div class="page-container" style="margin-top: 0;">
+
+        <div class="cta-section">
+            <h2 class="text-center">Get In Touch</h2>
+            <p>Interested in mentorship? Book a free 30-minute consulting call or send me an email to get started.</p>
+            <div class="cta-buttons">
+                <a href="https://calendly.com/billyhsun/30min" class="cta-btn cta-btn-primary" target="_blank">
+                    <i class="fa fa-calendar"></i> Book a Call
+                </a>
+                <a href="mailto:billyuanhong.sun@mail.utoronto.ca" class="cta-btn cta-btn-secondary">
+                    <i class="fas fa-envelope"></i> Send an Email
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <br><br>
+    <main-footer></main-footer>
+</body>
+</html>
