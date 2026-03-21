@@ -21,7 +21,7 @@
     --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
     
     /* Layout */
-    --navbar-height: 70px;
+    --navbar-height: 56px;
     
     /* Spacing */
     --spacing-xs: 0.25rem;
@@ -42,6 +42,15 @@
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
     --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+}
+
+/* Slimmer, modern nav bar (frosted glass over page content) */
+.navbar {
+    background: rgba(15, 23, 42, 0.78) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
 }
 
 /* ================================================

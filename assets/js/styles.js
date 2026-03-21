@@ -9,7 +9,7 @@ window.onscroll = function() {
         if (prevScrollpos > currentScrollPos) {
             navbar.style.top = "0";
         } else {
-            navbar.style.top = "-60px";
+            navbar.style.top = "-56px";
         }
         prevScrollpos = currentScrollPos;
     }
@@ -72,6 +72,7 @@ class Header extends HTMLElement {
             <div class="logo">
                 <a href="${homeLink}" style="text-decoration: none; color: inherit;">bill.ai</a>
             </div>
+            <div class="navbar-spacer" aria-hidden="true"></div>
             <div class="button"><a href="${pathPrefix}about.html" style="color: #e6e6e6; text-decoration: none;">About Me</a></div>
             <div class="dropdown">
                 <a href="${pathPrefix}experience.html" class="dropbtn">
@@ -157,7 +158,7 @@ class Publications extends HTMLElement {
                 <a href="https://doi.org/10.31234/osf.io/tnwq8_v1">doi.org/10.31234/osf.io/tnwq8_v1</a>
             </p>
             <p>[6] Yasin, Y., Sun, Y.H., & Lee, K. (2022). A machine learning approach for predicting children's future BMI. Canadian Developmental Psychology Conference 2022.
-                (Conference proceeding). <a href="files/poster-childbmi.pdf">Poster</a>
+                (Conference proceeding). <a href="/assets/docs/poster-childbmi.pdf">Poster</a>
             </p>
             <p>
                 <a href="https://scholar.google.com/citations?hl=en&user=bbtplDkAAAAJ&view_op=list_works&gmla=AJsN-F4COolLEfdgE4iCWldQ-NS9XYUCR5fAPNxaEnJmw0C_VnRX9D0330aSstBiPzdrgi9lJ_ueu85EiVneGUbauuNtqvL3uSWMXhNprQDV_4_cdGrDhYA">
