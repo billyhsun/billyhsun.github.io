@@ -123,10 +123,10 @@ class Footer extends HTMLElement {
 			<div class="socialmedia">
                 <a href="https://www.linkedin.com/in/bill-yuan-hong-sun/"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
 				<a href="https://github.com/billyhsun"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-                <a href="https://scholar.google.com/citations?hl=en&user=bbtplDkAAAAJ&view_op=list_works&gmla=AJsN-F4COolLEfdgE4iCWldQ-NS9XYUCR5fAPNxaEnJmw0C_VnRX9D0330aSstBiPzdrgi9lJ_ueu85EiVneGUbauuNtqvL3uSWMXhNprQDV_4_cdGrDhYA"><i class="fa-brands fa-google"></i></a>
-                <a href="https://www.researchgate.net/profile/Yuan-Hong-Sun"><i class="fa-brands fa-researchgate"></i></a>
                 <a href="https://www.facebook.com/billyhsun"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
 				<a href="https://www.instagram.com/billyhsun/"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://x.com/billyhsun"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                <a href="https://www.researchgate.net/profile/Yuan-Hong-Sun"><i class="fa-brands fa-researchgate"></i></a>
                 <a href="https://calendly.com/billyhsun/30min"><i class="fa fa-calendar" aria-hidden="true"></i></a>
 				<a href="mailto:billyuanhong.sun@mail.utoronto.ca"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                 <a href="https://linktr.ee/billyhsun"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
