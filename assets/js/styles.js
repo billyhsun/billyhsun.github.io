@@ -118,7 +118,7 @@ class Footer extends HTMLElement {
         `
 		<div class="footer">
 			<p style="margin: 0; padding: 0;">
-				<font color=#cccccc>Copyright 2018-2026 © Bill Yuan Hong Sun</font>
+				<font color=#cccccc>Copyright 2026 © Bill Yuan Hong Sun</font>
 			</p>
 			<div class="socialmedia">
                 <a href="https://www.linkedin.com/in/bill-yuan-hong-sun/"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
@@ -135,38 +135,311 @@ class Footer extends HTMLElement {
     }
 }
 
-// Publications
+// Publications — card layout (thumbnails & most links are placeholders you can fill in later)
+function escapePubHtml(s) {
+    return String(s || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+}
+
+function renderPublicationCard(pub, index, idPrefix) {
+    const badges = (pub.badges || []).map(function (b) {
+        return '<span class="pub-badge">' + b + '</span>';
+    }).join('');
+
+    const thumbInner = pub.thumb
+        ? '<img class="pub-thumb-img" src="' + pub.thumb + '" alt="" loading="lazy" />'
+        : '<div class="pub-thumb-placeholder" aria-hidden="true"></div>';
+
+    var pubHref = pub.doi || '#';
+    var titleHtml = escapePubHtml(pub.title || '');
+
+    const links = (pub.links || []).map(function (l) {
+        return (
+            '<a class="pub-link" href="' + l.href + '">' +
+            '<i class="' + l.iconClass + '" aria-hidden="true"></i>' +
+            '<span>' + l.label + '</span>' +
+            '</a>'
+        );
+    }).join('');
+
+    const bibtexEscaped = (pub.bibtex || '').replace(/</g, '&lt;');
+    const citationEscaped = escapePubHtml(pub.citation || '');
+
+    var citeIdPlain = idPrefix + '-cite-' + index + '-plain';
+    var citeIdBib = idPrefix + '-cite-' + index + '-bib';
+    var citeControls =
+        '<button type="button" class="pub-link pub-cite-btn" aria-expanded="false" aria-controls="' + citeIdPlain + '">' +
+        '<i class="fas fa-book" aria-hidden="true"></i><span>Citation</span></button>' +
+        '<button type="button" class="pub-link pub-cite-btn" aria-expanded="false" aria-controls="' + citeIdBib + '">' +
+        '<i class="fas fa-code" aria-hidden="true"></i><span>BibTeX</span></button>';
+
+    var citePanels =
+        '<div id="' + citeIdPlain + '" class="pub-cite-expand" hidden>' +
+        '<div class="pub-cite-expand-inner"><pre class="pub-bibtex pub-cite-as-pre"><code>' + citationEscaped + '</code></pre></div></div>' +
+        '<div id="' + citeIdBib + '" class="pub-cite-expand" hidden>' +
+        '<div class="pub-cite-expand-inner"><pre class="pub-bibtex"><code>' + bibtexEscaped + '</code></pre></div></div>';
+
+    var thumbOpen =
+        pubHref !== '#'
+            ? '<a class="pub-thumb" href="' + pubHref + '" target="_blank" rel="noopener noreferrer" aria-label="View publication">'
+            : '<div class="pub-thumb" role="presentation">';
+    var thumbClose = pubHref !== '#' ? '</a>' : '</div>';
+
+    return (
+        '<article class="pub-card">' +
+        thumbOpen +
+        thumbInner +
+        thumbClose +
+        '<div class="pub-main">' +
+        '<div class="pub-badges">' + badges + '</div>' +
+        (pubHref !== '#'
+            ? '<h3 class="pub-title"><a class="pub-title-link" href="' + pubHref + '" target="_blank" rel="noopener noreferrer">' + titleHtml + '</a></h3>'
+            : '<h3 class="pub-title">' + titleHtml + '</h3>') +
+        '<p class="pub-desc">' + pub.desc + '</p>' +
+        '<div class="pub-links">' + links + citeControls + '</div>' +
+        citePanels +
+        '</div>' +
+        '</article>'
+    );
+}
+
+var PUBLICATION_ENTRIES = [
+    {
+        year: 2022,
+        seq: 4,
+        badges: ['BRM 2022'],
+        title: 'Efficient short assessments to approximate a long assessment',
+        desc: 'A machine-learning pipeline for deriving minimal item sets that preserve the predictive accuracy of a full-length scale, with applications to behavioral and clinical measurement.',
+        citation:
+            'Sun, Y. H., Luo, H., & Lee, K. (2022).\n\n' +
+            'A novel approach for developing efficient and convenient short assessments to approximate a long assessment.\n\n' +
+            'Behavior Research Methods, 54, 2802–2828.\n\n' +
+            'https://doi.org/10.3758/s13428-021-01771-7',
+        doi: 'https://doi.org/10.3758/s13428-021-01771-7',
+        thumb: null,
+        links: [
+            { label: 'Demo', href: '#', iconClass: 'fas fa-play-circle' },
+            { label: 'PDF', href: 'https://doi.org/10.3758/s13428-021-01771-7', iconClass: 'fas fa-file-pdf' },
+            { label: 'Code', href: '#', iconClass: 'fas fa-code' },
+        ],
+        bibtex:
+            '@article{Sun2022Novel,\n' +
+            '  title={A Novel Approach for Developing Efficient and Convenient Short Assessments to Approximate a Long Assessment},\n' +
+            '  author={Sun, Yuan Hong and Luo, Hong and Lee, Kang},\n' +
+            '  journal={Behavior Research Methods},\n' +
+            '  volume={54},\n' +
+            '  pages={2802--2828},\n' +
+            '  year={2022},\n' +
+            '  doi={10.3758/s13428-021-01771-7}\n' +
+            '}',
+    },
+    {
+        year: 2022,
+        seq: 3,
+        badges: ['JAD 2022'],
+        title: 'Shortening depression risk assessment with machine learning',
+        desc: 'Selects compact item subsets and trains models to approximate full-scale depression risk scores while improving convenience for repeated or remote screening.',
+        citation:
+            'Sun, Y. H., Liu, Q., Lee, N. Y., Li, X., & Lee, K. (2022).\n\n' +
+            'A novel machine learning approach to shorten depression risk assessment for convenient uses.\n\n' +
+            'Journal of Affective Disorders, 312, 275–291.\n\n' +
+            'https://doi.org/10.1016/j.jad.2022.06.035',
+        doi: 'https://doi.org/10.1016/j.jad.2022.06.035',
+        thumb: null,
+        links: [
+            { label: 'Demo', href: '#', iconClass: 'fas fa-play-circle' },
+            { label: 'PDF', href: 'https://doi.org/10.1016/j.jad.2022.06.035', iconClass: 'fas fa-file-pdf' },
+            { label: 'Code', href: '#', iconClass: 'fas fa-code' },
+        ],
+        bibtex:
+            '@article{Sun2022Depression,\n' +
+            '  title={A novel machine learning approach to shorten depression risk assessment for convenient uses},\n' +
+            '  author={Sun, Yuan Hong and Liu, Qijian and Lee, Nathan Y. and Li, Xiaohong and Lee, Kang},\n' +
+            '  journal={Journal of Affective Disorders},\n' +
+            '  volume={312},\n' +
+            '  pages={275--291},\n' +
+            '  year={2022},\n' +
+            '  doi={10.1016/j.jad.2022.06.035}\n' +
+            '}',
+    },
+    {
+        year: 2025,
+        seq: 10,
+        badges: ['J Anxiety Disord. 2025'],
+        title: 'Concise multi-class anxiety disorder risk assessment',
+        desc: 'An advanced machine learning approach to multi-class anxiety risk prediction using a reduced item set while retaining strong discrimination across disorder classes.',
+        citation:
+            'Yang, H.-C., Sun, Y. H., & Lee, K. (2025).\n\n' +
+            'Concise multi-class anxiety disorder risk assessment: A novel advanced machine learning approach.\n\n' +
+            'Journal of Anxiety Disorders, 112, Article 103018.\n\n' +
+            'https://doi.org/10.1016/j.janxdis.2025.103018',
+        doi: 'https://doi.org/10.1016/j.janxdis.2025.103018',
+        thumb: null,
+        links: [
+            { label: 'Demo', href: '#', iconClass: 'fas fa-play-circle' },
+            { label: 'PDF', href: 'https://doi.org/10.1016/j.janxdis.2025.103018', iconClass: 'fas fa-file-pdf' },
+            { label: 'Code', href: '#', iconClass: 'fas fa-code' },
+        ],
+        bibtex:
+            '@article{Yang2025Anxiety,\n' +
+            '  title={Concise multi-class anxiety disorder risk assessment: A novel advanced machine learning approach},\n' +
+            '  author={Yang, Haochong and Sun, Yuan Hong and Lee, Kang},\n' +
+            '  journal={Journal of Anxiety Disorders},\n' +
+            '  volume={112},\n' +
+            '  pages={103018},\n' +
+            '  year={2025},\n' +
+            '  doi={10.1016/j.janxdis.2025.103018}\n' +
+            '}',
+    },
+    {
+        year: 2022,
+        seq: 2,
+        badges: ['Book chapter 2022'],
+        title: 'Symptom-based models of COVID-19 infection using AI',
+        desc: 'Machine learning models that relate self-reported symptoms to COVID-19 infection risk, presented as a chapter on AI in the COVID-19 context.',
+        citation:
+            'Liu, S., Sun, Y. H., Waese-Perlman, A. A., Lee, N. Y., Zhang, H., & Lee, K. (2022).\n\n' +
+            'Symptom based models of COVID-19 infection using AI.\n\n' +
+            'In N. Lidströmer & Y. C. Eldar (Eds.), Artificial intelligence in Covid-19. Springer, Cham.\n\n' +
+            'https://doi.org/10.1007/978-3-031-08506-2_8',
+        doi: 'https://doi.org/10.1007/978-3-031-08506-2_8',
+        thumb: null,
+        links: [
+            { label: 'Demo', href: '#', iconClass: 'fas fa-play-circle' },
+            { label: 'PDF', href: 'https://doi.org/10.1007/978-3-031-08506-2_8', iconClass: 'fas fa-file-pdf' },
+            { label: 'Code', href: '#', iconClass: 'fas fa-code' },
+        ],
+        bibtex:
+            '@incollection{Liu2022COVID,\n' +
+            '  title={Symptom Based Models of {COVID-19} Infection Using {AI}},\n' +
+            '  author={Liu, Shuwen and Sun, Yuan Hong and Waese-Perlman, Alex and Lee, Nathan Y. and Zhang, Haoran and Lee, Kang},\n' +
+            '  booktitle={Artificial Intelligence in Covid-19},\n' +
+            '  editor={Lidstr{\\"o}mer, Niklas and Eldar, Yonina C.},\n' +
+            '  publisher={Springer},\n' +
+            '  address={Cham},\n' +
+            '  year={2022},\n' +
+            '  doi={10.1007/978-3-031-08506-2_8}\n' +
+            '}',
+    },
+    {
+        year: 2026,
+        seq: 10,
+        badges: ['Preprint 2026'],
+        title: 'Concise comprehensive assessment of psychiatric disorder risks',
+        desc: 'Machine learning approach to shortening broad-spectrum psychiatric screening while preserving coverage across multiple disorder constructs (preprint).',
+        citation:
+            'Sun, Y., Zhu, J., Meng, F., Liu, Q., Chiu, Q., Lee, N. Y., … Lee, K. (2026).\n\n' +
+            'Concise comprehensive assessment of psychiatric disorder risks using machine learning.\n\n' +
+            'PsyArXiv preprint.\n\n' +
+            'https://doi.org/10.31234/osf.io/tnwq8_v1',
+        doi: 'https://doi.org/10.31234/osf.io/tnwq8_v1',
+        thumb: null,
+        links: [
+            { label: 'Demo', href: '#', iconClass: 'fas fa-play-circle' },
+            { label: 'PDF', href: 'https://doi.org/10.31234/osf.io/tnwq8_v1', iconClass: 'fas fa-file-pdf' },
+            { label: 'Code', href: '#', iconClass: 'fas fa-code' },
+        ],
+        bibtex:
+            '@misc{Sun2026CCAPDR,\n' +
+            '  title={Concise Comprehensive Assessment of Psychiatric Disorder Risks Using Machine Learning},\n' +
+            '  author={Sun, Yuan Hong and Zhu, Jiawei and Meng, Fanbo and Liu, Qijian and Chiu, Queeny and Lee, Nathan Y. and others and Lee, Kang},\n' +
+            '  year={2026},\n' +
+            '  howpublished={PsyArXiv preprint},\n' +
+            '  doi={10.31234/osf.io/tnwq8_v1}\n' +
+            '}',
+    },
+    {
+        year: 2022,
+        seq: 1,
+        badges: ['CDP Conf. 2022'],
+        title: "Predicting children's future BMI with machine learning",
+        desc: 'Conference contribution applying machine learning to longitudinal indicators for childhood BMI prediction (poster).',
+        citation:
+            "Yasin, Y., Sun, Y. H., & Lee, K. (2022).\n\n" +
+            "A machine learning approach for predicting children's future BMI [Poster].\n\n" +
+            'Canadian Developmental Psychology Conference.',
+        doi: '/assets/docs/poster-childbmi.pdf',
+        thumb: null,
+        links: [
+            { label: 'Demo', href: '#', iconClass: 'fas fa-play-circle' },
+            { label: 'PDF', href: '/assets/docs/poster-childbmi.pdf', iconClass: 'fas fa-file-pdf' },
+            { label: 'Code', href: '#', iconClass: 'fas fa-code' },
+        ],
+        bibtex:
+            '@inproceedings{Yasin2022BMI,\n' +
+            "  title={A machine learning approach for predicting children's future {BMI}},\n" +
+            '  author={Yasin, Yousef and Sun, Yuan Hong and Lee, Kang},\n' +
+            '  booktitle={Canadian Developmental Psychology Conference},\n' +
+            '  year={2022},\n' +
+            '  note={Poster}\n' +
+            '}',
+    },
+];
+
 class Publications extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = 
-        `
-		<div class="publications">
-            <p>[1] Sun, Y.H., Luo, H. & Lee, K. (2022). A Novel Approach for Developing Efficient and Convenient Short Assessments to Approximate a Long Assessment. Behavior Research Methods, 54, 2802–2828.
-                <a href="https://doi.org/10.3758/s13428-021-01771-7">doi.org/10.3758/s13428-021-01771-7</a>
-            </p>
-            <p>[2] Sun, Y.H., Liu, Q., Lee, N.Y., Li, X., & Lee, K. (2022). A novel machine learning approach to shorten depression risk assessment for convenient uses. Journal of Affective Disorders, 312, 275–291.
-                <a href="https://doi.org/10.1016/j.jad.2022.06.035">doi.org/10.1016/j.jad.2022.06.035</a>
-            </p>
-            <p>[3] Yang, H.C., Sun, Y.H., Lee, K. (2025). Concise multi-class anxiety disorder risk assessment: A novel advanced machine learning approach. Journal of Anxiety Disorders, 112, 103018.
-                <a href="https://doi.org/10.1016/j.janxdis.2025.103018">doi.org/10.1016/j.janxdis.2025.103018</a>
-            </p>
-            <p>[4] Liu, S., Sun, Y.H., Waese-Perlman, A.A., Lee, N.Y., Zhang, H., Lee, K. (2022). Symptom Based Models of COVID-19 Infection Using AI. In: Lidströmer, N., Eldar, Y.C. (eds) Artificial Intelligence in Covid-19. Springer, Cham. 
-                <a href="https://doi.org/10.1007/978-3-031-08506-2_8">doi.org/10.1007/978-3-031-08506-2_8</a>
-            </p>
-            <p>[5] Sun, Y., Zhu, J., Meng, F., Liu, Q., Chiu, Q., Lee, N.Y., … Lee, K. (2026). Concise Comprehensive Assessment of Psychiatric Disorder Risks Using Machine Learning. Preprint.
-                <a href="https://doi.org/10.31234/osf.io/tnwq8_v1">doi.org/10.31234/osf.io/tnwq8_v1</a>
-            </p>
-            <p>[6] Yasin, Y., Sun, Y.H., & Lee, K. (2022). A machine learning approach for predicting children's future BMI. Canadian Developmental Psychology Conference 2022.
-                (Conference proceeding). <a href="/assets/docs/poster-childbmi.pdf">Poster</a>
-            </p>
-            <p>
-                <a href="https://scholar.google.com/citations?hl=en&user=bbtplDkAAAAJ&view_op=list_works&gmla=AJsN-F4COolLEfdgE4iCWldQ-NS9XYUCR5fAPNxaEnJmw0C_VnRX9D0330aSstBiPzdrgi9lJ_ueu85EiVneGUbauuNtqvL3uSWMXhNprQDV_4_cdGrDhYA">
-                Google Scholar</a>
-                &emsp; <a href="https://www.researchgate.net/profile/Yuan-Hong-Sun">ResearchGate</a>
-                &emsp; <a href="https://orcid.org/0000-0002-2343-0340">ORCiD</a>
-            </p>
-		</div>
-        `
+        var self = this;
+        var sorted = PUBLICATION_ENTRIES.slice().sort(function (a, b) {
+            if (b.year !== a.year) {
+                return b.year - a.year;
+            }
+            return (b.seq || 0) - (a.seq || 0);
+        });
+        var idPrefix = 'pcl-' + String(Date.now()) + '-' + String(Math.random()).slice(2, 8);
+        var cards = sorted
+            .map(function (pub, index) {
+                return renderPublicationCard(pub, index, idPrefix);
+            })
+            .join('');
+        this.innerHTML =
+            '<div class="publications publications-cards">' +
+            cards +
+            '<p class="pub-profiles">' +
+            '<a href="https://scholar.google.com/citations?hl=en&user=bbtplDkAAAAJ&view_op=list_works&gmla=AJsN-F4COolLEfdgE4iCWldQ-NS9XYUCR5fAPNxaEnJmw0C_VnRX9D0330aSstBiPzdrgi9lJ_ueu85EiVneGUbauuNtqvL3uSWMXhNprQDV_4_cdGrDhYA">Google Scholar</a>' +
+            ' · <a href="https://www.researchgate.net/profile/Yuan-Hong-Sun">ResearchGate</a>' +
+            ' · <a href="https://orcid.org/0000-0002-2343-0340">ORCID</a>' +
+            '</p>' +
+            '</div>';
+
+        if (!this._pubCiteClickBound) {
+            this._pubCiteClickBound = true;
+            this.addEventListener('click', function (e) {
+                var btn = e.target.closest('.pub-cite-btn');
+                if (!btn || !self.contains(btn)) {
+                    return;
+                }
+                var panelId = btn.getAttribute('aria-controls');
+                var panel = panelId ? document.getElementById(panelId) : null;
+                if (!panel || !self.contains(panel)) {
+                    return;
+                }
+                var card = btn.closest('.pub-card');
+                var willOpen = btn.getAttribute('aria-expanded') !== 'true';
+
+                if (willOpen && card) {
+                    card.querySelectorAll('.pub-cite-expand').forEach(function (p) {
+                        p.hidden = true;
+                    });
+                    card.querySelectorAll('.pub-cite-btn').forEach(function (b) {
+                        b.setAttribute('aria-expanded', 'false');
+                        b.classList.remove('pub-cite-btn--active');
+                    });
+                }
+
+                if (willOpen) {
+                    btn.setAttribute('aria-expanded', 'true');
+                    panel.hidden = false;
+                    btn.classList.add('pub-cite-btn--active');
+                } else {
+                    btn.setAttribute('aria-expanded', 'false');
+                    panel.hidden = true;
+                    btn.classList.remove('pub-cite-btn--active');
+                }
+            });
+        }
     }
 }
 
