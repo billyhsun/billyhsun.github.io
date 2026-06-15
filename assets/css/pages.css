@@ -805,3 +805,34 @@ img {
     }
 }
 
+/* Projects & Experience — light cover image; darker type (navbar excluded) */
+body.page-cover-light {
+    color: #1e293b;
+}
+
+body.page-cover-light main-header-pages ~ * {
+    color: #1e293b;
+}
+
+body.page-cover-light main-header-pages ~ h1,
+body.page-cover-light main-header-pages ~ h2,
+body.page-cover-light main-header-pages ~ h3 {
+    color: #0f766e;
+}
+
+body.page-cover-light main-header-pages ~ * a {
+    color: #0d9488;
+}
+
+body.page-cover-light main-header-pages ~ * a:hover {
+    color: #115e59;
+}
+
+body.page-cover-light main-header-pages ~ * a::after {
+    background-color: #0d9488;
+}
+
+body.page-cover-light main-header-pages ~ * a:hover::after {
+    background-color: #115e59;
+}
+
