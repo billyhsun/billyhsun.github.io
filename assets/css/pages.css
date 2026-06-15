@@ -3,6 +3,64 @@
    Consolidated styles for all page templates
    ============================================ */
 
+/* Research page — thesis cover placeholders */
+.thesis-row {
+    display: grid;
+    grid-template-columns: minmax(160px, 220px) 1fr;
+    gap: 1.25rem 1.5rem;
+    align-items: start;
+    margin: 0.75rem 0 0.5rem;
+}
+
+.thesis-body {
+    min-width: 0;
+}
+
+.thesis-thumb-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    background: linear-gradient(
+        135deg,
+        rgba(62, 137, 137, 0.2) 0%,
+        rgba(59, 130, 246, 0.12) 45%,
+        rgba(26, 38, 57, 0.88) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    text-align: center;
+    padding: 0.75rem;
+}
+
+.thesis-thumb-placeholder-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.thesis-thumb-placeholder-inner .fas {
+    font-size: 2rem;
+    opacity: 0.55;
+}
+
+@media screen and (max-width: 640px) {
+    .thesis-row {
+        grid-template-columns: 1fr;
+    }
+
+    .thesis-thumb-placeholder {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}
+
 /* About page portrait (below title) */
 .about-portrait-wrap {
     display: flex;

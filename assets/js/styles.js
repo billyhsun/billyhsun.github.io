@@ -82,8 +82,8 @@ class Header extends HTMLElement {
                 <div class="dropdown-content">
                     <a href="${pathPrefix}research.html">Research & Publications</a>
                     <a href="https://www.guidepoint.com/">AI Engineer - Guidepoint</a>
-                    <a href="https://www.kinaxis.com/en">Machine Learning Engineer - Kinaxis</a>
-                    <a href="https://kangleelab.com/">Machine Learning Lead - University of Toronto</a>
+                    <a href="https://www.kinaxis.com/en">Machine Learning and AI Engineer - Kinaxis</a>
+                    <a href="https://www.oise.utoronto.ca/aphd/centre-smart-learning-and-development">Machine Learning Lead - University of Toronto Center for Smart Learning</a>
                     <a href="https://www.nuralogix.ai/">Data Science Software Engineer - Nuralogix</a>
                     <a href="${pathPrefix}capstone.html">Data Scientist - Public Health Ontario</a>
                     <a href="${pathPrefix}transit.html">Transportation Modelling Research - University of Toronto</a>
@@ -210,20 +210,20 @@ var PUBLICATION_ENTRIES = [
     {
         year: 2022,
         seq: 4,
-        badges: ['BRM 2022'],
+        badges: ['Behavior Research Methods, 2022'],
         title: 'Efficient short assessments to approximate a long assessment',
         desc: 'A machine-learning pipeline for deriving minimal item sets that preserve the predictive accuracy of a full-length scale, with applications to behavioral and clinical measurement.',
         citation:
             'Sun, Y. H., Luo, H., & Lee, K. (2022).\n\n' +
             'A novel approach for developing efficient and convenient short assessments to approximate a long assessment.\n\n' +
-            'Behavior Research Methods, 54, 2802–2828.\n\n' +
+            'Behavior Research Methods, 54, 2802-2828.\n\n' +
             'https://doi.org/10.3758/s13428-021-01771-7',
         doi: 'https://doi.org/10.3758/s13428-021-01771-7',
         thumb: null,
         links: [
-            { label: 'Demo', href: '#', iconClass: 'fas fa-play-circle' },
+            { label: 'Demo', href: 'https://kang-lee-lab-surveys.vercel.app/', iconClass: 'fas fa-play-circle' },
             { label: 'PDF', href: 'https://doi.org/10.3758/s13428-021-01771-7', iconClass: 'fas fa-file-pdf' },
-            { label: 'Code', href: '#', iconClass: 'fas fa-code' },
+            { label: 'Code', href: 'https://github.com/kang-lee-lab/long_to_short_dass', iconClass: 'fas fa-code' },
         ],
         bibtex:
             '@article{Sun2022Novel,\n' +
@@ -239,20 +239,20 @@ var PUBLICATION_ENTRIES = [
     {
         year: 2022,
         seq: 3,
-        badges: ['JAD 2022'],
+        badges: ['Journal of Affective Disorders, 2022'],
         title: 'Shortening depression risk assessment with machine learning',
         desc: 'Selects compact item subsets and trains models to approximate full-scale depression risk scores while improving convenience for repeated or remote screening.',
         citation:
             'Sun, Y. H., Liu, Q., Lee, N. Y., Li, X., & Lee, K. (2022).\n\n' +
             'A novel machine learning approach to shorten depression risk assessment for convenient uses.\n\n' +
-            'Journal of Affective Disorders, 312, 275–291.\n\n' +
+            'Journal of Affective Disorders, 312, 275-291.\n\n' +
             'https://doi.org/10.1016/j.jad.2022.06.035',
         doi: 'https://doi.org/10.1016/j.jad.2022.06.035',
         thumb: null,
         links: [
-            { label: 'Demo', href: '#', iconClass: 'fas fa-play-circle' },
+            { label: 'Demo', href: 'https://kang-lee-lab-surveys.vercel.app/survey/depression-moderate', iconClass: 'fas fa-play-circle' },
             { label: 'PDF', href: 'https://doi.org/10.1016/j.jad.2022.06.035', iconClass: 'fas fa-file-pdf' },
-            { label: 'Code', href: '#', iconClass: 'fas fa-code' },
+            { label: 'Code', href: 'https://github.com/kang-lee-lab/long_to_short_dass', iconClass: 'fas fa-code' },
         ],
         bibtex:
             '@article{Sun2022Depression,\n' +
@@ -268,20 +268,20 @@ var PUBLICATION_ENTRIES = [
     {
         year: 2025,
         seq: 10,
-        badges: ['J Anxiety Disord. 2025'],
+        badges: ['Journal of Anxiety Disorders, 2025'],
         title: 'Concise multi-class anxiety disorder risk assessment',
         desc: 'An advanced machine learning approach to multi-class anxiety risk prediction using a reduced item set while retaining strong discrimination across disorder classes.',
         citation:
-            'Yang, H.-C., Sun, Y. H., & Lee, K. (2025).\n\n' +
+            'Yang, H. C., Sun, Y. H., & Lee, K. (2025).\n\n' +
             'Concise multi-class anxiety disorder risk assessment: A novel advanced machine learning approach.\n\n' +
-            'Journal of Anxiety Disorders, 112, Article 103018.\n\n' +
+            'Journal of Anxiety Disorders, vol 112, 103018.\n\n' +
             'https://doi.org/10.1016/j.janxdis.2025.103018',
         doi: 'https://doi.org/10.1016/j.janxdis.2025.103018',
         thumb: null,
         links: [
-            { label: 'Demo', href: '#', iconClass: 'fas fa-play-circle' },
+            { label: 'Demo', href: 'https://kang-lee-lab-surveys.vercel.app/survey/anxiety-multiclass', iconClass: 'fas fa-play-circle' },
             { label: 'PDF', href: 'https://doi.org/10.1016/j.janxdis.2025.103018', iconClass: 'fas fa-file-pdf' },
-            { label: 'Code', href: '#', iconClass: 'fas fa-code' },
+            { label: 'Code', href: 'https://github.com/kang-lee-lab/long_to_short_dass', iconClass: 'fas fa-code' },
         ],
         bibtex:
             '@article{Yang2025Anxiety,\n' +
@@ -297,7 +297,7 @@ var PUBLICATION_ENTRIES = [
     {
         year: 2022,
         seq: 2,
-        badges: ['Book chapter 2022'],
+        badges: ['Artificial intelligence in Covid-19, 2022'],
         title: 'Symptom-based models of COVID-19 infection using AI',
         desc: 'Machine learning models that relate self-reported symptoms to COVID-19 infection risk, presented as a chapter on AI in the COVID-19 context.',
         citation:
@@ -315,7 +315,7 @@ var PUBLICATION_ENTRIES = [
         bibtex:
             '@incollection{Liu2022COVID,\n' +
             '  title={Symptom Based Models of {COVID-19} Infection Using {AI}},\n' +
-            '  author={Liu, Shuwen and Sun, Yuan Hong and Waese-Perlman, Alex and Lee, Nathan Y. and Zhang, Haoran and Lee, Kang},\n' +
+            '  author={Liu, Songqiao and Sun, Yuan Hong and Waese-Perlman, Alex A. and Lee, Nathan Y. and Zhang, Haibo and Lee, Kang},\n' +
             '  booktitle={Artificial Intelligence in Covid-19},\n' +
             '  editor={Lidstr{\\"o}mer, Niklas and Eldar, Yonina C.},\n' +
             '  publisher={Springer},\n' +
@@ -338,14 +338,14 @@ var PUBLICATION_ENTRIES = [
         doi: 'https://doi.org/10.31234/osf.io/tnwq8_v1',
         thumb: null,
         links: [
-            { label: 'Demo', href: '#', iconClass: 'fas fa-play-circle' },
+            { label: 'Demo', href: 'https://kang-lee-lab-surveys.vercel.app/survey/mmpi', iconClass: 'fas fa-play-circle' },
             { label: 'PDF', href: 'https://doi.org/10.31234/osf.io/tnwq8_v1', iconClass: 'fas fa-file-pdf' },
-            { label: 'Code', href: '#', iconClass: 'fas fa-code' },
+            { label: 'Code', href: 'https://github.com/kang-lee-lab/long_to_short_mmpi', iconClass: 'fas fa-code' },
         ],
         bibtex:
             '@misc{Sun2026CCAPDR,\n' +
             '  title={Concise Comprehensive Assessment of Psychiatric Disorder Risks Using Machine Learning},\n' +
-            '  author={Sun, Yuan Hong and Zhu, Jiawei and Meng, Fanbo and Liu, Qijian and Chiu, Queeny and Lee, Nathan Y. and others and Lee, Kang},\n' +
+            '  author={Sun, Yuan Hong and Zhu, Jianli and Meng, Fanqiang and Liu, Qijian and Chiu, Queenny and Lee, Nathan Y. and others and Lee, Kang},\n' +
             '  year={2026},\n' +
             '  howpublished={PsyArXiv preprint},\n' +
             '  doi={10.31234/osf.io/tnwq8_v1}\n' +
@@ -354,7 +354,7 @@ var PUBLICATION_ENTRIES = [
     {
         year: 2022,
         seq: 1,
-        badges: ['CDP Conf. 2022'],
+        badges: ['Canadian Developmental Psychology Conference, 2022'],
         title: "Predicting children's future BMI with machine learning",
         desc: 'Conference contribution applying machine learning to longitudinal indicators for childhood BMI prediction (poster).',
         citation:
@@ -364,9 +364,9 @@ var PUBLICATION_ENTRIES = [
         doi: '/assets/docs/poster-childbmi.pdf',
         thumb: null,
         links: [
-            { label: 'Demo', href: '#', iconClass: 'fas fa-play-circle' },
+            { label: 'Demo', href: 'https://kang-lee-lab-surveys.vercel.app/survey/child-bmi', iconClass: 'fas fa-play-circle' },
             { label: 'PDF', href: '/assets/docs/poster-childbmi.pdf', iconClass: 'fas fa-file-pdf' },
-            { label: 'Code', href: '#', iconClass: 'fas fa-code' },
+            { label: 'Code', href: 'https://github.com/kang-lee-lab/child_bmi_prediction', iconClass: 'fas fa-code' },
         ],
         bibtex:
             '@inproceedings{Yasin2022BMI,\n' +
