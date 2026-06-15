@@ -219,7 +219,7 @@ var PUBLICATION_ENTRIES = [
             'Behavior Research Methods, 54, 2802-2828.\n\n' +
             'https://doi.org/10.3758/s13428-021-01771-7',
         doi: 'https://doi.org/10.3758/s13428-021-01771-7',
-        thumb: null,
+        thumb: '/assets/images/publication_dass_anxiety.png',
         links: [
             { label: 'Demo', href: 'https://kang-lee-lab-surveys.vercel.app/', iconClass: 'fas fa-play-circle' },
             { label: 'PDF', href: 'https://doi.org/10.3758/s13428-021-01771-7', iconClass: 'fas fa-file-pdf' },
@@ -248,7 +248,7 @@ var PUBLICATION_ENTRIES = [
             'Journal of Affective Disorders, 312, 275-291.\n\n' +
             'https://doi.org/10.1016/j.jad.2022.06.035',
         doi: 'https://doi.org/10.1016/j.jad.2022.06.035',
-        thumb: null,
+        thumb: '/assets/images/publication_dass_depression.png',
         links: [
             { label: 'Demo', href: 'https://kang-lee-lab-surveys.vercel.app/survey/depression-moderate', iconClass: 'fas fa-play-circle' },
             { label: 'PDF', href: 'https://doi.org/10.1016/j.jad.2022.06.035', iconClass: 'fas fa-file-pdf' },
@@ -277,7 +277,7 @@ var PUBLICATION_ENTRIES = [
             'Journal of Anxiety Disorders, vol 112, 103018.\n\n' +
             'https://doi.org/10.1016/j.janxdis.2025.103018',
         doi: 'https://doi.org/10.1016/j.janxdis.2025.103018',
-        thumb: null,
+        thumb: '/assets/images/publication_multiclass_anxiety.png',
         links: [
             { label: 'Demo', href: 'https://kang-lee-lab-surveys.vercel.app/survey/anxiety-multiclass', iconClass: 'fas fa-play-circle' },
             { label: 'PDF', href: 'https://doi.org/10.1016/j.janxdis.2025.103018', iconClass: 'fas fa-file-pdf' },
@@ -306,11 +306,11 @@ var PUBLICATION_ENTRIES = [
             'In N. Lidströmer & Y. C. Eldar (Eds.), Artificial intelligence in Covid-19. Springer, Cham.\n\n' +
             'https://doi.org/10.1007/978-3-031-08506-2_8',
         doi: 'https://doi.org/10.1007/978-3-031-08506-2_8',
-        thumb: null,
+        thumb: '/assets/images/publication_covid.png',
         links: [
-            { label: 'Demo', href: '#', iconClass: 'fas fa-play-circle' },
+            { label: 'Demo', href: 'https://kang-lee-lab-surveys.vercel.app/', iconClass: 'fas fa-play-circle' },
             { label: 'PDF', href: 'https://doi.org/10.1007/978-3-031-08506-2_8', iconClass: 'fas fa-file-pdf' },
-            { label: 'Code', href: '#', iconClass: 'fas fa-code' },
+            { label: 'Code', href: 'https://github.com/kang-lee-lab/covid-19-prediction', iconClass: 'fas fa-code' },
         ],
         bibtex:
             '@incollection{Liu2022COVID,\n' +
@@ -336,7 +336,7 @@ var PUBLICATION_ENTRIES = [
             'PsyArXiv preprint.\n\n' +
             'https://doi.org/10.31234/osf.io/tnwq8_v1',
         doi: 'https://doi.org/10.31234/osf.io/tnwq8_v1',
-        thumb: null,
+        thumb: '/assets/images/publication_mmpi.png',
         links: [
             { label: 'Demo', href: 'https://kang-lee-lab-surveys.vercel.app/survey/mmpi', iconClass: 'fas fa-play-circle' },
             { label: 'PDF', href: 'https://doi.org/10.31234/osf.io/tnwq8_v1', iconClass: 'fas fa-file-pdf' },
@@ -362,7 +362,7 @@ var PUBLICATION_ENTRIES = [
             "A machine learning approach for predicting children's future BMI [Poster].\n\n" +
             'Canadian Developmental Psychology Conference.',
         doi: '/assets/docs/poster-childbmi.pdf',
-        thumb: null,
+        thumb: '/assets/images/publication_childbmi.png',
         links: [
             { label: 'Demo', href: 'https://kang-lee-lab-surveys.vercel.app/survey/child-bmi', iconClass: 'fas fa-play-circle' },
             { label: 'PDF', href: '/assets/docs/poster-childbmi.pdf', iconClass: 'fas fa-file-pdf' },
