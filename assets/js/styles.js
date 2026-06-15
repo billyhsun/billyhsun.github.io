@@ -399,8 +399,8 @@ class Publications extends HTMLElement {
             cards +
             '<p class="pub-profiles">' +
             '<a href="https://scholar.google.com/citations?hl=en&user=bbtplDkAAAAJ&view_op=list_works&gmla=AJsN-F4COolLEfdgE4iCWldQ-NS9XYUCR5fAPNxaEnJmw0C_VnRX9D0330aSstBiPzdrgi9lJ_ueu85EiVneGUbauuNtqvL3uSWMXhNprQDV_4_cdGrDhYA">Google Scholar</a>' +
-            ' · <a href="https://www.researchgate.net/profile/Yuan-Hong-Sun">ResearchGate</a>' +
-            ' · <a href="https://orcid.org/0000-0002-2343-0340">ORCID</a>' +
+            '  ·  <a href="https://www.researchgate.net/profile/Yuan-Hong-Sun">ResearchGate</a>' +
+            '  ·  <a href="https://orcid.org/0000-0002-2343-0340">ORCID</a>' +
             '</p>' +
             '</div>';
 
@@ -468,6 +468,89 @@ class Publications extends HTMLElement {
             </div>
 */
 
+// Skills board (About page) — edit SKILL_COLUMNS to add/reorder items
+var SKILL_COLUMNS = [
+    {
+        title: 'Programming',
+        skills: [
+            { name: 'Python', iconClass: 'fab fa-python', level: 'fluent' },
+            { name: 'Java', iconClass: 'fab fa-java', level: 'good' },
+            { name: 'C++', iconClass: 'fas fa-copyright', level: 'good' },
+            { name: 'HTML', iconClass: 'fab fa-html5', level: 'good' },
+            { name: 'CSS', iconClass: 'fab fa-css3', level: 'good' },
+            { name: 'JavaScript', iconClass: 'fab fa-js-square', level: 'familiar' },
+            { name: 'C', iconClass: 'fas fa-code', level: 'familiar' },
+            { name: 'R', iconClass: 'fab fa-r-project', level: 'familiar' },
+            { name: 'MATLAB', iconClass: 'fas fa-calculator', level: 'familiar' },
+        ],
+    },
+    {
+        title: 'Other Technologies',
+        skills: [
+            { name: 'PyTorch', iconClass: 'fas fa-fire', level: 'fluent' },
+            { name: 'SQL / Databases', iconClass: 'fas fa-database', level: 'fluent' },
+            { name: 'Atlassian (Jira, Confluence)', iconClass: 'fab fa-atlassian', level: 'fluent' },
+            { name: 'Microsoft Azure', iconClass: 'fab fa-microsoft', level: 'fluent' },
+            { name: 'Amazon Web Services', iconClass: 'fab fa-aws', level: 'good' },
+            { name: 'Google Cloud', iconClass: 'fab fa-google', level: 'good' },
+            { name: 'Docker & Kubernetes', iconClass: 'fab fa-docker', level: 'good' },
+            { name: 'TensorFlow', iconClass: 'fas fa-brain', level: 'good' },
+            { name: 'Microsoft Excel', iconClass: 'fas fa-file-excel', level: 'good' },
+        ],
+    },
+    {
+        title: 'Engineering & Leadership',
+        skills: [
+            { name: 'Machine Learning & Deep Learning', iconClass: 'fas fa-brain', level: 'fluent' },
+            { name: 'Data Mining and Analysis', iconClass: 'fas fa-chart-line', level: 'fluent' },
+            { name: 'Software Architecture and Design', iconClass: 'fas fa-drafting-compass', level: 'fluent' },
+            { name: 'Agile / Scrum', iconClass: 'fas fa-tasks', level: 'fluent' },
+            { name: 'LLM and Natural Language Processing', iconClass: 'fas fa-robot', level: 'fluent' },
+            { name: 'DevOps', iconClass: 'fas fa-cogs', level: 'good' },
+            { name: 'Software Development Cycle', iconClass: 'fas fa-code-branch', level: 'good' },
+            { name: 'Public Speaking', iconClass: 'fas fa-microphone', level: 'good' },
+            { name: 'Mentoring', iconClass: 'fas fa-chalkboard-teacher', level: 'good' },
+        ],
+    },
+];
+
+function skillLevelLabel(level) {
+    if (level === 'fluent') return 'Fluent';
+    if (level === 'good') return 'Proficient';
+    return 'Familiar';
+}
+
+function renderSkillCard(skill) {
+    var level = skill.level || 'familiar';
+    var icon = skill.iconClass || 'fas fa-star';
+    return (
+        '<article class="skill-card">' +
+        '<i class="' + icon + ' skill-icon" aria-hidden="true"></i>' +
+        '<div class="skill-card-body">' +
+        '<span class="skill-card-name">' + escapePubHtml(skill.name) + '</span>' +
+        '<span class="skill-level skill-level--' + level + '">' + skillLevelLabel(level) + '</span>' +
+        '</div>' +
+        '</article>'
+    );
+}
+
+function renderSkillColumn(col) {
+    var cards = (col.skills || []).map(renderSkillCard).join('');
+    return (
+        '<section class="skill-column">' +
+        '<h3 class="skill-column-title">' + escapePubHtml(col.title) + '</h3>' +
+        '<div class="skill-card-list">' + cards + '</div>' +
+        '</section>'
+    );
+}
+
+class SkillsBoard extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML =
+            '<div class="skills-board">' + SKILL_COLUMNS.map(renderSkillColumn).join('') + '</div>';
+    }
+}
+
 // Legacy aliases for backward compatibility
 class HeaderRoot extends Header {}
 class HeaderPages extends Header {}
@@ -476,6 +559,7 @@ customElements.define('main-head', Head);
 customElements.define('main-header', Header);
 customElements.define('main-footer', Footer);
 customElements.define('publications-list', Publications);
+customElements.define('skills-board', SkillsBoard);
 customElements.define('main-header-root', HeaderRoot);
 customElements.define('main-header-pages', HeaderPages);
 
