@@ -435,6 +435,14 @@ img {
     margin: 10px;
 }
 
+.img-width-80 {
+    width: 80%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
 .img-width-50 {
     width: 50%;
 }

@@ -461,6 +461,7 @@ img[height] {
         margin: var(--spacing-md) 0 !important;
     }
     
+    .img-width-80,
     .img-width-70,
     .img-width-50,
     .img-width-40,
