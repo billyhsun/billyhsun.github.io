@@ -15,14 +15,40 @@
 
     function formatMessage(text) {
         var escaped = escapeHtml(text);
+
+        // Markdown links: [label](url)
         escaped = escaped.replace(
             /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
             '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
         );
+
+        // Bold: **text** or __text__
+        escaped = escaped.replace(/\*\*([^*\n]+)\*\*/g, "<strong>$1</strong>");
+        escaped = escaped.replace(/__([^_\n]+)__/g, "<strong>$1</strong>");
+
+        // Italic: *text* or _text_ (single markers)
+        escaped = escaped.replace(/(^|[^*])\*([^*\n]+)\*([^*]|$)/g, "$1<em>$2</em>$3");
+        escaped = escaped.replace(/(^|[^_])_([^_\n]+)_([^_]|$)/g, "$1<em>$2</em>$3");
+
+        // Inline code: `code`
+        escaped = escaped.replace(/`([^`\n]+)`/g, "<code>$1</code>");
+
+        // Bare URLs (not already linked)
         escaped = escaped.replace(
-            /(https?:\/\/[^\s<]+)/g,
-            '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
+            /(^|[^"'>])(https?:\/\/[^\s<]+)/g,
+            '$1<a href="$2" target="_blank" rel="noopener noreferrer">$2</a>'
         );
+
+        // Internal site paths: /pages/about.html
+        escaped = escaped.replace(
+            /(^|[^"'/>])(\/[a-zA-Z0-9_\-./]*\.html)/g,
+            '$1<a href="$2">$2</a>'
+        );
+
+        // Bullet lines: "- item"
+        escaped = escaped.replace(/^- (.+)$/gm, '<span class="bill-chat-bullet">• $1</span>');
+        escaped = escaped.replace(/<br>- (.+?)(?=<br>|$)/g, '<br><span class="bill-chat-bullet">• $1</span>');
+
         return escaped.replace(/\n/g, "<br>");
     }
 

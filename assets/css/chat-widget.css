@@ -132,6 +132,29 @@ bill-chat {
     text-decoration: underline;
 }
 
+.bill-chat-message strong {
+    font-weight: 600;
+    color: #fff;
+}
+
+.bill-chat-message em {
+    font-style: italic;
+}
+
+.bill-chat-message code {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8em;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 0.1em 0.35em;
+    border-radius: 0.25rem;
+}
+
+.bill-chat-bullet {
+    display: block;
+    padding-left: 0.25rem;
+    margin-top: 0.25rem;
+}
+
 .bill-chat-message--user {
     align-self: flex-end;
     background: var(--chat-user-bg);
