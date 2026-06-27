@@ -563,3 +563,24 @@ customElements.define('skills-board', SkillsBoard);
 customElements.define('main-header-root', HeaderRoot);
 customElements.define('main-header-pages', HeaderPages);
 
+// AI chat widget — loaded on all pages that include styles.js
+(function () {
+    if (!document.querySelector('meta[name="chat-api-url"]')) {
+        var chatMeta = document.createElement('meta');
+        chatMeta.name = 'chat-api-url';
+        chatMeta.content = 'https://billyhsun-chat-api.vercel.app/api/chat';
+        document.head.appendChild(chatMeta);
+    }
+    if (!document.querySelector('script[src*="chat-widget.js"]')) {
+        var chatScript = document.createElement('script');
+        chatScript.src = '/assets/js/chat-widget.js';
+        chatScript.defer = true;
+        document.head.appendChild(chatScript);
+    }
+    if (!document.querySelector('link[href*="chat-widget.css"]')) {
+        var chatCss = document.createElement('link');
+        chatCss.rel = 'stylesheet';
+        chatCss.href = '/assets/css/chat-widget.css';
+        document.head.appendChild(chatCss);
+    }
+})();

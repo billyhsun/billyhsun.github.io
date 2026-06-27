@@ -1,0 +1,17 @@
+{
+  "name": "billyhsun-chat-api",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Serverless chat API for billyhsun.github.io",
+  "scripts": {
+    "build:knowledge": "node scripts/build-knowledge.js",
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "openai": "^4.77.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

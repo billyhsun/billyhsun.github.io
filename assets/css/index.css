@@ -72,6 +72,13 @@ body {
     font-weight: 500;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+button.btn {
+    appearance: none;
 }
 
 .btn:hover {
