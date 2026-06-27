@@ -132,6 +132,22 @@ bill-chat {
     text-decoration: underline;
 }
 
+.bill-chat-message a.bill-chat-cta {
+    display: inline-block;
+    margin: 0.35rem 0;
+    padding: 0.45rem 0.75rem;
+    background: var(--chat-accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+}
+
+.bill-chat-message a.bill-chat-cta:hover {
+    background: var(--chat-accent-hover);
+    color: #fff;
+}
+
 .bill-chat-message strong {
     font-weight: 600;
     color: #fff;

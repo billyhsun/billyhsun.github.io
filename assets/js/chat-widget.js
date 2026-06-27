@@ -13,41 +13,57 @@
             .replace(/"/g, "&quot;");
     }
 
-    function formatMessage(text) {
-        var escaped = escapeHtml(text);
+    function stripHtmlArtifacts(text) {
+        return String(text || "")
+            .replace(/<a\s+[^>]*>/gi, "")
+            .replace(/<\/a>/gi, "")
+            .replace(/<[^>]+>/g, "")
+            .replace(/"\s*target\s*=\s*["'][^"']*["']\s*rel\s*=\s*["'][^"']*["']\s*>/gi, "")
+            .replace(/"\s*target\s*=\s*["'][^"']*["']\s*>/gi, "")
+            .trim();
+    }
+
+    function formatMessage(text, finalize) {
+        var clean = stripHtmlArtifacts(text);
+        var escaped = escapeHtml(clean);
+
+        if (!finalize) {
+            return escaped.replace(/\n/g, "<br>");
+        }
 
         // Markdown links: [label](url)
         escaped = escaped.replace(
-            /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+            /\[([^\]]+)\]\((https?:\/\/[^\s")]+)\)/g,
             '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
+        );
+
+        // Calendly booking link with friendly label
+        escaped = escaped.replace(
+            /https?:\/\/calendly\.com\/billyhsun\/30min/g,
+            '<a class="bill-chat-cta" href="https://calendly.com/billyhsun/30min" target="_blank" rel="noopener noreferrer">Book a 30-minute call</a>'
         );
 
         // Bold: **text** or __text__
         escaped = escaped.replace(/\*\*([^*\n]+)\*\*/g, "<strong>$1</strong>");
         escaped = escaped.replace(/__([^_\n]+)__/g, "<strong>$1</strong>");
 
-        // Italic: *text* or _text_ (single markers)
-        escaped = escaped.replace(/(^|[^*])\*([^*\n]+)\*([^*]|$)/g, "$1<em>$2</em>$3");
-        escaped = escaped.replace(/(^|[^_])_([^_\n]+)_([^_]|$)/g, "$1<em>$2</em>$3");
-
         // Inline code: `code`
         escaped = escaped.replace(/`([^`\n]+)`/g, "<code>$1</code>");
 
-        // Bare URLs (not already linked)
+        // Other bare URLs (stop before quotes or angle brackets)
         escaped = escaped.replace(
-            /(^|[^"'>])(https?:\/\/[^\s<]+)/g,
+            /(^|[^\w/"'=])(https?:\/\/[^\s"<]+)/g,
             '$1<a href="$2" target="_blank" rel="noopener noreferrer">$2</a>'
         );
 
         // Internal site paths: /pages/about.html
         escaped = escaped.replace(
-            /(^|[^"'/>])(\/[a-zA-Z0-9_\-./]*\.html)/g,
+            /(^|[^\w/"'=])(\/[a-zA-Z0-9_\-./]*\.html)/g,
             '$1<a href="$2">$2</a>'
         );
 
         // Bullet lines: "- item"
         escaped = escaped.replace(/^- (.+)$/gm, '<span class="bill-chat-bullet">• $1</span>');
-        escaped = escaped.replace(/<br>- (.+?)(?=<br>|$)/g, '<br><span class="bill-chat-bullet">• $1</span>');
 
         return escaped.replace(/\n/g, "<br>");
     }
@@ -152,7 +168,7 @@
         appendMessageEl(role, text) {
             var el = document.createElement("div");
             el.className = "bill-chat-message bill-chat-message--" + role;
-            el.innerHTML = formatMessage(text);
+            el.innerHTML = formatMessage(text, true);
             this.messagesEl.appendChild(el);
             this.scrollToBottom();
             return el;
@@ -264,7 +280,7 @@
                         var parsed = JSON.parse(payload);
                         if (parsed.content) {
                             fullText += parsed.content;
-                            botEl.innerHTML = formatMessage(fullText);
+                            botEl.innerHTML = formatMessage(fullText, false);
                             this.scrollToBottom();
                         }
                         if (parsed.error) {
@@ -278,6 +294,7 @@
                 }
             }
 
+            botEl.innerHTML = formatMessage(fullText, true);
             this.messages.push({ role: "assistant", content: fullText });
         }
     }
