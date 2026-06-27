@@ -4,6 +4,25 @@
     var CHAT_API_URL =
         (document.querySelector('meta[name="chat-api-url"]') || {}).content ||
         "http://localhost:3000/api/chat";
+    var STORAGE_KEY = "bill-chat-state";
+    var WELCOME_MESSAGE =
+        "Hi! I'm Bill's assistant. Ask me about his experience, research, projects, or mentorship — or say you'd like to book a call and I'll share his Calendly link.";
+
+    function loadStoredState() {
+        try {
+            var raw = sessionStorage.getItem(STORAGE_KEY);
+            if (!raw) return null;
+            var data = JSON.parse(raw);
+            if (!data || !Array.isArray(data.messages)) return null;
+            return data;
+        } catch (err) {
+            return null;
+        }
+    }
+
+    function newSessionId() {
+        return "sess_" + Date.now() + "_" + Math.random().toString(36).slice(2, 9);
+    }
 
     function escapeHtml(text) {
         return String(text || "")
@@ -71,10 +90,26 @@
     class BillChat extends HTMLElement {
         constructor() {
             super();
-            this.isOpen = false;
+            var stored = loadStoredState();
+            this.isOpen = !!(stored && stored.isOpen);
             this.isLoading = false;
-            this.messages = [];
-            this.sessionId = "sess_" + Date.now() + "_" + Math.random().toString(36).slice(2, 9);
+            this.messages = stored && stored.messages ? stored.messages.slice() : [];
+            this.sessionId = (stored && stored.sessionId) || newSessionId();
+        }
+
+        persistState() {
+            try {
+                sessionStorage.setItem(
+                    STORAGE_KEY,
+                    JSON.stringify({
+                        sessionId: this.sessionId,
+                        messages: this.messages,
+                        isOpen: this.isOpen,
+                    })
+                );
+            } catch (err) {
+                // sessionStorage may be unavailable in some browsers/modes
+            }
         }
 
         connectedCallback() {
@@ -82,11 +117,24 @@
             this._initialized = true;
             this.render();
             this.bindEvents();
-            if (!this.messages.length) {
-                this.addBotMessage(
-                    "Hi! I'm Bill's assistant. Ask me about his experience, research, projects, or mentorship — or say you'd like to book a call and I'll share his Calendly link."
-                );
+            if (this.messages.length) {
+                this.restoreMessages();
+                if (this.isOpen) {
+                    this.setOpen(true);
+                }
+            } else {
+                this.addBotMessage(WELCOME_MESSAGE);
             }
+        }
+
+        restoreMessages() {
+            var self = this;
+            this.messagesEl.innerHTML = "";
+            this.messages.forEach(function (message) {
+                var role = message.role === "user" ? "user" : "bot";
+                self.renderMessageEl(role, message.content);
+            });
+            this.scrollToBottom();
         }
 
         render() {
@@ -145,6 +193,7 @@
             this.toggleBtn.innerHTML = open
                 ? '<i class="fas fa-times"></i>'
                 : '<i class="fas fa-comment-dots"></i>';
+            this.persistState();
             if (open) {
                 this.input.focus();
                 this.scrollToBottom();
@@ -157,21 +206,27 @@
 
         addUserMessage(text) {
             this.messages.push({ role: "user", content: text });
-            this.appendMessageEl("user", text);
+            this.renderMessageEl("user", text);
+            this.persistState();
         }
 
         addBotMessage(text) {
             this.messages.push({ role: "assistant", content: text });
-            this.appendMessageEl("bot", text);
+            this.renderMessageEl("bot", text);
+            this.persistState();
         }
 
-        appendMessageEl(role, text) {
+        renderMessageEl(role, text) {
             var el = document.createElement("div");
             el.className = "bill-chat-message bill-chat-message--" + role;
             el.innerHTML = formatMessage(text, true);
             this.messagesEl.appendChild(el);
             this.scrollToBottom();
             return el;
+        }
+
+        appendMessageEl(role, text) {
+            return this.renderMessageEl(role, text);
         }
 
         showTyping() {
@@ -296,6 +351,7 @@
 
             botEl.innerHTML = formatMessage(fullText, true);
             this.messages.push({ role: "assistant", content: fullText });
+            this.persistState();
         }
     }
 
