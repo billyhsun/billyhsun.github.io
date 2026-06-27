@@ -568,7 +568,7 @@ customElements.define('main-header-pages', HeaderPages);
     if (!document.querySelector('meta[name="chat-api-url"]')) {
         var chatMeta = document.createElement('meta');
         chatMeta.name = 'chat-api-url';
-        chatMeta.content = 'https://billyhsun-chat-api.vercel.app/api/chat';
+        chatMeta.content = 'https://billyhsun-github-io-chat.vercel.app/api/chat';
         document.head.appendChild(chatMeta);
     }
     if (!document.querySelector('script[src*="chat-widget.js"]')) {
