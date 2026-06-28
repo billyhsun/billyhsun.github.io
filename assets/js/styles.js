@@ -99,8 +99,6 @@ class Header extends HTMLElement {
                     <a href="https://kang-lee-lab-surveys.vercel.app/">Machine Learning Psychometrics</a>
                     <a href="https://github.com/billyhsun/MusicGenre">Music Genre Classifier</a>
                     <a href="https://devpost.com/software/surroundsound-1u9ljk">Music Sharing App</a>
-                    <a href="${pathPrefix}game.html">Boxhead Video Game</a>
-                    <a href="${pathPrefix}parking.html">Parking Manager App Simulator</a>
                     <a href="${pathPrefix}aer201.html">Autonomous Pill Packaging Machine</a>
                 </div>
             </div>
