@@ -83,7 +83,7 @@ class Header extends HTMLElement {
                     <a href="${pathPrefix}research.html">Research & Publications</a>
                     <a href="https://www.guidepoint.com/">AI Engineer - Guidepoint</a>
                     <a href="https://www.kinaxis.com/en">Machine Learning and AI Engineer - Kinaxis</a>
-                    <a href="https://www.oise.utoronto.ca/aphd/centre-smart-learning-and-development">Machine Learning Lead - University of Toronto Center for Smart Learning</a>
+                    <a href="https://www.oise.utoronto.ca/aphd/centre-smart-learning-and-development">Lead ML / AI Researcher - University of Toronto Center for Smart Learning</a>
                     <a href="https://www.nuralogix.ai/">Data Science Software Engineer - Nuralogix</a>
                     <a href="${pathPrefix}capstone.html">Data Scientist - Public Health Ontario</a>
                     <a href="${pathPrefix}transit.html">Transportation Modelling Research - University of Toronto</a>
