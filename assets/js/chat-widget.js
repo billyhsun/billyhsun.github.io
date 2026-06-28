@@ -143,8 +143,8 @@
                 '  <div class="bill-chat-panel" id="bill-chat-panel" role="dialog" aria-label="Chat with Bill\'s assistant">' +
                 '    <div class="bill-chat-header">' +
                 '      <div>' +
-                '        <h2>Ask Bill\'s Assistant</h2>' +
-                '        <p>Questions &amp; meeting booking</p>' +
+                '        <h2>Chat with Bill\'s Assistant</h2>' +
+                '        <p>Ask me questions</p>' +
                 "      </div>" +
                 '      <button type="button" class="bill-chat-close" aria-label="Close chat"><i class="fas fa-times"></i></button>' +
                 "    </div>" +
@@ -154,8 +154,9 @@
                 '      <button type="button" class="bill-chat-send" id="bill-chat-send" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>' +
                 "    </div>" +
                 "  </div>" +
-                '  <button type="button" class="bill-chat-toggle" id="bill-chat-toggle" aria-label="Open chat" aria-expanded="false">' +
+                '  <button type="button" class="bill-chat-toggle" id="bill-chat-toggle" aria-label="Ask me" aria-expanded="false">' +
                 '    <i class="fas fa-comment-dots"></i>' +
+                '    <span class="bill-chat-toggle-label">Ask me</span>' +
                 "  </button>" +
                 "</div>";
 
@@ -186,13 +187,18 @@
             });
         }
 
+        updateToggleContent(open) {
+            this.toggleBtn.innerHTML = open
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-comment-dots"></i><span class="bill-chat-toggle-label">Ask me</span>';
+            this.toggleBtn.setAttribute("aria-label", open ? "Close chat" : "Ask me");
+        }
+
         setOpen(open) {
             this.isOpen = open;
             this.panel.classList.toggle("is-open", open);
             this.toggleBtn.setAttribute("aria-expanded", open ? "true" : "false");
-            this.toggleBtn.innerHTML = open
-                ? '<i class="fas fa-times"></i>'
-                : '<i class="fas fa-comment-dots"></i>';
+            this.updateToggleContent(open);
             this.persistState();
             if (open) {
                 this.input.focus();
