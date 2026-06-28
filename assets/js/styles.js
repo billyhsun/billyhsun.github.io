@@ -80,7 +80,7 @@ class Header extends HTMLElement {
                     <i class="fa fa-caret-down" style="margin-left: 5px;"></i>
                 </a>
                 <div class="dropdown-content">
-                    <a href="${pathPrefix}research.html">Research & Publications</a>
+                    <a href="${pathPrefix}projects.html">Projects</a>
                     <a href="https://www.guidepoint.com/">AI Engineer - Guidepoint</a>
                     <a href="https://www.kinaxis.com/en">Machine Learning and AI Engineer - Kinaxis</a>
                     <a href="https://www.oise.utoronto.ca/aphd/centre-smart-learning-and-development">Lead ML / AI Researcher - University of Toronto Center for Smart Learning</a>
@@ -89,19 +89,7 @@ class Header extends HTMLElement {
                     <a href="${pathPrefix}transit.html">Transportation Modelling Research - University of Toronto</a>
                 </div>
             </div>
-            <div class="dropdown">
-                <a href="${pathPrefix}projects.html" class="dropbtn">
-                    <span>Projects</span>
-                    <i class="fa fa-caret-down" style="margin-left: 5px;"></i>
-                </a>
-                <div class="dropdown-content">
-                    <a href="https://llm-psych-assessment-demo.onrender.com/">Mental Health LLM Chatbot</a>
-                    <a href="https://kang-lee-lab-surveys.vercel.app/">Machine Learning Psychometrics</a>
-                    <a href="https://github.com/billyhsun/MusicGenre">Music Genre Classifier</a>
-                    <a href="https://devpost.com/software/surroundsound-1u9ljk">Music Sharing App</a>
-                    <a href="${pathPrefix}aer201.html">Autonomous Pill Packaging Machine</a>
-                </div>
-            </div>
+            <div class="button"><a href="${pathPrefix}research.html" style="color: #e6e6e6; text-decoration: none;">Research</a></div>
             <div class="button"><a href="${pathPrefix}blogs.html" style="color: #e6e6e6; text-decoration: none;">Blog</a></div>
             <div class="button"><a href="${pathPrefix}mentorship.html" style="color: #e6e6e6; text-decoration: none;">Mentorship</a></div>
         </div>
