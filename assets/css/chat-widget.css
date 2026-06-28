@@ -15,9 +15,14 @@ bill-chat {
 
 .bill-chat-root {
     position: fixed;
-    bottom: 3.5rem;
+    bottom: 1.25rem;
     right: 1.25rem;
     z-index: 10000;
+    transition: bottom 0.25s ease;
+}
+
+.bill-chat-root.bill-chat-root--raised {
+    bottom: 3.5rem;
 }
 
 .bill-chat-toggle {
@@ -300,8 +305,12 @@ bill-chat {
 
 @media (max-width: 480px) {
     .bill-chat-root {
-        bottom: 3.25rem;
+        bottom: 1rem;
         right: 1rem;
+    }
+
+    .bill-chat-root.bill-chat-root--raised {
+        bottom: 3.25rem;
     }
 
     .bill-chat-panel {

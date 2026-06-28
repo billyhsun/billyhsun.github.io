@@ -117,6 +117,7 @@
             this._initialized = true;
             this.render();
             this.bindEvents();
+            this.bindFooterAwarePosition();
             if (this.messages.length) {
                 this.restoreMessages();
                 if (this.isOpen) {
@@ -160,12 +161,65 @@
                 "  </button>" +
                 "</div>";
 
+            this.rootEl = this.querySelector(".bill-chat-root");
             this.panel = this.querySelector("#bill-chat-panel");
             this.messagesEl = this.querySelector("#bill-chat-messages");
             this.input = this.querySelector("#bill-chat-input");
             this.sendBtn = this.querySelector("#bill-chat-send");
             this.toggleBtn = this.querySelector("#bill-chat-toggle");
             this.closeBtn = this.querySelector(".bill-chat-close");
+        }
+
+        bindFooterAwarePosition() {
+            var self = this;
+
+            function getFooter() {
+                return document.querySelector("main-footer .footer, .footer");
+            }
+
+            function setupObserver() {
+                var footer = getFooter();
+                if (!footer || !self.rootEl) return;
+
+                if (self._footerObserver) {
+                    self._footerObserver.disconnect();
+                }
+
+                var toggleHeight = self.toggleBtn.offsetHeight || 56;
+                var defaultBottom = parseFloat(getComputedStyle(self.rootEl).bottom) || 20;
+                var margin = Math.ceil(defaultBottom + toggleHeight + 12);
+
+                self._footerObserver = new IntersectionObserver(
+                    function (entries) {
+                        var intersecting = entries.some(function (entry) {
+                            return entry.isIntersecting;
+                        });
+                        self.rootEl.classList.toggle("bill-chat-root--raised", intersecting);
+                    },
+                    {
+                        root: null,
+                        rootMargin: "0px 0px -" + margin + "px 0px",
+                        threshold: 0,
+                    }
+                );
+
+                self._footerObserver.observe(footer);
+            }
+
+            setupObserver();
+
+            if (!getFooter()) {
+                var attempts = 0;
+                var waitForFooter = setInterval(function () {
+                    attempts += 1;
+                    if (getFooter() || attempts > 50) {
+                        clearInterval(waitForFooter);
+                        setupObserver();
+                    }
+                }, 100);
+            }
+
+            window.addEventListener("resize", setupObserver);
         }
 
         bindEvents() {
