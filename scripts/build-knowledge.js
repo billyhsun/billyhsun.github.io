@@ -17,6 +17,10 @@ function htmlToText(html) {
         .replace(/<main-footer[^>]*>[\s\S]*?<\/main-footer[^>]*>/gi, " ")
         .replace(/<publications-list[^>]*><\/publications-list>/gi, " ")
         .replace(/<skills-board[^>]*><\/skills-board>/gi, " ")
+        .replace(/<a\s+[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi, function (_, href, text) {
+            const label = text.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+            return label ? label + " (" + href + ")" : href;
+        })
         .replace(/<[^>]+>/g, " ")
         .replace(/&nbsp;/g, " ")
         .replace(/&amp;/g, "&")
@@ -98,6 +102,10 @@ function buildKnowledgeText(pages, publications, skills) {
             "M.A. Applied Psychology and B.Eng Engineering Science — Machine Intelligence (University of Toronto).\n" +
             "Contact: billyuanhong.sun@mail.utoronto.ca | LinkedIn: https://www.linkedin.com/in/bill-yuan-hong-sun/ | " +
             "GitHub: https://github.com/billyhsun\n" +
+            "Writing: passionate about writing on engineering, education, and technology. " +
+            "Blog: https://billyhsun.github.io/pages/blogs.html | " +
+            "Medium (The Wandering Engineer): https://thewanderingengineer.medium.com/ | " +
+            "Substack (The Wandering Engineer): https://substack.com/@thewanderingengineer\n" +
             "Mentorship: free 30-minute consulting calls — book at https://calendly.com/billyhsun/30min\n"
     );
 
