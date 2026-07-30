@@ -405,6 +405,13 @@ img[height] {
     max-width: 100%;
 }
 
+.card img.card-icon {
+    width: 2em !important;
+    height: 2em !important;
+    max-width: 2em !important;
+    margin: 0 auto 10px !important;
+}
+
 /* Portfolio item images */
 .item img {
     width: 100%;

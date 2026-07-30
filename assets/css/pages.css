@@ -349,6 +349,22 @@ img {
     margin: 1rem 0;
 }
 
+.card img.card-icon {
+    width: 2em !important;
+    height: 2em !important;
+    max-width: 2em !important;
+    margin: 0 auto 10px !important;
+    display: block;
+}
+
+.card-brand-icon {
+    width: 2em;
+    height: 2em;
+    margin: 0 auto 10px;
+    display: block;
+    color: #3e8989;
+}
+
 /* Blog Styles */
 * {
     box-sizing: border-box;
