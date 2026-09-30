@@ -11,6 +11,7 @@ const OUTPUT = path.join(ROOT, "data", "site-knowledge.json");
 
 function htmlToText(html) {
     return html
+        .replace(/<!--[\s\S]*?-->/g, " ")
         .replace(/<script[\s\S]*?<\/script>/gi, " ")
         .replace(/<style[\s\S]*?<\/style>/gi, " ")
         .replace(/<main-header[^>]*>[\s\S]*?<\/main-header[^>]*>/gi, " ")
